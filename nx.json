@@ -24,10 +24,10 @@
   },
   "projects": {
     "ivds": {
-      "tags": []
+      "tags": ["scope:ivds","type:app"]
     },
     "ivds-e2e": {
-      "tags": [],
+      "tags": ["scope:ivds", "type:e2e"],
       "implicitDependencies": ["ivds"]
     },
     "shared-ui": {
