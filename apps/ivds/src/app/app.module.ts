@@ -7,6 +7,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 
+import { SharedUiModule } from 'zy/shared/ui';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -17,12 +19,13 @@ import { environment } from '../environments/environment';
         metaReducers: !environment.production ? [] : [],
         runtimeChecks: {
           strictActionImmutability: true,
-          strictStateImmutability: true,
-        },
+          strictStateImmutability: true
+        }
       }
     ),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+    SharedUiModule
   ],
   providers: [],
   bootstrap: [AppComponent],
