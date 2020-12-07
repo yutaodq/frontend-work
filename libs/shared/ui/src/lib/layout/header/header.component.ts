@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'frontend-work-header',
+  selector: 'zy-ui-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })

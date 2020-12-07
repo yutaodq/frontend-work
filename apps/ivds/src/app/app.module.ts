@@ -7,7 +7,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 
-import { SharedUiModule } from 'zy/shared/ui';
+// @ts-ignore
+import { SharedUiModule } from '@zy/shared/ui';
 
 @NgModule({
   declarations: [AppComponent],

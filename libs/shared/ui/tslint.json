@@ -1,8 +1,8 @@
 {
   "extends": "../../../tslint.json",
   "rules": {
-    "directive-selector": [true, "attribute", "frontendWork", "camelCase"],
-    "component-selector": [true, "element", "frontend-work", "kebab-case"]
+    "directive-selector": [true, "attribute", "zyUi", "camelCase"],
+    "component-selector": [true, "element", "zy-ui", "kebab-case"]
   },
   "linterOptions": {
     "exclude": ["!**/*"]
