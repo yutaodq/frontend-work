@@ -29,6 +29,9 @@
     "ivds-e2e": {
       "tags": [],
       "implicitDependencies": ["ivds"]
+    },
+    "shared-ui": {
+      "tags": ["scope:shared", "type:ui"]
     }
   }
 }

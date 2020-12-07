@@ -1,3 +1,3 @@
 module.exports = {
-  projects: ['<rootDir>/apps/ivds'],
+  projects: ['<rootDir>/apps/ivds', '<rootDir>/libs/shared/ui'],
 };
