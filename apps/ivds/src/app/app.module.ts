@@ -9,7 +9,7 @@ import { environment } from '../environments/environment';
 
 // @ts-ignore
 import { SharedUiModule } from '@zy/shared/ui';
-
+import {InputTextModule} from 'primeng/inputtext';
 @NgModule({
   declarations: [AppComponent],
   imports: [
