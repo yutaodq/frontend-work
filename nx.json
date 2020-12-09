@@ -24,7 +24,7 @@
   },
   "projects": {
     "ivds": {
-      "tags": ["scope:ivds","type:app"]
+      "tags": ["scope:ivds", "type:app"]
     },
     "ivds-e2e": {
       "tags": ["scope:ivds", "type:e2e"],
@@ -32,6 +32,9 @@
     },
     "shared-ui": {
       "tags": ["scope:shared", "type:ui"]
+    },
+    "shared-util": {
+      "tags": ["scope:shared", "type:util"]
     }
   }
 }

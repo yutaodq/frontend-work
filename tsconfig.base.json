@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@zy/shared/ui": ["libs/shared/ui/src/index.ts"]
+      "@zy/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@zy/shared/util": ["libs/shared/util/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
