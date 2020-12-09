@@ -47,6 +47,7 @@
     "@nrwl/angular": "10.4.4",
     "@nrwl/schematics": "^8.12.11",
     "bootstrap": "^4.5.3",
+    "font-awesome": "^4.7.0",
     "primeicons": "^4.1.0",
     "primeng": "^11.0.0",
     "rxjs": "~6.5.5",

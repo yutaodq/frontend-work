@@ -9,14 +9,14 @@ import { environment } from '../environments/environment';
 
 // @ts-ignore
 import { SharedUiModule } from '@zy/shared/ui';
-import {InputTextModule} from 'primeng/inputtext';
+// import {InputTextModule} from 'primeng/inputtext';
 // @ts-ignore
 import { SharedUtilModule } from '@zy/shared/util';
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    InputTextModule,
+    // InputTextModule,
     SharedUtilModule,
     StoreModule.forRoot(
       {},

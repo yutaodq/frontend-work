@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconModule } from './icoms/icon.module';
+import { IconModule } from './_icons/icon.module';
+import { ThemePrimengModule } from './_primeng/theme-primeng.module';
 
-const EXPORTS_MODULES = [IconModule];
+const EXPORTS_MODULES = [
+  IconModule,
+  ThemePrimengModule
+];
 
 @NgModule({
   imports: [CommonModule, IconModule],
