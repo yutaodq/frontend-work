@@ -30,6 +30,9 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/styles/src/lib"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -177,6 +180,36 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/util/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-styles": {
+      "projectType": "library",
+      "root": "libs/shared/styles",
+      "sourceRoot": "libs/shared/styles/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/styles/tsconfig.lib.json",
+              "libs/shared/styles/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/styles/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/styles/jest.config.js",
             "passWithNoTests": true
           }
         }

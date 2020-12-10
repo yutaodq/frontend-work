@@ -35,6 +35,9 @@
     },
     "shared-util": {
       "tags": ["scope:shared", "type:util"]
+    },
+    "shared-styles": {
+      "tags": ["scope:shared", "type:styles"]
     }
   }
 }
