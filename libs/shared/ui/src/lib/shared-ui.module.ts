@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './layout/header/header.component';
 import { FootComponent } from './layout/foot/foot.component';
+import { HeaderModule } from './layout/header/header.module';
 
+const EXPORTS_MODULES = [
+  HeaderModule
+  ]
 @NgModule({
   imports: [CommonModule],
-  declarations: [HeaderComponent, FootComponent],
+  declarations: [FootComponent],
   exports: [
-    HeaderComponent
+    ...EXPORTS_MODULES
   ]
 })
 export class SharedUiModule {}
