@@ -1,33 +1,75 @@
-<div class="alert alert-primary" role="alert">
-  A simple primary alert—check it out!
+<div class="layout-wrapper" [ngClass]="{'layout-news-active': true,
+            'p-input-filled': true, 'p-ripple-disabled': true}">
+  <div class="layout-news">
+    <div class="layout-news-container">
+      <img class="layouts-news-mockup-image" src="/assets/images/header-news.png">
+      <span class="layout-news-details">
+                </span>
+      <a href="https://www.primefaces.org/poseidon-ng" target="_blank" style="text-decoration: none"
+         class="layout-news-button">
+        LEARN MORE<i class="pi pi-angle-right"></i>
+      </a>
+      <a tabindex="0" class="layout-news-close">
+        <i class="pi pi-times"></i>
+      </a>
+    </div>
+  </div>
+  <div>
+    <zy-ui-header>
+    </zy-ui-header>
+
+  </div>
+  <div>
+    1
+  </div>
+  <div>
+    2
+  </div>
+  <div>
+    3
+  </div>
+  <div>
+    4
+  </div>
+  <div class="layout-topbar">
+    <a class="menu-button" >
+      <i class="pi pi-bars"></i>
+    </a>
+    <a  class="logo">
+      9999999999
+    </a>
+    <div class="app-theme"  tooltipPosition="bottom">
+      nnnnnn
+    </div>
+    <ul #topbarMenu class="topbar-menu">
+      <li><a >Get Started</a></li>
+
+      <li class="topbar-submenu">
+        <a tabindex="0" >Templates</a>
+        <ul >
+          <li class="topbar-submenu-header">PREMIUM ADMIN TEMPLATES</li>
+          <li>
+            <a href="https://www.primefaces.org/layouts/poseidon-ng">
+              <span>Poseidon</span>
+            </a>
+          </li>
+
+        </ul>
+      </li>
+      <li class="topbar-submenu">
+        <a tabindex="0" >Resources</a>
+        <ul >
+          <li><a href="https://www.primetek.com.tr" target="_blank"><span>About PrimeTek</span></a></li>
+        </ul>
+      </li>
+      <li class="topbar-submenu">
+        <a >ppppppppppp</a>
+        <ul  style="width:100%">
+          <li  >
+            <a>aaa</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </div>
-<div class="alert alert-secondary" role="alert">
-  A simple secondary alert—check it out!
-</div>
-<div class="alert alert-success" role="alert">
-  A simple success alert—check it out!
-</div>
-<i class="fas fa-paw" title="Toggle menu"></i>
-dfssdfsdf
-<i class="fa fa-twitter" ></i>
-<h1>Heading 2</h1>
-
-<h2>Heading 2</h2>
-
-<link rel="icon" type="image/x-icon" href="favicon.ico" />
-
-<button type="button"  class="btn btn-link"><i class="fas fa-bell"></i> Notifications</button>
-<hr>
-<button type="button"  class="btn btn-link"><i class="fas fa-sign-out-alt"></i> Logout</button>
-<button pButton  label="Logout" icon="fas fa-sign-out-alt" style="margin-left:.25em"></button>
-
-<header class="flex">
-  <img
-    alt="Nx logo"
-    width="75"
-    src="a-clash-of-kings.jpg"
-  />
-  <h1>Welcome to {{ title }}!</h1>
-</header>
-
-<zy-ui-header></zy-ui-header>

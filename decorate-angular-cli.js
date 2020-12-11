@@ -38,7 +38,7 @@ try {
 /**
  * Paths to files being patched
  */
-const angularCLIInitPath = "node_modules/@angular/cli/lib/cli/index.js";
+const angularCLIInitPath = "node_modules/@angular/cli/assets/cli/index.js";
 
 /**
  * Patch index.js to warn you if you invoke the undecorated Angular CLI.

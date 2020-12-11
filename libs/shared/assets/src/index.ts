@@ -1,1 +1,1 @@
-export * from './lib/shared-assets.module';
+export * from './assets/shared-assets.module';

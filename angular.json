@@ -21,7 +21,15 @@
             "polyfills": "apps/ivds/src/polyfills.ts",
             "tsConfig": "apps/ivds/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/ivds/src/favicon.ico", "apps/ivds/src/assets"],
+            "assets": [
+              "apps/ivds/src/favicon.ico",
+              "apps/ivds/src/assets",
+              {
+                "input": "libs/shared/assets/src/assets",
+                "glob": "**/*",
+                "output": "assets"
+              }
+            ],
             "styles": [
               "apps/ivds/src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -31,7 +39,9 @@
               "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["libs/shared/styles/src/lib"]
+              "includePaths": [
+                "libs/shared/styles/src/lib"
+              ]
             },
             "scripts": []
           },
