@@ -148,12 +148,35 @@
     "@angular-devkit/core" "8.3.23"
     rxjs "6.4.0"
 
+"@angular-extensions/elements@~10.1.1":
+  version "10.1.1"
+  resolved "https://registry.npm.taobao.org/@angular-extensions/elements/download/@angular-extensions/elements-10.1.1.tgz#36f3615ea0df953d4920cdf53128ca820623fd2e"
+  integrity sha1-NvNhXqDflT1JIM31MSjKggYj/S4=
+  dependencies:
+    tslib "^2.0.0"
+
+"@angular-extensions/model@^10.0.1":
+  version "10.0.1"
+  resolved "https://registry.npm.taobao.org/@angular-extensions/model/download/@angular-extensions/model-10.0.1.tgz#54ffa901003fa917e3b0047486bf3fbb6555c46e"
+  integrity sha1-VP+pAQA/qRfjsAR0hr8/u2VVxG4=
+  dependencies:
+    tslib "^2.0.0"
+
 "@angular/animations@^10.1.0":
   version "10.2.3"
   resolved "https://registry.npm.taobao.org/@angular/animations/download/@angular/animations-10.2.3.tgz?cache=0&sync_timestamp=1606935568802&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40angular%2Fanimations%2Fdownload%2F%40angular%2Fanimations-10.2.3.tgz#eb12630b530ff861577ead9470c066bb37cd8655"
   integrity sha1-6xJjC1MP+GFXfq2UcMBmuzfNhlU=
   dependencies:
     tslib "^2.0.0"
+
+"@angular/cdk@^10.1.0":
+  version "10.2.7"
+  resolved "https://registry.npm.taobao.org/@angular/cdk/download/@angular/cdk-10.2.7.tgz#0ff82eb91b2653ea26909c57a460d4593b44f186"
+  integrity sha1-D/guuRsmU+omkJxXpGDUWTtE8YY=
+  dependencies:
+    tslib "^2.0.0"
+  optionalDependencies:
+    parse5 "^5.0.0"
 
 "@angular/cli@~10.1.3":
   version "10.1.7"
@@ -1297,7 +1320,7 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fortawesome/angular-fontawesome@0.7.x":
+"@fortawesome/angular-fontawesome@^0.7.0":
   version "0.7.0"
   resolved "https://registry.npm.taobao.org/@fortawesome/angular-fontawesome/download/@fortawesome/angular-fontawesome-0.7.0.tgz#af9ac19e035960e9c05615ae86aac3b737ad7b13"
   integrity sha1-r5rBngNZYOnAVhWuhqrDtzetexM=
@@ -1318,6 +1341,13 @@
   version "1.2.32"
   resolved "https://registry.npm.taobao.org/@fortawesome/fontawesome-svg-core/download/@fortawesome/fontawesome-svg-core-1.2.32.tgz#da092bfc7266aa274be8604de610d7115f9ba6cf"
   integrity sha1-2gkr/HJmqidL6GBN5hDXEV+bps8=
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.32"
+
+"@fortawesome/free-brands-svg-icons@^5.15.1":
+  version "5.15.1"
+  resolved "https://registry.npm.taobao.org/@fortawesome/free-brands-svg-icons/download/@fortawesome/free-brands-svg-icons-5.15.1.tgz#1dc0563f4036639e53d24b8e532ea78a53ca2250"
+  integrity sha1-HcBWP0A2Y55T0kuOUy6nilPKIlA=
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.32"
 
@@ -8391,7 +8421,7 @@ parse5-htmlparser2-tree-adapter@6.0.1:
   dependencies:
     parse5 "^6.0.1"
 
-parse5@5.1.1:
+parse5@5.1.1, parse5@^5.0.0:
   version "5.1.1"
   resolved "https://registry.npm.taobao.org/parse5/download/parse5-5.1.1.tgz#f68e4e5ba1852ac2cadc00f4555fff6c2abb6178"
   integrity sha1-9o5OW6GFKsLK3AD0VV//bCq7YXg=

@@ -1,3 +1,4 @@
+// import browser from 'browser-detect';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  @Input() imgSrc: string;
-
+  @Input()
+  logo;
+  @Input()
+  title
   constructor() { }
 
   ngOnInit(): void {
