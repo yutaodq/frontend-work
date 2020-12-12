@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FootComponent } from './layout/foot/foot.component';
 import { HeaderModule } from './layout/header/header.module';
+import { NavbarModule } from './layout/navbar/navbar.module';
 
 const EXPORTS_MODULES = [
-  HeaderModule
+  HeaderModule,
+  NavbarModule
   ]
 @NgModule({
   imports: [CommonModule],
