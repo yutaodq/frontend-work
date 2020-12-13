@@ -1,22 +1,11 @@
-<div>
-<p>navbar works!</p>
-</div>
-<div>
-  <p>navbar works!</p>
-</div>
-<div>
-  <p>navbar works!</p>
-</div>
-<div>
-  <p>navbar works!</p>
-</div>
-<div>
-  <p>navbar works!</p>
-</div>
-<div>
-  <p>navbar works!</p>
-</div>
-<div>
-  <p>navbar works!</p>
-</div>
-
+  <div class="layout-topbar">
+    <a class="menu-button" >
+      ddddddddd<i class="pi pi-bars"></i>
+    </a>
+    <a [routerLink]="['/']" class="logo">
+      <img alt="logo" [src]="logo" />
+    </a>
+    <div class="layout-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
