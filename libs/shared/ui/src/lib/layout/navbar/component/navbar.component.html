@@ -10,7 +10,8 @@
 
     <li class="topbar-submenu">
       <a tabindex="0" (click)="toggleMenu($event, 0)">Themes</a>
-      <ul>
+      <ul [@overlayMenuAnimation]="'visible'" *ngIf="activeMenuIndex === 0"
+          (@overlayMenuAnimation.start)="onOverlayMenuEnter($event)">
         <li class="topbar-submenu-header">PREMIUM ADMIN TEMPLATES</li>
         <li>
           <a href="https://www.primefaces.org/layouts/poseidon-ng">
@@ -22,3 +23,5 @@
     </li>
   </ul>
 </div>
+
+
