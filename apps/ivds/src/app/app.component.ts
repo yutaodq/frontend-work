@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  logo = require('../assets/github.png').default;
+  logo = require('../assets/images/logo.svg').default;
+
   title = 'ivds';
 }

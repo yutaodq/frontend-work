@@ -14,7 +14,7 @@
     padding: 0 35px;
 
     .menu-button {
-        display: none;
+        display: none;  // 此元素不会被显示
         color: var(--text-color);
         width: 70px;
         height: 70px;
@@ -52,7 +52,7 @@
         width: 39px;
         height: 39px;
         margin-left: 70px;
-    
+
         img {
             width: 25px;
         }
@@ -124,7 +124,7 @@
                             padding: 1.5rem 0 1rem 0;
                             font-size: 0.857rem;
                             text-transform: uppercase;
-                
+
                             &:first-child {
                                 padding-top: 1rem;
                             }

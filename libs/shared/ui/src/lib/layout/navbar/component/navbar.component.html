@@ -1,11 +1,24 @@
-  <div class="layout-topbar">
-    <a class="menu-button" >
-      ddddddddd<i class="pi pi-bars"></i>
-    </a>
-    <a [routerLink]="['/']" class="logo">
-      <img alt="logo" [src]="logo" />
-    </a>
-    <div class="layout-content">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+<div class="layout-topbar">
+  <a class="menu-button">
+    <i class="pi pi-bars"></i>
+  </a>
+  <a [routerLink]="['/']" class="logo">
+    <img alt="logo" [src]="logo"/>
+  </a>
+  <ul #topbarMenu class="topbar-menu">
+    <li><a>Get Started</a></li>
+
+    <li class="topbar-submenu">
+      <a tabindex="0">Templates</a>
+      <ul>
+        <li class="topbar-submenu-header">PREMIUM ADMIN TEMPLATES</li>
+        <li>
+          <a href="https://www.primefaces.org/layouts/poseidon-ng">
+            <span>Poseidon</span>
+          </a>
+        </li>
+
+      </ul>
+    </li>
+  </ul>
+</div>

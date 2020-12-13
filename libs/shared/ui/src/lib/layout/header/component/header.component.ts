@@ -7,11 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input()
-  logo;
-  @Input()
-  title
-  constructor() { }
+  @Input() logo;
+  @Input() title;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
