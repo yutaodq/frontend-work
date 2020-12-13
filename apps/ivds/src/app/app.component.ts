@@ -9,4 +9,8 @@ export class AppComponent {
   logo = require('../assets/images/logo.svg').default;
 
   title = 'ivds';
+
+  onMenuButtonClick() {
+
+  }
 }
