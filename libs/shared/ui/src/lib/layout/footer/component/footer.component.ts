@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'zy-ui-foot',
-  templateUrl: './foot.component.html',
-  styleUrls: ['./foot.component.scss']
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss']
 })
-export class FootComponent implements OnInit {
+export class FooterComponent implements OnInit {
 
   constructor() { }
 
