@@ -1,0 +1,33 @@
+<p>menu works!</p>
+<div class="layout-sidebar" [ngClass]="{'active': active}">
+  <div class="layout-menu">
+
+    <div class="menu-category">Media</div>
+    <div class="menu-items">
+      <a [routerLink]=" ['/carousel']" routerLinkActive="router-link-exact-active">Carousel</a>
+      <div>
+        <a tabindex="0" (click)="toggleSubmenu($event, '/galleria')">Galleria</a>
+        <div [@submenu]="isSubmenuActive('/galleria') ? 'visible': 'hidden'">
+          <ul>
+            <li><a [routerLink]=" ['/galleria']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Documentation</a></li>
+            <li><a [routerLink]=" ['/galleria/programmatic']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Programmatic</a></li>
+            <li><a [routerLink]=" ['/galleria/indicator']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Indicator</a></li>
+            <li><a [routerLink]=" ['/galleria/thumbnail']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Thumbnail</a></li>
+            <li><a [routerLink]=" ['/galleria/navigator']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Navigator</a></li>
+            <li><a [routerLink]=" ['/galleria/responsive']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Responsive</a></li>
+            <li><a [routerLink]=" ['/galleria/fullscreen']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Fullscreen</a></li>
+            <li><a [routerLink]=" ['/galleria/autoplay']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">AutoPlay</a></li>
+            <li><a [routerLink]=" ['/galleria/caption']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Caption</a></li>
+            <li><a [routerLink]=" ['/galleria/advanced']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Advanced</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="menu-category">Utilities</div>
+    <div class="menu-items">
+      <a [routerLink]=" ['/filterservice']" routerLinkActive="router-link-exact-active">FilterService <span class="p-tag">New</span></a>
+    </div>
+  </div>
+</div>

@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FootComponent } from './layout/foot/foot.component';
 import { HeaderModule } from './layout/header/header.module';
 import { NavbarModule } from './layout/navbar/navbar.module';
+import { MenuModule } from './layout/menu/menu.module';
 
 const EXPORTS_MODULES = [
   HeaderModule,
-  NavbarModule
+  NavbarModule,
+  MenuModule
   ]
 @NgModule({
   imports: [CommonModule],
