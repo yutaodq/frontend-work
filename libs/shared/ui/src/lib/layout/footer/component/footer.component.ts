@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'zy-ui-foot',
+  selector: 'zy-ui-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })

@@ -9,15 +9,14 @@
   </zy-ui-navbar>
   <zy-ui-menu  [active]="menuActive">
   </zy-ui-menu>
-  <zy-ui-config>
-
-  </zy-ui-config>
+<!--  <zy-ui-config>-->
+<!--  </zy-ui-config>-->
   <div class="layout-mask" [ngClass]="{'layout-mask-active': menuActive}" (click)="onMaskClick()">
   </div>
 
   <div class="layout-content">
     <router-outlet></router-outlet>
-    <zy-ui-foot></zy-ui-foot>
+    <zy-ui-footer></zy-ui-footer>
   </div>
 
 </div>
