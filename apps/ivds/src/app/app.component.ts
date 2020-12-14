@@ -32,4 +32,7 @@ export class AppComponent {
       element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
   }
 
+  onMaskClick() {
+    this.hideMenu();
+  }
 }
