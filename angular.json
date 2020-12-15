@@ -39,9 +39,7 @@
               "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "libs/shared/styles/src/lib"
-              ]
+              "includePaths": ["libs/shared/styles/src/lib"]
             },
             "scripts": []
           },
@@ -255,6 +253,39 @@
         }
       },
       "schematics": {}
+    },
+    "shared-data-access-http": {
+      "projectType": "library",
+      "root": "libs/shared/data-access-http",
+      "sourceRoot": "libs/shared/data-access-http/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/data-access-http/tsconfig.lib.json",
+              "libs/shared/data-access-http/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/data-access-http/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/data-access-http/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

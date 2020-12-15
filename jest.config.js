@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/libs/styles/styles',
     '<rootDir>/libs/shared/styles',
     '<rootDir>/libs/shared/assets',
+    '<rootDir>/libs/shared/data-access-http',
   ],
 };

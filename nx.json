@@ -41,6 +41,9 @@
     },
     "shared-assets": {
       "tags": ["scope:shared", "type:assets"]
+    },
+    "shared-data-access-http": {
+      "tags": ["scope:shared", "type:data-access"]
     }
   }
 }
