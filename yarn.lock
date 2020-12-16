@@ -251,6 +251,13 @@
   dependencies:
     tslib "^2.0.0"
 
+"@angular/http@^10.1.0":
+  version "8.0.0-beta.10"
+  resolved "https://registry.npm.taobao.org/@angular/http/download/@angular/http-8.0.0-beta.10.tgz#3d30c98aa64603daa3fc5675413c2dc3da3868b2"
+  integrity sha1-PTDJiqZGA9qj/FZ1QTwtw9o4aLI=
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/language-service@^10.1.0":
   version "10.2.3"
   resolved "https://registry.npm.taobao.org/@angular/language-service/download/@angular/language-service-10.2.3.tgz?cache=0&sync_timestamp=1606935305063&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40angular%2Flanguage-service%2Fdownload%2F%40angular%2Flanguage-service-10.2.3.tgz#bb678c11822b9bf7ca007703a31dae090dc2c0ab"
@@ -7768,11 +7775,6 @@ next-tick@~1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/next-tick/download/next-tick-1.0.0.tgz?cache=0&sync_timestamp=1581394203989&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnext-tick%2Fdownload%2Fnext-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
-
-ng2-translate@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.npm.taobao.org/ng2-translate/download/ng2-translate-5.0.0.tgz#0adbb510eb5007a2d6ded5f5d26888c14760aca5"
-  integrity sha1-Ctu1EOtQB6LW3tX10miIwUdgrKU=
 
 nice-try@^1.0.4:
   version "1.0.5"
