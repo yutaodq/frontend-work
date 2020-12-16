@@ -32,7 +32,7 @@ export class HttpService {
 
   protected getBaseUrl(): string {
 //    return this.configService.get('api').baseUrl;
-    return environment.apiUrl;
+    return environment.baseUrl;
 
   }
 

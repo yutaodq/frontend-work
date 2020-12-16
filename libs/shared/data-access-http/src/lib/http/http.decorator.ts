@@ -1,4 +1,4 @@
-import { RequestMethod } from "@angular/http";
+ import { RequestMethod } from "@angular/http";
 
 
 import {
@@ -41,7 +41,7 @@ export function DefaultHeaders(headers: any) {
  * Method decorators
  * *********************************************/
 
-/**
+ /**
  * GET method
  * @param {string} url - resource url of the method
  */
