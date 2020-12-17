@@ -1,18 +1,22 @@
- import { RequestMethod } from "@angular/http";
-
-
-import {
-  HttpService,
-  MediaType
-} from './http.service';
-import {
-  methodBuilder,
-  paramBuilder
-} from './utils.service';
+import {HttpService,  MediaType } from './http.service';
+import {methodBuilder,  paramBuilder} from './utils.service';
 
 /* *********************************************
  * Class decorators
  * *********************************************/
+enum RequestMethod {
+   Get ="GET",
+   Post = "POST",
+  Delete = "DELETE",
+  Put = "PUT",
+  Head = "HEAD"
+ }
+enum ParamName {
+  Path ="Path",
+  Query = "Query",
+  Body = "Body",
+  Header = "Header"
+}
 
 /**
  * Set the base URL of REST resource
@@ -45,7 +49,7 @@ export function DefaultHeaders(headers: any) {
  * GET method
  * @param {string} url - resource url of the method
  */
-export let GET = methodBuilder(RequestMethod.Get);
+ export let GET = methodBuilder(RequestMethod.Get);
 /**
  * POST method
  * @param {string} url - resource url of the method
@@ -110,19 +114,20 @@ export function Adapter(adapterFn: Function) {
  * Path variable of a method's url, type: string
  * @param {string} key - path key to bind value
  */
-export let Path = paramBuilder('Path');
+export let Path = paramBuilder(ParamName.Path);
 /**
  * Query value of a method's url, type: string
  * @param {string} key - query key to bind value
  */
-export let Query = paramBuilder('Query');
+export let Query = paramBuilder(ParamName.Query);
 /**
  * Body of a REST method, type: key-value pair object
  * Only one body per method!
  */
-export let Body = paramBuilder('Body')('Body');
+export let Body = paramBuilder(ParamName.Body)(ParamName.Body);
 /**
  * Custom header of a REST method, type: string
  * @param {string} key - header key to bind value
  */
-export let Header = paramBuilder('Header');
+export let Header = paramBuilder(ParamName.Header);
+

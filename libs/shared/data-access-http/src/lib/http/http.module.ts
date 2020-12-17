@@ -13,7 +13,6 @@ export class HttpModule {
   static forRoot(): ModuleWithProviders<any> {
     return {
       ngModule: HttpModule,
-
       providers: [
         HttpService,
         HttpResponseHandler

@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
-// import {  Http,  Request,  RequestMethod,  Response} from "@angular/http";
 import { HttpClient, HttpRequest, HttpParams, HttpResponse } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { HttpResponseHandler } from './httpResponseHandler.service';
 import { HttpAdapter } from './http.adapter';
 //import { ConfigService } from '../../../app-config.service';
-import {
-  methodBuilder,
-  paramBuilder
-} from './utils.service';
+
 import { catchError, map } from 'rxjs/operators';
+// tslint:disable-next-line:nx-enforce-module-boundaries
 import { environment } from "../../../../../../apps/ivds/src/environments/environment";
 
 /**
