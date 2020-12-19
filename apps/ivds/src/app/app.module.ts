@@ -11,14 +11,12 @@ import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
-import { HomeComponent } from './component/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 
-// @ts-ignore
 import { LayoutFeatureLayoutIvdsModule } from '@zy/layout/feature-layout-ivds';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
