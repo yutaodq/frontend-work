@@ -291,7 +291,7 @@
       "projectType": "library",
       "root": "libs/layout/feature-layout-ivds",
       "sourceRoot": "libs/layout/feature-layout-ivds/src",
-      "prefix": "frontend-work",
+      "prefix": "zy-layout",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",

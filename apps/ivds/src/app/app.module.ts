@@ -10,11 +10,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
-// @ts-ignore
-import { SharedUiModule } from '@zy/shared/ui';
 import { HomeComponent } from './component/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LayoutFeatureLayoutIvdsModule } from '@frontend-work/layout/feature-layout-ivds';
+// @ts-ignore
+import { LayoutFeatureLayoutIvdsModule } from '@zy/layout/feature-layout-ivds';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -36,10 +35,11 @@ import { LayoutFeatureLayoutIvdsModule } from '@frontend-work/layout/feature-lay
     !environment.production ? StoreDevtoolsModule.instrument() : [],
 
     AppRoutingModule,
-    SharedUiModule,
-    LayoutFeatureLayoutIvdsModule
+    LayoutFeatureLayoutIvdsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
+
+
 })
 export class AppModule {}

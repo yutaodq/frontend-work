@@ -22,7 +22,7 @@
       "@frontend-work/shared/data-access-http": [
         "libs/shared/data-access-http/src/index.ts"
       ],
-      "@frontend-work/layout/feature-layout-ivds": [
+      "@zy/layout/feature-layout-ivds": [
         "libs/layout/feature-layout-ivds/src/index.ts"
       ]
     }
