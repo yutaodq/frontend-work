@@ -53,6 +53,9 @@
     },
     "vehicle-shell": {
       "tags": ["scope:vehicle", "type:feature"]
+    },
+    "shared-data-access-model": {
+      "tags": ["scope:shared", "type:data-access"]
     }
   }
 }

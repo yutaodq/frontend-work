@@ -10,5 +10,6 @@ module.exports = {
     '<rootDir>/libs/layout/feature-layout-component',
     '<rootDir>/libs/vehicle/feature-vehicle',
     '<rootDir>/libs/vehicle/shell',
+    '<rootDir>/libs/shared/data-access-model',
   ],
 };

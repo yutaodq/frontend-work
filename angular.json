@@ -382,6 +382,39 @@
           "style": "scss"
         }
       }
+    },
+    "shared-data-access-model": {
+      "projectType": "library",
+      "root": "libs/shared/data-access-model",
+      "sourceRoot": "libs/shared/data-access-model/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/data-access-model/tsconfig.lib.json",
+              "libs/shared/data-access-model/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/data-access-model/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/data-access-model/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
