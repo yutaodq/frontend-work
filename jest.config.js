@@ -7,5 +7,6 @@ module.exports = {
     '<rootDir>/libs/shared/styles',
     '<rootDir>/libs/shared/assets',
     '<rootDir>/libs/shared/data-access-http',
+    '<rootDir>/libs/layout/feature-layout-ivds',
   ],
 };

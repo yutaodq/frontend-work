@@ -44,6 +44,9 @@
     },
     "shared-data-access-http": {
       "tags": ["scope:shared", "type:data-access"]
+    },
+    "layout-feature-layout-ivds": {
+      "tags": ["scope:layout", "type:feature"]
     }
   }
 }

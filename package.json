@@ -27,7 +27,6 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "server": "ts-node ./server/server.ts"
-
   },
   "private": true,
   "dependencies": {

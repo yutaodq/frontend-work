@@ -286,6 +286,39 @@
           "style": "scss"
         }
       }
+    },
+    "layout-feature-layout-ivds": {
+      "projectType": "library",
+      "root": "libs/layout/feature-layout-ivds",
+      "sourceRoot": "libs/layout/feature-layout-ivds/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/layout/feature-layout-ivds/tsconfig.lib.json",
+              "libs/layout/feature-layout-ivds/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/layout/feature-layout-ivds/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/layout/feature-layout-ivds/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
