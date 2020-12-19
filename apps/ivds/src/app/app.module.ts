@@ -12,9 +12,9 @@ import { environment } from '../environments/environment';
 
 // @ts-ignore
 import { SharedUiModule } from '@zy/shared/ui';
-
 import { HomeComponent } from './component/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LayoutFeatureLayoutIvdsModule } from '@frontend-work/layout/feature-layout-ivds';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -36,7 +36,8 @@ import { AppRoutingModule } from './app-routing.module';
     !environment.production ? StoreDevtoolsModule.instrument() : [],
 
     AppRoutingModule,
-    SharedUiModule
+    SharedUiModule,
+    LayoutFeatureLayoutIvdsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'layout-feature-layout-ivds',
+  displayName: 'layout-feature-layout-component',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../coverage/libs/layout/feature-layout-ivds',
+  coverageDirectory: '../../../coverage/libs/layout/feature-layout-component',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

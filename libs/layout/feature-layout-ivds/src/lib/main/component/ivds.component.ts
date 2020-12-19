@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'frontend-work-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'layout-ivds',
+  templateUrl: './ivds.component.html',
+  styleUrls: ['./ivds.component.scss']
 })
-export class AppComponent {
-  logo = require('../assets/images/logo.svg').default;
+export class IvdsComponent  {
+  logo = require('../../../../assets/images/logo.svg').default;
   menuActive: boolean;
 
   title = 'component';
@@ -35,4 +35,6 @@ export class AppComponent {
   onMaskClick() {
     this.hideMenu();
   }
+
+
 }

@@ -2,7 +2,7 @@
 // import { HttpClient, HttpHeaders } from '@angular/common/http';
 // import { Observable } from 'rxjs';
 // // import { environment } from '@env/environment';
-// import { environment } from "../../../../../../apps/ivds/src/environments/environment";
+// import { environment } from "../../../../../../apps/component/src/environments/environment";
 //
 //
 // @Injectable()
