@@ -1,7 +1,7 @@
 {
   "extends": "../../../tslint.json",
   "rules": {
-    "directive-selector": [true, "attribute", "layout-ivds", "camelCase"],
+    "directive-selector": [true, "attribute", "layoutIvds", "camelCase"],
     "component-selector": [true, "element", "layout-ivds", "kebab-case"]
   },
   "linterOptions": {

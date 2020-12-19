@@ -8,5 +8,7 @@ module.exports = {
     '<rootDir>/libs/shared/assets',
     '<rootDir>/libs/shared/data-access-http',
     '<rootDir>/libs/layout/feature-layout-component',
+    '<rootDir>/libs/vehicle/feature-vehicle',
+    '<rootDir>/libs/vehicle/shell',
   ],
 };

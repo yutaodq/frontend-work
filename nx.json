@@ -47,6 +47,12 @@
     },
     "layout-feature-layout-ivds": {
       "tags": ["scope:layout", "type:feature"]
+    },
+    "vehicle-feature-vehicle": {
+      "tags": ["scope:vehicle", "type:feature"]
+    },
+    "vehicle-shell": {
+      "tags": ["scope:vehicle", "type:feature"]
     }
   }
 }

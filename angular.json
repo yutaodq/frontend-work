@@ -319,6 +319,69 @@
           "style": "scss"
         }
       }
+    },
+    "vehicle-feature-vehicle": {
+      "projectType": "library",
+      "root": "libs/vehicle/feature-vehicle",
+      "sourceRoot": "libs/vehicle/feature-vehicle/src",
+      "prefix": "zy-vehicle",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/vehicle/feature-vehicle/tsconfig.lib.json",
+              "libs/vehicle/feature-vehicle/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/vehicle/feature-vehicle/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/vehicle/feature-vehicle/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "vehicle-shell": {
+      "projectType": "library",
+      "root": "libs/vehicle/shell",
+      "sourceRoot": "libs/vehicle/shell/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/vehicle/shell/tsconfig.lib.json",
+              "libs/vehicle/shell/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/vehicle/shell/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/vehicle/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {
