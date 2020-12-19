@@ -72,5 +72,15 @@
         "name": "Paint",
         "category": "paint"
       }
-    ]
+    ],
+  "vehicle": [
+    {
+      "id": 1,
+      "name": "汽车"
+    },
+    {
+      "id": 2,
+      "name": "卡车"
+    }
+  ]
   }
