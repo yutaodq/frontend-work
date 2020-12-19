@@ -6,12 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
 import { HomeComponent } from './component/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+
 // @ts-ignore
 import { LayoutFeatureLayoutIvdsModule } from '@zy/layout/feature-layout-ivds';
 
@@ -21,8 +23,11 @@ import { LayoutFeatureLayoutIvdsModule } from '@zy/layout/feature-layout-ivds';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+
     StoreModule.forRoot(
-      {},
+      {
+        router: routerReducer
+      },
       {
         metaReducers: !environment.production ? [] : [],
         runtimeChecks: {
@@ -32,7 +37,9 @@ import { LayoutFeatureLayoutIvdsModule } from '@zy/layout/feature-layout-ivds';
       }
     ),
     EffectsModule.forRoot([]),
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    // !environment.production ? StoreDevtoolsModule.instrument() : [],
+    StoreDevtoolsModule.instrument(),
+    StoreRouterConnectingModule.forRoot(),
 
     AppRoutingModule,
     LayoutFeatureLayoutIvdsModule,
