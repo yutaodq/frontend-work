@@ -1,18 +1,18 @@
 import { Injectable } 	    from '@angular/core';
 import { Store }            from '@ngrx/store';
 import { Observable }       from 'rxjs';
-import * as store           from '../store';
+import * as store           from '../+state';
 // import * as authActions     from '../store/actions/auth.action';
 import { User }             from '@zy/model';
 import { localeDateString } from '@zy/shared/util';
 
 export abstract class Sandbox {
 
-  public loggedUser$: Observable<any> = this.appState$.select(store.getLoggedUser);
-  public culture$:    Observable<any> = this.appState$.select(store.getSelectedCulture);
+  // public loggedUser$: Observable<any> = this.appState$.select(store.getLoggedUser);
+  // public culture$:    Observable<any> = this.appState$.select(store.getSelectedCulture);
   public culture:     string;
 
-  constructor(protected appState$: Store<store.State>) {}
+  constructor(protected appState$: Store<store.AppState>) {}
 
   /**
    * Pulls user from local storage and saves it to the store
