@@ -47,8 +47,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/ivds/src/environments/environment.ts",
-                  "with": "apps/ivds/src/environments/environment.prod.ts"
+                  "replace": "libs/shared/environments/src/lib/environment.ts",
+                  "with": "libs/shared/environments/src/lib/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -406,6 +406,69 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/data-access-model/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-data-access-store": {
+      "projectType": "library",
+      "root": "libs/shared/data-access-store",
+      "sourceRoot": "libs/shared/data-access-store/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/data-access-store/tsconfig.lib.json",
+              "libs/shared/data-access-store/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/data-access-store/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/data-access-store/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-environments": {
+      "projectType": "library",
+      "root": "libs/shared/environments",
+      "sourceRoot": "libs/shared/environments/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/environments/tsconfig.lib.json",
+              "libs/shared/environments/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/environments/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/environments/jest.config.js",
             "passWithNoTests": true
           }
         }

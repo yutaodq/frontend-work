@@ -56,6 +56,12 @@
     },
     "shared-data-access-model": {
       "tags": ["scope:shared", "type:data-access"]
+    },
+    "shared-data-access-store": {
+      "tags": ["scope:shared", "type:data-access"]
+    },
+    "shared-environments": {
+      "tags": ["scope:shared", "type:util"]
     }
   }
 }

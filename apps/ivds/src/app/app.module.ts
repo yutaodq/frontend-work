@@ -22,19 +22,19 @@ import { LayoutFeatureLayoutIvdsModule } from '@zy/layout/feature-layout-ivds';
     BrowserAnimationsModule,
     HttpClientModule,
 
-    StoreModule.forRoot(
-      {
-        router: routerReducer
-      },
-      {
-        metaReducers: !environment.production ? [] : [],
-        runtimeChecks: {
-          strictActionImmutability: true,
-          strictStateImmutability: true
-        }
-      }
-    ),
-    EffectsModule.forRoot([]),
+    // StoreModule.forRoot(
+    //   {
+    //     router: routerReducer
+    //   },
+    //   {
+    //     metaReducers: !environment.production ? [] : [],
+    //     runtimeChecks: {
+    //       strictActionImmutability: true,
+    //       strictStateImmutability: true
+    //     }
+    //   }
+    // ),
+    // EffectsModule.forRoot([]),
     // !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreDevtoolsModule.instrument(),
     StoreRouterConnectingModule.forRoot(),

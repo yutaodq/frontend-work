@@ -29,8 +29,10 @@
         "libs/vehicle/feature-vehicle/src/index.ts"
       ],
       "@zy/vehicle/shell": ["libs/vehicle/shell/src/index.ts"],
-      "@zy/model": [
-        "libs/shared/data-access-model/src/index.ts"
+      "@zy/model": ["libs/shared/data-access-model/src/index.ts"],
+      "@zy/store": ["libs/shared/data-access-store/src/index.ts"],
+      "@zy/environments": [
+        "libs/shared/environments/src/index.ts"
       ]
     }
   },

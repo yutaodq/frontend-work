@@ -11,5 +11,7 @@ module.exports = {
     '<rootDir>/libs/vehicle/feature-vehicle',
     '<rootDir>/libs/vehicle/shell',
     '<rootDir>/libs/shared/data-access-model',
+    '<rootDir>/libs/shared/data-access-store',
+    '<rootDir>/libs/shared/environments',
   ],
 };

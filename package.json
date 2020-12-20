@@ -28,7 +28,6 @@
     "help": "nx help",
     "server": "ts-node ./server/server.ts",
     "json-server": "json-server --watch server/db.json --config json-server.json"
-
   },
   "private": true,
   "dependencies": {
