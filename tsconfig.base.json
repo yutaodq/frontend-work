@@ -18,8 +18,8 @@
     "paths": {
       "@zy/shared/ui": ["libs/shared/ui/src/index.ts"],
       "@zy/shared/util": ["libs/shared/util/src/index.ts"],
-      "@frontend-work/shared/assets": ["libs/shared/assets/src/index.ts"],
-      "@frontend-work/shared/data-access-http": [
+      "@zy/shared/assets": ["libs/shared/assets/src/index.ts"],
+      "@zy/shared/data-access-http": [
         "libs/shared/data-access-http/src/index.ts"
       ],
       "@zy/layout/feature-layout-ivds": [
@@ -28,7 +28,7 @@
       "@zy/vehicle/feature-vehicle": [
         "libs/vehicle/feature-vehicle/src/index.ts"
       ],
-      "@frontend-work/vehicle/shell": ["libs/vehicle/shell/src/index.ts"],
+      "@zy/vehicle/shell": ["libs/vehicle/shell/src/index.ts"],
       "@zy/model": [
         "libs/shared/data-access-model/src/index.ts"
       ]

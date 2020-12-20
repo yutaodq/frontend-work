@@ -9,10 +9,10 @@ import { HttpResponseHandler } from './httpResponseHandler.service';
 @NgModule({
   imports: [CommonModule]
 })
-export class HttpModule {
+export class HttpServiceModule {
   static forRoot(): ModuleWithProviders<any> {
     return {
-      ngModule: HttpModule,
+      ngModule: HttpServiceModule,
       providers: [
         HttpService,
         HttpResponseHandler

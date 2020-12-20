@@ -18,7 +18,7 @@ export class VehicleComponent implements OnInit {
   getAll() {
     console.log(`在控制台打印:`);
       // const options = createRequestOption(req);
-    return this.http.get<User[]>(this.url).subscribe(data => console.log(data));
+    // return this.http.get<User[]>(this.url).subscribe(data => console.log(data));
   }
 
 }

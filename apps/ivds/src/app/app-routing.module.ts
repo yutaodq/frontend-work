@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 const routes: Routes = [
   {
     path: 'general',
-    loadChildren: () => import('@frontend-work/vehicle/shell').then((m) => m.VehicleShellModule),
+    loadChildren: () => import('@zy/vehicle/shell').then((m) => m.VehicleShellModule),
   },
   { path: '', redirectTo: 'general', pathMatch: 'full' },
 ];

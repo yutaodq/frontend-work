@@ -6,7 +6,7 @@ import {
 import { Vehicle } from '@zy/model';
 
 @Injectable()
-export class VehicleService {
+export class VehiclesService {
 
   private vehiclesSubscription;
 
@@ -24,7 +24,7 @@ export class VehicleService {
    *
    * @param product
    */
-  static productDetailsAdapter(product: any): Vehicle {
-    return new Product(product);
+  static vehicleDetailsAdapter(vehicles: any): Vehicle {
+    return new Vehicle(vehicles);
   }
 }

@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpModule } from './http';
+import { HttpServiceModule } from './http';
 const EXPORTS_MODULES = [
-  HttpModule
+  HttpServiceModule
   ]
 @NgModule({
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    HttpServiceModule.forRoot(),
+  ],
   exports: [
     ...EXPORTS_MODULES
   ]
