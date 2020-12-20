@@ -3,17 +3,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
+
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import { AppComponent } from './app.component';
-import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { LayoutFeatureLayoutIvdsModule } from '@zy/layout/feature-layout-ivds';
+import { SharedDataAccessStoreModule } from '@zy/store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,21 +20,7 @@ import { LayoutFeatureLayoutIvdsModule } from '@zy/layout/feature-layout-ivds';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
-    // StoreModule.forRoot(
-    //   {
-    //     router: routerReducer
-    //   },
-    //   {
-    //     metaReducers: !environment.production ? [] : [],
-    //     runtimeChecks: {
-    //       strictActionImmutability: true,
-    //       strictStateImmutability: true
-    //     }
-    //   }
-    // ),
-    // EffectsModule.forRoot([]),
-    // !environment.production ? StoreDevtoolsModule.instrument() : [],
+    SharedDataAccessStoreModule,
     StoreDevtoolsModule.instrument(),
     StoreRouterConnectingModule.forRoot(),
 
