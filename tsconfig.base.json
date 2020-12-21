@@ -31,8 +31,12 @@
       "@zy/vehicle/shell": ["libs/vehicle/shell/src/index.ts"],
       "@zy/model": ["libs/shared/data-access-model/src/index.ts"],
       "@zy/store": ["libs/shared/data-access-store/src/index.ts"],
-      "@zy/environments": [
-        "libs/shared/environments/src/index.ts"
+      "@zy/environments": ["libs/shared/environments/src/index.ts"],
+      "@zy/shared/vehicle/data-acces": [
+        "libs/shared/vehicle/data-acces/src/index.ts"
+      ],
+      "@zy/shared/vehicle/util": [
+        "libs/shared/vehicle/util/src/index.ts"
       ]
     }
   },

@@ -13,5 +13,7 @@ module.exports = {
     '<rootDir>/libs/shared/data-access-model',
     '<rootDir>/libs/shared/data-access-store',
     '<rootDir>/libs/shared/environments',
+    '<rootDir>/libs/shared/vehicle/data-acces',
+    '<rootDir>/libs/shared/vehicle/util',
   ],
 };

@@ -478,6 +478,65 @@
           "style": "scss"
         }
       }
+    },
+    "shared-vehicle-data-acces": {
+      "projectType": "library",
+      "root": "libs/shared/vehicle/data-acces",
+      "sourceRoot": "libs/shared/vehicle/data-acces/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/vehicle/data-acces/tsconfig.lib.json",
+              "libs/shared/vehicle/data-acces/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/vehicle/data-acces/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/vehicle/data-acces/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "shared-vehicle-util": {
+      "projectType": "library",
+      "root": "libs/shared/vehicle/util",
+      "sourceRoot": "libs/shared/vehicle/util/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/vehicle/util/tsconfig.lib.json",
+              "libs/shared/vehicle/util/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/vehicle/util/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/vehicle/util/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

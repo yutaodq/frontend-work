@@ -1,0 +1,361 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VehiclesReducer LOAD should add a single vehicle, if the vehicle does not exist 1`] = `
+Object {
+  "entities": Object {
+    "1": Object {
+      "id": "1",
+      "volumeInfo": Object {
+        "authors": Array [
+          "author",
+        ],
+        "averageRating": 3,
+        "description": "description",
+        "imageLinks": Object {
+          "smallThumbnail": "string",
+          "thumbnail": "string",
+        },
+        "publishDate": "",
+        "publisher": "publisher",
+        "ratingsCount": 5,
+        "subtitle": "subtitle",
+        "title": "title",
+      },
+    },
+  },
+  "ids": Array [
+    "1",
+  ],
+  "selectedVehicleId": null,
+}
+`;
+
+exports[`VehiclesReducer LOAD should return the existing state if the vehicle exists 1`] = `
+Object {
+  "entities": Object {
+    "1": Object {
+      "id": "1",
+      "volumeInfo": Object {
+        "authors": Array [
+          "author",
+        ],
+        "averageRating": 3,
+        "description": "description",
+        "imageLinks": Object {
+          "smallThumbnail": "string",
+          "thumbnail": "string",
+        },
+        "publishDate": "",
+        "publisher": "publisher",
+        "ratingsCount": 5,
+        "subtitle": "subtitle",
+        "title": "title",
+      },
+    },
+  },
+  "ids": Array [
+    "1",
+  ],
+  "selectedVehicleId": null,
+}
+`;
+
+exports[`VehiclesReducer SEARCH_COMPLETE & LOAD_SUCCESS should add all books in the payload when none exist 1`] = `
+Object {
+  "entities": Object {
+    "1": Object {
+      "id": "1",
+      "volumeInfo": Object {
+        "authors": Array [
+          "author",
+        ],
+        "averageRating": 3,
+        "description": "description",
+        "imageLinks": Object {
+          "smallThumbnail": "string",
+          "thumbnail": "string",
+        },
+        "publishDate": "",
+        "publisher": "publisher",
+        "ratingsCount": 5,
+        "subtitle": "subtitle",
+        "title": "title",
+      },
+    },
+    "222": Object {
+      "id": "222",
+      "volumeInfo": Object {
+        "authors": Array [
+          "author",
+        ],
+        "averageRating": 3,
+        "description": "description",
+        "imageLinks": Object {
+          "smallThumbnail": "string",
+          "thumbnail": "string",
+        },
+        "publishDate": "",
+        "publisher": "publisher",
+        "ratingsCount": 5,
+        "subtitle": "subtitle",
+        "title": "title",
+      },
+    },
+  },
+  "ids": Array [
+    "1",
+    "222",
+  ],
+  "selectedVehicleId": null,
+}
+`;
+
+exports[`VehiclesReducer SEARCH_COMPLETE & LOAD_SUCCESS should add all books in the payload when none exist 2`] = `
+Object {
+  "entities": Object {
+    "1": Object {
+      "id": "1",
+      "volumeInfo": Object {
+        "authors": Array [
+          "author",
+        ],
+        "averageRating": 3,
+        "description": "description",
+        "imageLinks": Object {
+          "smallThumbnail": "string",
+          "thumbnail": "string",
+        },
+        "publishDate": "",
+        "publisher": "publisher",
+        "ratingsCount": 5,
+        "subtitle": "subtitle",
+        "title": "title",
+      },
+    },
+    "222": Object {
+      "id": "222",
+      "volumeInfo": Object {
+        "authors": Array [
+          "author",
+        ],
+        "averageRating": 3,
+        "description": "description",
+        "imageLinks": Object {
+          "smallThumbnail": "string",
+          "thumbnail": "string",
+        },
+        "publishDate": "",
+        "publisher": "publisher",
+        "ratingsCount": 5,
+        "subtitle": "subtitle",
+        "title": "title",
+      },
+    },
+  },
+  "ids": Array [
+    "1",
+    "222",
+  ],
+  "selectedVehicleId": null,
+}
+`;
+
+exports[`VehiclesReducer SEARCH_COMPLETE & LOAD_SUCCESS should add only books when books already exist 1`] = `
+Object {
+  "entities": Object {
+    "1": Object {
+      "id": "1",
+      "volumeInfo": Object {
+        "authors": Array [
+          "author",
+        ],
+        "averageRating": 3,
+        "description": "description",
+        "imageLinks": Object {
+          "smallThumbnail": "string",
+          "thumbnail": "string",
+        },
+        "publishDate": "",
+        "publisher": "publisher",
+        "ratingsCount": 5,
+        "subtitle": "subtitle",
+        "title": "title",
+      },
+    },
+    "222": Object {
+      "id": "222",
+      "volumeInfo": Object {
+        "authors": Array [
+          "author",
+        ],
+        "averageRating": 3,
+        "description": "description",
+        "imageLinks": Object {
+          "smallThumbnail": "string",
+          "thumbnail": "string",
+        },
+        "publishDate": "",
+        "publisher": "publisher",
+        "ratingsCount": 5,
+        "subtitle": "subtitle",
+        "title": "title",
+      },
+    },
+    "333": Object {
+      "id": "333",
+      "volumeInfo": Object {
+        "authors": Array [
+          "author",
+        ],
+        "averageRating": 3,
+        "description": "description",
+        "imageLinks": Object {
+          "smallThumbnail": "string",
+          "thumbnail": "string",
+        },
+        "publishDate": "",
+        "publisher": "publisher",
+        "ratingsCount": 5,
+        "subtitle": "subtitle",
+        "title": "title",
+      },
+    },
+  },
+  "ids": Array [
+    "1",
+    "222",
+    "333",
+  ],
+  "selectedVehicleId": null,
+}
+`;
+
+exports[`VehiclesReducer SEARCH_COMPLETE & LOAD_SUCCESS should add only books when books already exist 2`] = `
+Object {
+  "entities": Object {
+    "1": Object {
+      "id": "1",
+      "volumeInfo": Object {
+        "authors": Array [
+          "author",
+        ],
+        "averageRating": 3,
+        "description": "description",
+        "imageLinks": Object {
+          "smallThumbnail": "string",
+          "thumbnail": "string",
+        },
+        "publishDate": "",
+        "publisher": "publisher",
+        "ratingsCount": 5,
+        "subtitle": "subtitle",
+        "title": "title",
+      },
+    },
+    "222": Object {
+      "id": "222",
+      "volumeInfo": Object {
+        "authors": Array [
+          "author",
+        ],
+        "averageRating": 3,
+        "description": "description",
+        "imageLinks": Object {
+          "smallThumbnail": "string",
+          "thumbnail": "string",
+        },
+        "publishDate": "",
+        "publisher": "publisher",
+        "ratingsCount": 5,
+        "subtitle": "subtitle",
+        "title": "title",
+      },
+    },
+    "333": Object {
+      "id": "333",
+      "volumeInfo": Object {
+        "authors": Array [
+          "author",
+        ],
+        "averageRating": 3,
+        "description": "description",
+        "imageLinks": Object {
+          "smallThumbnail": "string",
+          "thumbnail": "string",
+        },
+        "publishDate": "",
+        "publisher": "publisher",
+        "ratingsCount": 5,
+        "subtitle": "subtitle",
+        "title": "title",
+      },
+    },
+  },
+  "ids": Array [
+    "1",
+    "222",
+    "333",
+  ],
+  "selectedVehicleId": null,
+}
+`;
+
+exports[`VehiclesReducer SELECT should set the selected vehicle id on the state 1`] = `
+Object {
+  "entities": Object {
+    "1": Object {
+      "id": "1",
+      "volumeInfo": Object {
+        "authors": Array [
+          "author",
+        ],
+        "averageRating": 3,
+        "description": "description",
+        "imageLinks": Object {
+          "smallThumbnail": "string",
+          "thumbnail": "string",
+        },
+        "publishDate": "",
+        "publisher": "publisher",
+        "ratingsCount": 5,
+        "subtitle": "subtitle",
+        "title": "title",
+      },
+    },
+    "222": Object {
+      "id": "222",
+      "volumeInfo": Object {
+        "authors": Array [
+          "author",
+        ],
+        "averageRating": 3,
+        "description": "description",
+        "imageLinks": Object {
+          "smallThumbnail": "string",
+          "thumbnail": "string",
+        },
+        "publishDate": "",
+        "publisher": "publisher",
+        "ratingsCount": 5,
+        "subtitle": "subtitle",
+        "title": "title",
+      },
+    },
+  },
+  "ids": Array [
+    "1",
+    "222",
+  ],
+  "selectedVehicleId": "1",
+}
+`;
+
+exports[`VehiclesReducer Selectors selectId should return the selected id 1`] = `"1"`;
+
+exports[`VehiclesReducer undefined action should return the default state 1`] = `
+Object {
+  "entities": Object {},
+  "ids": Array [],
+  "selectedVehicleId": null,
+}
+`;
