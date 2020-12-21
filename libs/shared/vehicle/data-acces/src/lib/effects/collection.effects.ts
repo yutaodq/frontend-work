@@ -8,9 +8,9 @@ import {
   CollectionApiActions,
   CollectionPageActions,
   SelectedVehiclePageActions,
-} from '@example-app/books/actions';
-import { Vehicle } from '@example-app/books/models';
-import { VehicleStorageService } from '@example-app/core/services';
+} from '../actions';
+import { Vehicle } from '@zy/model';
+import { VehiclesApiClient } from '@zy/shared/vehicle/data-acces-api';
 
 @Injectable()
 export class CollectionEffects {
@@ -24,18 +24,18 @@ export class CollectionEffects {
    * Wrapping the supported call in `defer` makes
    * effect easier to test.
    */
-  checkStorageSupport$ = createEffect(
-    () => defer(() => this.storageService.supported()),
-    { dispatch: false }
-  );
+  // checkStorageSupport$ = createEffect(
+  //   () => defer(() => this.apiClient.supported()),
+  //   { dispatch: false }
+  // );
 
   loadCollection$ = createEffect(() =>
     this.actions$.pipe(
       ofType(CollectionPageActions.enter),
       switchMap(() =>
-        this.storageService.getCollection().pipe(
-          map((books: Vehicle[]) =>
-            CollectionApiActions.loadVehiclesSuccess({ books })
+        this.apiClient.getCollection().pipe(
+          map((vehicles: Vehicle[]) =>
+            CollectionApiActions.loadVehiclesSuccess({ vehicles })
           ),
           catchError((error) =>
             of(CollectionApiActions.loadVehiclesFailure({ error }))
@@ -45,32 +45,32 @@ export class CollectionEffects {
     )
   );
 
-  addVehicleToCollection$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(SelectedVehiclePageActions.addVehicle),
-      mergeMap(({ vehicle }) =>
-        this.storageService.addToCollection([vehicle]).pipe(
-          map(() => CollectionApiActions.addVehicleSuccess({ vehicle })),
-          catchError(() => of(CollectionApiActions.addVehicleFailure({ vehicle })))
-        )
-      )
-    )
-  );
+  // addVehicleToCollection$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(SelectedVehiclePageActions.addVehicle),
+  //     mergeMap(({ vehicle }) =>
+  //       this.apiClient.addToCollection([vehicle]).pipe(
+  //         map(() => CollectionApiActions.addVehicleSuccess({ vehicle })),
+  //         catchError(() => of(CollectionApiActions.addVehicleFailure({ vehicle })))
+  //       )
+  //     )
+  //   )
+  // );
 
-  removeVehicleFromCollection$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(SelectedVehiclePageActions.removeVehicle),
-      mergeMap(({ vehicle }) =>
-        this.storageService.removeFromCollection([vehicle.id]).pipe(
-          map(() => CollectionApiActions.removeVehicleSuccess({ vehicle })),
-          catchError(() => of(CollectionApiActions.removeVehicleFailure({ vehicle })))
-        )
-      )
-    )
-  );
+  // removeVehicleFromCollection$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(SelectedVehiclePageActions.removeVehicle),
+  //     mergeMap(({ vehicle }) =>
+  //       this.apiClient.removeFromCollection([vehicle.id]).pipe(
+  //         map(() => CollectionApiActions.removeVehicleSuccess({ vehicle })),
+  //         catchError(() => of(CollectionApiActions.removeVehicleFailure({ vehicle })))
+  //       )
+  //     )
+  //   )
+  // );
 
   constructor(
     private actions$: Actions,
-    private storageService: VehicleStorageService
+    private apiClient: VehiclesApiClient
   ) {}
 }

@@ -1,13 +1,8 @@
-import {
-  Injectable,
-  Inject,
-  forwardRef
-}                           from '@angular/core';
+import { Injectable, Inject, forwardRef } from '@angular/core';
 import { Vehicle } from '@zy/model';
 
 @Injectable()
 export class VehiclesService {
-
   private vehiclesSubscription;
 
   /**
@@ -16,7 +11,7 @@ export class VehiclesService {
    * @param products
    */
   static gridAdapter(vehicles: any): Array<Vehicle> {
-    return vehicles.map(vehicle => new Vehicle(vehicle));
+    return vehicles.map((vehicle) => new Vehicle(vehicle));
   }
 
   /**

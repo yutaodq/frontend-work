@@ -1,7 +1,4 @@
-import {
-  VehiclesApiActions,
-  FindVehiclePageActions,
-} from '@example-app/books/actions';
+import { VehiclesApiActions, FindVehiclePageActions } from '../actions';
 import { createReducer, on } from '@ngrx/store';
 
 export const searchFeatureKey = 'search';
@@ -37,8 +34,8 @@ export const reducer = createReducer(
           query,
         };
   }),
-  on(VehiclesApiActions.searchSuccess, (state, { books }) => ({
-    ids: books.map((vehicle) => vehicle.id),
+  on(VehiclesApiActions.searchSuccess, (state, { vehicles }) => ({
+    ids: vehicles.map((vehicle) => vehicle.id),
     loading: false,
     error: '',
     query: state.query,

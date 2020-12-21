@@ -7,12 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 
+import { TranslateService }     from "@ngx-translate/core";
+
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { LayoutFeatureLayoutIvdsModule } from '@zy/layout/feature-layout-ivds';
 import { SharedDataAccessStoreModule } from '@zy/store';
+import { SharedDataAccessHttpModule } from '@zy/shared/data-access-http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +25,7 @@ import { SharedDataAccessStoreModule } from '@zy/store';
     HttpClientModule,
     AppRoutingModule,
     SharedDataAccessStoreModule,
-
+    SharedDataAccessHttpModule,
     LayoutFeatureLayoutIvdsModule,
   ],
   providers: [],

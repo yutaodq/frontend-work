@@ -537,6 +537,72 @@
           "style": "scss"
         }
       }
+    },
+    "shared-vehicle-data-acces-api": {
+      "projectType": "library",
+      "root": "libs/shared/vehicle/data-acces-api",
+      "sourceRoot": "libs/shared/vehicle/data-acces-api/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/vehicle/data-acces-api/tsconfig.lib.json",
+              "libs/shared/vehicle/data-acces-api/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/vehicle/data-acces-api/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/vehicle/data-acces-api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-vehicle-data-acces-facade": {
+      "projectType": "library",
+      "root": "libs/shared/vehicle/data-acces-facade",
+      "sourceRoot": "libs/shared/vehicle/data-acces-facade/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/vehicle/data-acces-facade/tsconfig.lib.json",
+              "libs/shared/vehicle/data-acces-facade/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/vehicle/data-acces-facade/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/vehicle/data-acces-facade/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

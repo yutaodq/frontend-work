@@ -35,8 +35,12 @@
       "@zy/shared/vehicle/data-acces": [
         "libs/shared/vehicle/data-acces/src/index.ts"
       ],
-      "@zy/shared/vehicle/util": [
-        "libs/shared/vehicle/util/src/index.ts"
+      "@zy/shared/vehicle/util": ["libs/shared/vehicle/util/src/index.ts"],
+      "@zy/shared/vehicle/data-acces-api": [
+        "libs/shared/vehicle/data-acces-api/src/index.ts"
+      ],
+      "@zy/shared/vehicle/data-acces-facade": [
+        "libs/shared/vehicle/data-acces-facade/src/index.ts"
       ]
     }
   },

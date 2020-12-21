@@ -1,12 +1,11 @@
-import { Store }            from '@ngrx/store';
-import * as store           from '@zy/store';
-import { localeDateString } from '@zy/shared/util';
+import { Store } from '@ngrx/store';
+import * as store from '@zy/store';
+import { localeDateString } from '../utility';
 
 export abstract class Sandbox {
-
   // public loggedUser$: Observable<any> = this.appState$.select(store.getLoggedUser);
   // public culture$:    Observable<any> = this.appState$.select(store.getSelectedCulture);
-  public culture:     string;
+  public culture: string;
 
   constructor(protected appState$: Store<store.AppState>) {}
 

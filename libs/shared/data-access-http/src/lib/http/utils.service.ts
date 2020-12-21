@@ -6,6 +6,7 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpService } from './http.service';
+import {Vehicle} from '@zy/model';
 
 export function methodBuilder(method: string) {
   return function(url: string) {
@@ -36,7 +37,12 @@ export function methodBuilder(method: string) {
         //this.requestInterceptor(req);
         // make the request and store the observable for later transformation
         //let observable: Observable<HttpResponse<any>> = this.http.request(req);
-        let observable = this.http.request(method, this.getBaseUrl() + resUrl, options);
+
+        // let observable = this.http.request(method, this.getBaseUrl() + resUrl, options);
+        const myurl = 'http://localhost:8080/vehicle';
+
+      let observable = this.http.get(myurl);
+        // return this.http.get<User[]>(this.url).subscribe(data => console.log(data));
 
         // intercept the response
         observable = this.responseInterceptor(observable, descriptor.adapter);

@@ -15,5 +15,7 @@ module.exports = {
     '<rootDir>/libs/shared/environments',
     '<rootDir>/libs/shared/vehicle/data-acces',
     '<rootDir>/libs/shared/vehicle/util',
+    '<rootDir>/libs/shared/vehicle/data-acces-api',
+    '<rootDir>/libs/shared/vehicle/data-acces-facade',
   ],
 };

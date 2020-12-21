@@ -6,10 +6,10 @@ import {
   VehiclesApiActions,
   CollectionApiActions,
   ViewVehiclePageActions,
-} from '@example-app/books/actions';
-import { Vehicle } from '@example-app/books/models';
+} from '../actions';
+import { Vehicle } from '@zy/model';
 
-export const booksFeatureKey = 'books';
+export const vehiclesFeatureKey = 'vehicles';
 
 /**
  * @ngrx/entity provides a predefined interface for handling
@@ -56,7 +56,7 @@ export const reducer = createReducer(
   on(
     VehiclesApiActions.searchSuccess,
     CollectionApiActions.loadVehiclesSuccess,
-    (state, { books }) => adapter.addMany(books, state)
+    (state, { vehicles }) => adapter.addMany(vehicles, state)
   ),
   /**
    * The addOne function provided by the created adapter
@@ -65,7 +65,9 @@ export const reducer = createReducer(
    * exist already. If the collection is to be sorted, the adapter will
    * insert the new record into the sorted array.
    */
-  on(VehicleActions.loadVehicle, (state, { vehicle }) => adapter.addOne(vehicle, state)),
+  on(VehicleActions.loadVehicle, (state, { vehicle }) =>
+    adapter.addOne(vehicle, state)
+  ),
   on(ViewVehiclePageActions.selectVehicle, (state, { id }) => ({
     ...state,
     selectedVehicleId: id,

@@ -1,32 +1,32 @@
-import { Vehicle } from '@example-app/books/models';
+import { Vehicle } from '@zy/model';
 import {
   createSelector,
   createFeatureSelector,
   combineReducers,
   Action,
 } from '@ngrx/store';
-import * as fromSearch from '@example-app/books/reducers/search.reducer';
-import * as fromVehicles from '@example-app/books/reducers/books.reducer';
-import * as fromCollection from '@example-app/books/reducers/collection.reducer';
-import * as fromRoot from '@example-app/reducers';
+import * as fromSearch from './search.reducer';
+import * as fromVehicles from './vehicles.reducer';
+import * as fromCollection from './collection.reducer';
+import * as fromRoot from '@zy/store';
 
-export const booksFeatureKey = 'books';
+export const vehiclesFeatureKey = 'vehicles';
 
 export interface VehiclesState {
   [fromSearch.searchFeatureKey]: fromSearch.State;
-  [fromVehicles.booksFeatureKey]: fromVehicles.State;
+  [fromVehicles.vehiclesFeatureKey]: fromVehicles.State;
   [fromCollection.collectionFeatureKey]: fromCollection.State;
 }
 
-export interface State extends fromRoot.State {
-  [booksFeatureKey]: VehiclesState;
+export interface State extends fromRoot.AppState {
+  [vehiclesFeatureKey]: VehiclesState;
 }
 
 /** Provide reducer in AoT-compilation happy way */
 export function reducers(state: VehiclesState | undefined, action: Action) {
   return combineReducers({
     [fromSearch.searchFeatureKey]: fromSearch.reducer,
-    [fromVehicles.booksFeatureKey]: fromVehicles.reducer,
+    [fromVehicles.vehiclesFeatureKey]: fromVehicles.reducer,
     [fromCollection.collectionFeatureKey]: fromCollection.reducer,
   })(state, action);
 }
@@ -52,7 +52,7 @@ export function reducers(state: VehiclesState | undefined, action: Action) {
  * This is used for selecting feature states that are loaded eagerly or lazily.
  */
 export const selectVehiclesState = createFeatureSelector<State, VehiclesState>(
-  booksFeatureKey
+  vehiclesFeatureKey
 );
 
 /**
@@ -66,7 +66,7 @@ export const selectVehiclesState = createFeatureSelector<State, VehiclesState>(
  */
 export const selectVehicleEntitiesState = createSelector(
   selectVehiclesState,
-  (state) => state.books
+  (state) => state.vehicles
 );
 
 export const selectSelectedVehicleId = createSelector(
@@ -130,9 +130,9 @@ export const selectSearchError = createSelector(
 export const selectSearchResults = createSelector(
   selectVehicleEntities,
   selectSearchVehicleIds,
-  (books, searchIds) => {
+  (vehicles, searchIds) => {
     return searchIds
-      .map((id) => books[id])
+      .map((id) => vehicles[id])
       .filter((vehicle): vehicle is Vehicle => vehicle != null);
   }
 );
