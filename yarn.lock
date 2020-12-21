@@ -1566,6 +1566,13 @@
     merge-source-map "^1.1.0"
     schema-utils "^2.7.0"
 
+"@ngrx/data@^10.1.1":
+  version "10.1.1"
+  resolved "https://registry.npm.taobao.org/@ngrx/data/download/@ngrx/data-10.1.1.tgz#22aa4aa470c6987f1c449b9064f680f0dabd5c83"
+  integrity sha1-IqpKpHDGmH8cRJuQZPaA8Nq9XIM=
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngrx/effects@10.0.0":
   version "10.0.0"
   resolved "https://registry.npm.taobao.org/@ngrx/effects/download/@ngrx/effects-10.0.0.tgz#d58151b1d7f5731ea42de7ed239bbab3d5866542"

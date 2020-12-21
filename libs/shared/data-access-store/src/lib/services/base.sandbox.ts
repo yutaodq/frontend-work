@@ -1,7 +1,7 @@
 import { Injectable } 	    from '@angular/core';
 import { Store }            from '@ngrx/store';
 import { Observable }       from 'rxjs';
-import * as store           from '../+state';
+import * as store           from '../reducers';
 // import * as authActions     from '../store/actions/auth.action';
 import { User }             from '@zy/model';
 import { localeDateString } from '@zy/shared/util';

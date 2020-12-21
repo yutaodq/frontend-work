@@ -20,11 +20,9 @@ import { SharedDataAccessStoreModule } from '@zy/store';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    SharedDataAccessStoreModule,
-    StoreDevtoolsModule.instrument(),
-    StoreRouterConnectingModule.forRoot(),
-
     AppRoutingModule,
+    SharedDataAccessStoreModule,
+
     LayoutFeatureLayoutIvdsModule,
   ],
   providers: [],
