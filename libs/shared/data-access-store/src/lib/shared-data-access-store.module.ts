@@ -5,7 +5,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '@zy/environments';
 
 import { metaReducers, ROOT_REDUCERS } from './reducers';
-import { AppEffects } from './reducers/app.effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { RouterEffects } from './effects';
 @NgModule({

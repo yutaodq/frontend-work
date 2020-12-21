@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Adapter, GET, HttpService, Path } from '@zy/shared/data-access-http';
-import { VehiclesService } from './vehicles.service';
+import { VehiclesService } from '../services/vehicles.service';
 import { Observable } from 'rxjs';
 
 @Injectable()
