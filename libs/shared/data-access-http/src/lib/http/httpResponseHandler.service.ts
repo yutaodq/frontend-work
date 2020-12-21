@@ -2,7 +2,7 @@ import { Injectable }           from '@angular/core';
 
 // @ts-ignore
 import { NotificationsService } from 'angular2-notifications';
-//import { ConfigService }        from '../../../app-config.service';
+//import { ConfigService }        from '../../../app-config.services';
 import { Router }               from '@angular/router';
 import { Observable, throwError }           from 'rxjs';
 import { TranslateService }     from "@ngx-translate/core";

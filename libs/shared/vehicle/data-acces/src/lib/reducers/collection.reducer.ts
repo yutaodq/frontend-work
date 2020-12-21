@@ -4,7 +4,7 @@ import {
   CollectionApiActions,
   CollectionPageActions,
   SelectedVehiclePageActions,
-} from '@example-app/books/actions';
+} from '../actions';
 
 export const collectionFeatureKey = 'collection';
 
@@ -26,10 +26,10 @@ export const reducer = createReducer(
     ...state,
     loading: true,
   })),
-  on(CollectionApiActions.loadVehiclesSuccess, (state, { books }) => ({
+  on(CollectionApiActions.loadVehiclesSuccess, (state, { vehicles }) => ({
     loaded: true,
     loading: false,
-    ids: books.map((vehicle) => vehicle.id),
+    ids: vehicles.map((vehicle) => vehicle.id),
   })),
   /**
    * Optimistically add vehicle to collection.

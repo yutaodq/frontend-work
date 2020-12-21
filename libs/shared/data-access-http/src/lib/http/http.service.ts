@@ -4,7 +4,7 @@ import { HttpClient, HttpRequest, HttpParams, HttpResponse } from '@angular/comm
 import { Observable } from 'rxjs';
 import { HttpResponseHandler } from './httpResponseHandler.service';
 import { HttpAdapter } from './http.adapter';
-//import { ConfigService } from '../../../app-config.service';
+//import { ConfigService } from '../../../app-config.services';
 
 import { catchError, map } from 'rxjs/operators';
 // tslint:disable-next-line:nx-enforce-module-boundaries

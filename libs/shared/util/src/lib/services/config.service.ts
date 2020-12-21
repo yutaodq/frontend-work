@@ -1,4 +1,4 @@
-//D:\yutao\前端案例\angular-architecture-patterns\src\app\app-config.service.ts
+//D:\yutao\前端案例\angular-architecture-patterns\src\app\app-config.services.ts
 interface ConfigService {
   load();
   getEnv(key: any)

@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
+import { Vehicle } from '@zy/model';
 
-import { Vehicle } from '@example-app/books/models';
 
 /**
  * Add Vehicle to Collection Actions
@@ -33,7 +33,7 @@ export const removeVehicleFailure = createAction(
  */
 export const loadVehiclesSuccess = createAction(
   '[Collection/API] Load Vehicles Success',
-  props<{ books: Vehicle[] }>()
+  props<{ vehicles: Vehicle[] }>()
 );
 
 export const loadVehiclesFailure = createAction(

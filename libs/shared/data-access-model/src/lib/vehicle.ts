@@ -1,5 +1,5 @@
 export class Vehicle {
-  public id:                  number;
+  public id:                  string;
   public name:                string;
 
   constructor(vehicle: any = null) {
