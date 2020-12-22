@@ -7,6 +7,7 @@ import {
 } from '@angular/common/http';
 import { HttpService } from './http.service';
 import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 export function methodBuilder(method: string) {
   return function(url: string) {
@@ -33,16 +34,19 @@ export function methodBuilder(method: string) {
         //let req: HttpRequest<any> = new HttpRequest(options);
 
 
-        // intercept the request
+        // 拦截请求
         //this.requestInterceptor(req);
-        // make the request and store the observable for later transformation
+        // 发出请求并存储可观察对象，以便稍后进行转换
 
-        let observable: Observable<HttpEvent<any>> = this.http.request(method, this.getBaseUrl() + resUrl, options);
-        console.log(`在控制台打印:methodBuilder `+ observable.status);
-        // : Observable<HttpResponse<any>>
-        // intercept the response
-        observable = this.responseInterceptor(observable, descriptor.adapter);
+        const observable  = this.http.request(method, this.getBaseUrl() + resUrl, options)
+          .pipe(
+            catchError((err, source) => {
+              return this.responseHandler.onCatch(err, source);
+            })
+          );
+        // console.log(`在控制台打印:methodBuilder `+ observable.status.);
 
+        // observable = this.responseInterceptor(observable, descriptor.adapter);
         return observable;
       };
 
