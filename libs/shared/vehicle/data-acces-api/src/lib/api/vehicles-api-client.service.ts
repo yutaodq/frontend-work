@@ -9,19 +9,19 @@ export class VehiclesApiClient extends HttpService {
   /**
    * Retrieves all products
    */
-  // @GET('/vehicle')
-  // @Adapter(VehiclesService.gridAdapter)
-  // public getCollection(): Observable<any> {
-  //
-  //   return null;
-  // }
-
+  @GET('/vehicle')
+  @Adapter(VehiclesService.gridAdapter)
   public getCollection(): Observable<any> {
 
-     const myurl = 'http://localhost:8080/vehicle';
-
-    return  this.http.get(myurl);
+    return null;
   }
+
+  // public getCollection(): Observable<any> {
+  //
+  //    const myurl = 'http://localhost:8080/vehicle';
+  //
+  //   return  this.http.get(myurl);
+  // }
 
 
   /**

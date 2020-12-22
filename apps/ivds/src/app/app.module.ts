@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LayoutFeatureLayoutIvdsModule } from '@zy/layout/feature-layout-ivds';
 import { SharedDataAccessStoreModule } from '@zy/store';
 import { SharedDataAccessHttpModule } from '@zy/shared/data-access-http';
+console.log(`在控制台打印:`);
 
 @NgModule({
   declarations: [AppComponent],

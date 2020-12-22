@@ -4,11 +4,9 @@ import { HttpClient, HttpRequest, HttpParams, HttpResponse } from '@angular/comm
 import { Observable } from 'rxjs';
 import { HttpResponseHandler } from './httpResponseHandler.service';
 import { HttpAdapter } from './http.adapter';
-//import { ConfigService } from '../../../app-config.services';
 
 import { catchError, map } from 'rxjs/operators';
-// tslint:disable-next-line:nx-enforce-module-boundaries
-import { environment } from "../../../../../../apps/ivds/src/environments/environment";
+import { environment } from "@zy/environments";
 
 /**
  * Supported @Produces media types
@@ -23,7 +21,6 @@ export class HttpService {
 
   public constructor(
     protected http: HttpClient,
-    // protected configService: ConfigService,
     protected responseHandler: HttpResponseHandler) {
   }
 
@@ -54,9 +51,15 @@ export class HttpService {
    * @returns {Response} res - transformed response object
    */
   protected responseInterceptor(observableRes: Observable<any>, adapterFn?: Function): Observable<any> {
+    console.log(`在控制台打印:响应拦截器`);
+    // return observableRes;
     return observableRes
       .pipe(
-        map(res => HttpAdapter.baseAdapter(res, adapterFn)),
+        map(res => {
+          console.log(`在控制台打印:123--- `+ res.status);
+
+          HttpAdapter.baseAdapter(res, adapterFn)
+        }),
         catchError( (err, source) => {
           return this.responseHandler.onCatch(err, source);
         })
