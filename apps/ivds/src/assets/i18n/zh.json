@@ -1,0 +1,10 @@
+{
+    "Email": "Email",
+    "Password": "Password",
+    "ConfirmPassword": "口令",
+    "EmailFormatError": "Email is not in valid format",
+    "EmailRequiredError": "Email is required",
+    "PasswordRequiredError": "Password is required",
+    "ConfirmPasswordError": "Passwords mismatch",
+    "PasswordLengthError": "Passwords must contain at least 6 characters"
+}
