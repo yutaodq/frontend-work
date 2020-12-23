@@ -5,3 +5,11 @@ dddddddddd
 {{ 'ConfirmPassword' | translate }}
 
 {{ 'myEmail' | translate }}
+
+<ag-grid-angular
+  style="width: 500px; height: 500px;"
+  class="ag-theme-alpine"
+  [rowData]="vehiclesSandbox.vehicles$ | async"
+  [columnDefs]="columnDefs"
+>
+</ag-grid-angular>

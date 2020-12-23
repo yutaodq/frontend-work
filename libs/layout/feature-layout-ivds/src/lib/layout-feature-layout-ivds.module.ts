@@ -1,34 +1,23 @@
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainModule } from './main/main.module';
 import { SharedDataAccessStoreModule } from '@zy/store';
 import { HttpServiceModule } from '@zy/shared/data-access-http';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LayoutFeatureLayoutIvdsI18nModule } from './i18n/layout-feature-layout-ivds-i18n.module';
+import { LayoutFeatureLayoutIvdsGridModule } from './grid/layout-feature-layout-ivds-grid.module';
 
 const EXPORTS_MODULES = [
   MainModule
 ];
 
-// AoT requires an exported function for factories
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
-
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
-    TranslateModule.forRoot({
-      defaultLanguage: 'zh',
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    }),
+    LayoutFeatureLayoutIvdsI18nModule,
+    LayoutFeatureLayoutIvdsGridModule,
     SharedDataAccessStoreModule,
     HttpServiceModule.forRoot()
   ],

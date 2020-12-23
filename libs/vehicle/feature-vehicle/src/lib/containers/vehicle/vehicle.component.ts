@@ -9,7 +9,10 @@ import { TranslateService } from "@ngx-translate/core";
 })
 export class VehicleComponent implements OnInit {
   private url = 'http://localhost:8080/users';
-
+  columnDefs = [
+    { field: 'id' },
+    { field: 'name' }
+  ];
   constructor(private http: HttpClient,
               public vehiclesSandbox: VehiclesFaceade,
               private i18n: TranslateService
