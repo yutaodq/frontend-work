@@ -51,14 +51,9 @@ export class HttpService {
    * @returns {Response} res - transformed response object
    */
   protected responseInterceptor(observableRes: Observable<any>, adapterFn?: Function): Observable<any> {
-    console.log(`在控制台打印:响应拦截器`);
     return observableRes
       .pipe(
-        map(res => {
-          console.log(`在控制台打印:123--- `);
-
-          HttpAdapter.baseAdapter(res, adapterFn);
-        }),
+        map(res =>   HttpAdapter.baseAdapter(res, adapterFn)),
         catchError( (err, source) => {
           return this.responseHandler.onCatch(err, source);
         })

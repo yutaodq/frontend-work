@@ -4,7 +4,6 @@ import { NotificationsService } from 'angular2-notifications';
 import { Router }               from '@angular/router';
 import { Observable, throwError }           from 'rxjs';
 import { TranslateService }     from "@ngx-translate/core";
-import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 
 @Injectable()
 export class HttpResponseHandler {

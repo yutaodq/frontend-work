@@ -31,23 +31,12 @@ export function methodBuilder(method: string) {
           search
         };
 
-        //let req: HttpRequest<any> = new HttpRequest(options);
-
-
-        // 拦截请求
-        //this.requestInterceptor(req);
-        // 发出请求并存储可观察对象，以便稍后进行转换
-
-        const observable  = this.http.request(method, this.getBaseUrl() + resUrl, options)
+        return this.http.request(method, this.getBaseUrl() + resUrl, options)
           .pipe(
             catchError((err, source) => {
               return this.responseHandler.onCatch(err, source);
             })
           );
-        // console.log(`在控制台打印:methodBuilder `+ observable.status.);
-
-        // observable = this.responseInterceptor(observable, descriptor.adapter);
-        return observable;
       };
 
       return descriptor;

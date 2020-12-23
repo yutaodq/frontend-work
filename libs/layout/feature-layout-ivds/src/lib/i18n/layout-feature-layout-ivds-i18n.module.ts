@@ -1,15 +1,11 @@
-import { LOCALE_ID, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MainModule } from './main/main.module';
-import { SharedDataAccessStoreModule } from '@zy/store';
-import { HttpServiceModule } from '@zy/shared/data-access-http';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 const EXPORTS_MODULES = [
-  MainModule
+  TranslateModule
 ];
 
 // AoT requires an exported function for factories
@@ -19,8 +15,6 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   imports: [
-    CommonModule,
-    HttpClientModule,
     TranslateModule.forRoot({
       defaultLanguage: 'zh',
       loader: {
@@ -29,12 +23,10 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    SharedDataAccessStoreModule,
-    HttpServiceModule.forRoot()
   ],
   exports: [
     ...EXPORTS_MODULES
   ],
 })
-export class LayoutFeatureLayoutIvdsModule {
+export class LayoutFeatureLayoutIvdsI18nModule {
 }
