@@ -7,11 +7,24 @@ import { TranslateService } from "@ngx-translate/core";
   templateUrl: './vehicle.component.html',
   styleUrls: ['./vehicle.component.scss'],
 })
+
 export class VehicleComponent implements OnInit {
   private url = 'http://localhost:8080/users';
   columnDefs = [
-    { field: 'id' },
-    { field: 'name' }
+    {
+      headerName: "标识",
+      field: "id",
+      editable:true,
+      colId: "square",
+      width: 175
+    },
+    {
+      headerName: "车辆名称",
+      field: "name",
+      editable:true,
+      colId: "square",
+      width: 175
+    }
   ];
   constructor(private http: HttpClient,
               public vehiclesSandbox: VehiclesFaceade,
