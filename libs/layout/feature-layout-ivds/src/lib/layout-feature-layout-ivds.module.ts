@@ -9,7 +9,9 @@ import { LayoutFeatureLayoutIvdsI18nModule } from './i18n/layout-feature-layout-
 import { LayoutFeatureLayoutIvdsGridModule } from './grid/layout-feature-layout-ivds-grid.module';
 
 const EXPORTS_MODULES = [
-  MainModule
+  MainModule,
+  LayoutFeatureLayoutIvdsGridModule,
+
 ];
 
 @NgModule({
