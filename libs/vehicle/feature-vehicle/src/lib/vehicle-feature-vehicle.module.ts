@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { SharedVehicleDataAccesFacadeModule } from '@zy/shared/vehicle/data-acces-facade';
 import { TranslateModule } from '@ngx-translate/core';
 import { LayoutFeatureLayoutIvdsGridModule } from '@zy/layout/feature-layout-ivds';
+import {InputTextModule} from 'primeng/inputtext';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { LayoutFeatureLayoutIvdsGridModule } from '@zy/layout/feature-layout-ivd
     SharedVehicleDataAccesFacadeModule,
     RouterModule.forChild([{ path: '', component: VehicleComponent }]),
     TranslateModule,
-    LayoutFeatureLayoutIvdsGridModule
+    LayoutFeatureLayoutIvdsGridModule,
+    InputTextModule
   ],
   declarations: [VehicleComponent],
 })

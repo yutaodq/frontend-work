@@ -10,21 +10,34 @@ import { TranslateService } from "@ngx-translate/core";
 
 export class VehicleComponent implements OnInit {
   private url = 'http://localhost:8080/users';
-  columnDefs = [
+  private columnDefs = [
     {
       headerName: "标识",
       field: "id",
-      editable:true,
-      colId: "square",
-      width: 175
+      minWidth: 50,
+      maxWidth: 90,
     },
     {
       headerName: "车辆名称",
       field: "name",
-      editable:true,
-      colId: "square",
-      width: 175
-    }
+    },
+    {
+      headerName: "牌照",
+      field: "pz",
+    },
+    {
+      headerName: "内部牌照",
+      field: "nbpz",
+    },
+    {
+      headerName: "设备类型",
+      field: "type",
+    },
+    {
+      headerName: "使用状态",
+      field: "zt",
+    },
+    // this.defaultColDef = { resizable: true };
   ];
   constructor(private http: HttpClient,
               public vehiclesSandbox: VehiclesFaceade,
