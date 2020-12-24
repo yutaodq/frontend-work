@@ -3,56 +3,32 @@
     <h1>车辆档案<span>列表</span></h1>
     <p>档案主要记录车辆所属单位</p>
   </div>
+
 </div>
 
-<!--<div class="content-section implementation">-->
-<!--  <div class="card">-->
-<!--    <h5>Filter Menu</h5>-->
-<!--    <p>Filters are displayed in an overlay.</p>-->
-<!--    &lt;!&ndash;    <ng-template pTemplate="caption">&ndash;&gt;-->
-<!--    <div class="p-d-flex">-->
-<!--                    <span class="p-input-icon-left p-ml-auto">-->
-<!--                        <i class="pi pi-search"></i>-->
-<!--                        <input pInputText type="text" placeholder="搜索关键字"/>-->
-<!--                    </span>-->
-<!--    </div>-->
+<div class="content-section implementation">
+  <div class="card">
+    <h5>Filter Menu</h5>
+    <p>Filters are displayed in an overlay.</p>
+    <div class="p-d-flex">
+                    <span class="p-input-icon-left p-ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" placeholder="搜索关键字"/>
+                    </span>
+    </div>
 
-<!--    <div style="display: flex; flex-direction: row; height: 100%;">-->
-<!--      <div style=" overflow: hidden; flex-grow: 1">-->
-<!--        <ag-grid-angular-->
-<!--          class="ag-theme-alpine"-->
-<!--          style="width: 800px; height: 800px;"-->
-<!--          [rowData]="vehiclesSandbox.vehicles$ | async"-->
-<!--          [columnDefs]="columnDefs"-->
-<!--        >-->
-<!--        </ag-grid-angular>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-
-<div style="display: flex; flex-direction: row; height: 100%;">
-  <div style=" overflow: hidden; flex-grow: 1">
-
-<ag-grid-angular
-  class="ag-theme-alpine"
-  style="width: 800px; height: 800px;"
-  [rowData]="vehiclesSandbox.vehicles$ | async"
-  [columnDefs]="columnDefs"
->
-</ag-grid-angular>
+    <div style="display: flex; flex-direction: row; height: 100%;">
+      <div style=" overflow: hidden; flex-grow: 1">
+        <ag-grid-angular
+          class="ag-theme-alpine"
+          style="height: 50vh;"
+          [rowData]="vehiclesSandbox.vehicles$ | async"
+          [columnDefs]="columnDefs"
+          [defaultColDef]="defaultColDef"
+        >
+        </ag-grid-angular>
+      </div>
+    </div>
   </div>
 </div>
 
-<div style="display: flex; flex-direction: row; height: 100%;">
-  <div style=" overflow: hidden; flex-grow: 1">
-
-    <ag-grid-angular
-      class="ag-theme-alpine"
-      style="width: 100%; height: 100%;"
-      [rowData]="vehiclesSandbox.vehicles$ | async"
-      [columnDefs]="columnDefs"
-    >
-    </ag-grid-angular>
-  </div>
-</div>
