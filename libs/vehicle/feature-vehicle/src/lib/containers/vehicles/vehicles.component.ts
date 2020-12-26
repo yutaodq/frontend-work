@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { VehiclesFaceade } from '@zy/shared/vehicle/data-acces-facade';
+import { VehicleFacade } from '@zy/shared/vehicle/data-acces-facade';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -14,7 +14,7 @@ export class VehiclesComponent implements OnInit {
   private _defaultColDef;
 
   constructor(
-    private _vehiclesSandbox: VehiclesFaceade,
+    private _vehiclesSandbox: VehicleFacade,
     private i18n: TranslateService
   ) {
 

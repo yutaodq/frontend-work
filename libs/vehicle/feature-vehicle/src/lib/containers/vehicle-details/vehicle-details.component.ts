@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { Vehicle } from '@zy/model';
-import { VehiclesFaceade } from '@zy/shared/vehicle/data-acces-facade';
+import { VehicleFacade } from '@zy/shared/vehicle/data-acces-facade';
 
 @Component({
   selector: 'zy-vehicle-vehicle-details',
@@ -19,7 +19,7 @@ export class VehicleDetailsComponent implements OnInit, OnDestroy {
   private subscriptions: Array<Subscription> = [];
 
   constructor(
-    public vehiclesSandbox: VehiclesFaceade,
+    public vehiclesSandbox: VehicleFacade,
     private changeDetector: ChangeDetectorRef,
     private activatedRoute: ActivatedRoute) {}
 
@@ -35,12 +35,12 @@ export class VehicleDetailsComponent implements OnInit, OnDestroy {
    * Registers events
    */
   private registerEvents(): void {
-    // // Subscribes to vehicle details
-    // this.subscriptions.push(this.vehiclesSandbox.vehicleDetails$.subscribe((vehicle: any) => {
-    //   if (vehicle) {
-    //     this.changeDetector.markForCheck();
-    //     this.vehicle = vehicle;
-    //   }
-    // }));
+    // Subscribes to vehicle details
+    this.subscriptions.push(this.vehiclesSandbox.vehicleDetails$.subscribe((vehicle: any) => {
+      if (vehicle) {
+        this.changeDetector.markForCheck();
+        this.vehicle = vehicle;
+      }
+    }));
   }
 }

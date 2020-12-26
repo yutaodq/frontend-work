@@ -8,18 +8,18 @@ import * as store from '@zy/store';
 import * as fromVehicles from '@zy/shared/vehicle/data-acces';
 
 @Injectable()
-export class VehiclesFaceade extends Sandbox {
+export class VehicleFacade extends Sandbox {
   // public products$ = this.appState$.select(store.getProductsData);
   // public productsLoading$       = this.appState$.select(store.getProductsLoading);
   // public productDetails$        = this.appState$.select(store.getProductDetailsData);
   // public productDetailsLoading$ = this.appState$.select(store.getProductDetailsLoading);
   // public loggedUser$            = this.appState$.select(store.getLoggedUser);
   public vehicles$ = this.appState$.pipe(select(fromVehicles.selectVehicleCollection));
-  // public vehicleDetails$        = this.appState$.select(store.getVehicleDetailsData);
+  public vehicleDetails$        = this.appState$.select(fromVehicles.selectSelectedVehicle);
 
   private subscriptions: Array<Subscription> = [];
 
-  constructor(protected appState$: Store<store.AppState>) {
+  constructor(protected appState$: Store<fromVehicles.State>) {
     super(appState$);
     this.registerEvents();
   }
