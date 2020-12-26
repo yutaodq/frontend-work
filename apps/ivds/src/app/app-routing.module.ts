@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   {
-    path: 'general',
+    path: 'vehicles',
     loadChildren: () => import('@zy/vehicle/shell').then((m) => m.VehicleShellModule),
   },
-  { path: '', redirectTo: 'general', pathMatch: 'full' },
+  { path: '', redirectTo: 'vehicles', pathMatch: 'full' },
 ];
 
 @NgModule({

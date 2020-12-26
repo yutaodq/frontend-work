@@ -48,10 +48,10 @@ export class CollectionEffects {
   // addVehicleToCollection$ = createEffect(() =>
   //   this.actions$.pipe(
   //     ofType(SelectedVehiclePageActions.addVehicle),
-  //     mergeMap(({ vehicle }) =>
-  //       this.apiClient.addToCollection([vehicle]).pipe(
-  //         map(() => CollectionApiActions.addVehicleSuccess({ vehicle })),
-  //         catchError(() => of(CollectionApiActions.addVehicleFailure({ vehicle })))
+  //     mergeMap(({ vehicles }) =>
+  //       this.apiClient.addToCollection([vehicles]).pipe(
+  //         map(() => CollectionApiActions.addVehicleSuccess({ vehicles })),
+  //         catchError(() => of(CollectionApiActions.addVehicleFailure({ vehicles })))
   //       )
   //     )
   //   )
@@ -60,10 +60,10 @@ export class CollectionEffects {
   // removeVehicleFromCollection$ = createEffect(() =>
   //   this.actions$.pipe(
   //     ofType(SelectedVehiclePageActions.removeVehicle),
-  //     mergeMap(({ vehicle }) =>
-  //       this.apiClient.removeFromCollection([vehicle.id]).pipe(
-  //         map(() => CollectionApiActions.removeVehicleSuccess({ vehicle })),
-  //         catchError(() => of(CollectionApiActions.removeVehicleFailure({ vehicle })))
+  //     mergeMap(({ vehicles }) =>
+  //       this.apiClient.removeFromCollection([vehicles.id]).pipe(
+  //         map(() => CollectionApiActions.removeVehicleSuccess({ vehicles })),
+  //         catchError(() => of(CollectionApiActions.removeVehicleFailure({ vehicles })))
   //       )
   //     )
   //   )

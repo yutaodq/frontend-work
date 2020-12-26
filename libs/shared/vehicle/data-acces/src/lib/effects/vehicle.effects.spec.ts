@@ -36,7 +36,7 @@
 //   });
 //
 //   describe('search$', () => {
-//     it('should return a vehicle.SearchComplete, with the books, on success, after the de-bounce', () => {
+//     it('should return a vehicles.SearchComplete, with the books, on success, after the de-bounce', () => {
 //       const book1 = { id: '111', volumeInfo: {} } as Vehicle;
 //       const book2 = { id: '222', volumeInfo: {} } as Vehicle;
 //       const books = [book1, book2];
@@ -56,7 +56,7 @@
 //       ).toBeObservable(expected);
 //     });
 //
-//     it('should return a vehicle.SearchError if the books services throws', () => {
+//     it('should return a vehicles.SearchError if the books services throws', () => {
 //       const action = FindVehiclePageActions.searchVehicles({ query: 'query' });
 //       const completion = VehiclesApiActions.searchFailure({
 //         errorMsg: 'Unexpected Error. Try again later.',

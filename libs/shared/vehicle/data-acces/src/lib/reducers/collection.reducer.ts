@@ -32,9 +32,9 @@ export const reducer = createReducer(
     ids: vehicles.map((vehicle) => vehicle.id),
   })),
   /**
-   * Optimistically add vehicle to collection.
+   * Optimistically add vehicles to collection.
    * If this succeeds there's nothing to do.
-   * If this fails we revert state by removing the vehicle.
+   * If this fails we revert state by removing the vehicles.
    *
    * `on` supports handling multiple types of actions
    */
@@ -52,8 +52,8 @@ export const reducer = createReducer(
     }
   ),
   /**
-   * Optimistically remove vehicle from collection.
-   * If addVehicle fails, we "undo" adding the vehicle.
+   * Optimistically remove vehicles from collection.
+   * If addVehicle fails, we "undo" adding the vehicles.
    */
   on(
     SelectedVehiclePageActions.removeVehicle,

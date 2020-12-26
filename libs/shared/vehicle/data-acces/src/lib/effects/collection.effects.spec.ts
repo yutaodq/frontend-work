@@ -90,9 +90,9 @@
 //   });
 //
 //   describe('addVehicleToCollection$', () => {
-//     it('should return a collection.AddVehicleSuccess, with the vehicle, on success', () => {
-//       const action = SelectedVehiclePageActions.addVehicle({ vehicle: book1 });
-//       const completion = CollectionApiActions.addVehicleSuccess({ vehicle: book1 });
+//     it('should return a collection.AddVehicleSuccess, with the vehicles, on success', () => {
+//       const action = SelectedVehiclePageActions.addVehicle({ vehicles: book1 });
+//       const completion = CollectionApiActions.addVehicleSuccess({ vehicles: book1 });
 //
 //       actions$ = hot('-a', { a: action });
 //       const response = cold('-b', { b: true });
@@ -103,9 +103,9 @@
 //       expect(db.addToCollection).toHaveBeenCalledWith([book1]);
 //     });
 //
-//     it('should return a collection.AddVehicleFail, with the vehicle, when the db insert throws', () => {
-//       const action = SelectedVehiclePageActions.addVehicle({ vehicle: book1 });
-//       const completion = CollectionApiActions.addVehicleFailure({ vehicle: book1 });
+//     it('should return a collection.AddVehicleFail, with the vehicles, when the db insert throws', () => {
+//       const action = SelectedVehiclePageActions.addVehicle({ vehicles: book1 });
+//       const completion = CollectionApiActions.addVehicleFailure({ vehicles: book1 });
 //       const error = 'Error!';
 //
 //       actions$ = hot('-a', { a: action });
@@ -117,10 +117,10 @@
 //     });
 //
 //     describe('removeVehicleFromCollection$', () => {
-//       it('should return a collection.RemoveVehicleSuccess, with the vehicle, on success', () => {
-//         const action = SelectedVehiclePageActions.removeVehicle({ vehicle: book1 });
+//       it('should return a collection.RemoveVehicleSuccess, with the vehicles, on success', () => {
+//         const action = SelectedVehiclePageActions.removeVehicle({ vehicles: book1 });
 //         const completion = CollectionApiActions.removeVehicleSuccess({
-//           vehicle: book1,
+//           vehicles: book1,
 //         });
 //
 //         actions$ = hot('-a', { a: action });
@@ -132,10 +132,10 @@
 //         expect(db.removeFromCollection).toHaveBeenCalledWith([book1.id]);
 //       });
 //
-//       it('should return a collection.RemoveVehicleFail, with the vehicle, when the db insert throws', () => {
-//         const action = SelectedVehiclePageActions.removeVehicle({ vehicle: book1 });
+//       it('should return a collection.RemoveVehicleFail, with the vehicles, when the db insert throws', () => {
+//         const action = SelectedVehiclePageActions.removeVehicle({ vehicles: book1 });
 //         const completion = CollectionApiActions.removeVehicleFailure({
-//           vehicle: book1,
+//           vehicles: book1,
 //         });
 //         const error = 'Error!';
 //

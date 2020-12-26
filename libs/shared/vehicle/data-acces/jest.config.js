@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'shared-vehicle-data-acces',
+  displayName: 'shared-vehicles-data-acces',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../../coverage/libs/shared/vehicle/data-acces',
+  coverageDirectory: '../../../../coverage/libs/shared/vehicles/data-acces',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

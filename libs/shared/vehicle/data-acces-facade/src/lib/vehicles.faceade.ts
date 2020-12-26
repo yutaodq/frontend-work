@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
+
 import { Sandbox } from '@zy/shared/util';
 import * as store from '@zy/store';
-// import { CollectionPageActions } from '@zy/shared/vehicle/data-acces';
+// import { CollectionPageActions } from '@zy/shared/vehicles/data-acces';
 import * as fromVehicles from '@zy/shared/vehicle/data-acces';
 
 @Injectable()
@@ -14,6 +15,7 @@ export class VehiclesFaceade extends Sandbox {
   // public productDetailsLoading$ = this.appState$.select(store.getProductDetailsLoading);
   // public loggedUser$            = this.appState$.select(store.getLoggedUser);
   public vehicles$ = this.appState$.pipe(select(fromVehicles.selectVehicleCollection));
+  // public vehicleDetails$        = this.appState$.select(store.getVehicleDetailsData);
 
   private subscriptions: Array<Subscription> = [];
 

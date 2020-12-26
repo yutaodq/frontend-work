@@ -16,7 +16,7 @@
 //   VehiclesApiActions,
 //   FindVehiclePageActions,
 // } from '../actions';
-// import { VehiclesApiClient } from '@zy/shared/vehicle/data-acces-api';
+// import { VehiclesApiClient } from '@zy/shared/vehicles/data-acces-api';
 //
 // /**
 //  * Effects offer a way to isolate and easily test side-effects within your

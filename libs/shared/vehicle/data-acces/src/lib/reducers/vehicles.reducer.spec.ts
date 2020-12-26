@@ -102,16 +102,16 @@
 //       selectedVehicleId: null,
 //     };
 //
-//     it('should add a single vehicle, if the vehicle does not exist', () => {
-//       const action = VehicleActions.loadVehicle({ vehicle: book1 });
+//     it('should add a single vehicles, if the vehicles does not exist', () => {
+//       const action = VehicleActions.loadVehicle({ vehicles: book1 });
 //
 //       const result = reducer(fromVehicles.initialState, action);
 //
 //       expect(result).toMatchSnapshot();
 //     });
 //
-//     it('should return the existing state if the vehicle exists', () => {
-//       const action = VehicleActions.loadVehicle({ vehicle: book1 });
+//     it('should return the existing state if the vehicles exists', () => {
+//       const action = VehicleActions.loadVehicle({ vehicles: book1 });
 //
 //       const result = reducer(expectedResult, action);
 //
@@ -120,7 +120,7 @@
 //   });
 //
 //   describe('SELECT', () => {
-//     it('should set the selected vehicle id on the state', () => {
+//     it('should set the selected vehicles id on the state', () => {
 //       const action = ViewVehiclePageActions.selectVehicle({ id: book1.id });
 //
 //       const result = reducer(initialState, action);
