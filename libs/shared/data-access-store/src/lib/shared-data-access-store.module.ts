@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -50,4 +50,22 @@ import { RouterEffects } from './effects';
      */
     EffectsModule.forRoot([ RouterEffects]),  ],
 })
-export class SharedDataAccessStoreModule {}
+export class SharedDataAccessStoreModule {
+  static forRoot(): ModuleWithProviders<any> {
+    return {
+      ngModule: SharedDataAccessStoreModule
+    };
+  }
+
+  constructor(
+    @Optional()
+    @SkipSelf()
+      parentModule: SharedDataAccessStoreModule
+  ) {
+    if (parentModule) {
+      throw new Error(
+        `${parentModule} has already been loaded. Import StateModule in the AppModule only.`
+      );
+    }
+  }
+}
