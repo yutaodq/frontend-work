@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { VehicleFacade } from '@zy/shared/vehicle/data-acces-facade';
 import { TranslateService } from '@ngx-translate/core';
+import { GridOptions } from 'ag-grid-community';
 
 @Component({
   selector: 'zy-vehicle-vehicle',
@@ -12,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class VehiclesComponent implements OnInit {
   private _columnDefs;
   private _defaultColDef;
-
+private _gridOptions: GridOptions;
   constructor(
     private _vehiclesSandbox: VehicleFacade,
     private i18n: TranslateService
@@ -23,7 +24,13 @@ export class VehiclesComponent implements OnInit {
   ngOnInit(): void {
     this._columnDefs = ColumnDefs;
     this._defaultColDef = DefaultColDer;
+
+    this._gridOptions = <GridOptions> {
+      defaultColDef: this._defaultColDef,
+      columnDefs: this._columnDefs,
+    }
   }
+  // onGridReady: this.sizeColumns
 
   get vehiclesSandbox() {
     return this._vehiclesSandbox;
@@ -31,6 +38,14 @@ export class VehiclesComponent implements OnInit {
 
   get columnDefs() {
     return this._columnDefs;
+  }
+  get gridOptions() {
+    return this._gridOptions;
+  }
+
+
+  sizeColumns () {
+    this._gridOptions.api.sizeColumnsToFit();//调整表格大小自适应
   }
 
   get defaultColDef() {

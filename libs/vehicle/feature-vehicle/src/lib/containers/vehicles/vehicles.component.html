@@ -23,10 +23,13 @@
           class="ag-theme-alpine"
           style="height: 50vh;"
           [rowData]="vehiclesSandbox.vehicles$ | async"
-          [columnDefs]="columnDefs"
-          [defaultColDef]="defaultColDef"
+          [gridOptions]="gridOptions"
         >
         </ag-grid-angular>
+<!--        [columnDefs]="columnDefs"-->
+<!--        [defaultColDef]="defaultColDef"-->
+<!--        [onGridReady]:-->
+
       </div>
     </div>
   </div>
