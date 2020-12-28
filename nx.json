@@ -74,6 +74,9 @@
     },
     "shared-vehicle-data-acces-facade": {
       "tags": ["scope:shared", "type:data-acces"]
+    },
+    "shared-ui-grid": {
+      "tags": ["scope:shared", "type:ui"]
     }
   }
 }

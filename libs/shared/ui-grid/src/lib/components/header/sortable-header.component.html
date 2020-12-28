@@ -1,0 +1,25 @@
+<div style="display: flex; align-items: center;">
+    <div [hidden]="!params.enableMenu" class="customHeaderMenuButton" (click)="onMenuClick()">
+        <i><fa-icon icon="{{params.menuIcon}}"></fa-icon> </i>
+    </div>
+    <div class="customHeaderLabel">{{params.displayName}}</div>
+    <i class="fa fa-sort-down"></i>
+<!--    <div [hidden]="!params.enableSorting" class="{{'customSortDownLabel'+ (this.sorted === 'desc' ? ' active' : '') }}"-->
+<!--         (click)="onSortRequested('desc', $event)">-->
+<!--        <i >-->
+<!--            <fa-icon icon="sort-down"> </fa-icon>-->
+<!--        </i>-->
+<!--    </div>-->
+<!--    <div [hidden]="!params.enableSorting" class="{{'customSortUpLabel'+ (this.sorted === 'asc' ? ' active' : '') }}"-->
+<!--         (click)="onSortRequested('asc', $event)">-->
+<!--        <i >-->
+<!--            <fa-icon icon="sort-up"></fa-icon>-->
+<!--        </i>-->
+<!--    </div>-->
+<!--    <div [hidden]="!params.enableSorting" class="{{'customSortRemoveLabel'+ (this.sorted === '' ? ' active' : '') }}"-->
+<!--         (click)="onSortRequested('', $event)">-->
+<!--        <i >-->
+<!--            <fa-icon icon="times"></fa-icon>-->
+<!--        </i>-->
+<!--    </div>-->
+</div>

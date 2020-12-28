@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import { AgGridModule } from 'ag-grid-angular';
 
 const EXPORTS_MODULES = [
@@ -8,10 +10,11 @@ const EXPORTS_MODULES = [
 
 @NgModule({
   imports: [
+    CommonModule
   ],
   exports: [
     ...EXPORTS_MODULES
   ],
 })
-export class LayoutFeatureLayoutIvdsGridModule {
-}
+
+export class SharedUiGridModule {}

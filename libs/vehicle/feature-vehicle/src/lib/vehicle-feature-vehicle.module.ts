@@ -4,12 +4,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import {InputTextModule} from 'primeng/inputtext';
 
 import { SharedVehicleDataAccesFacadeModule } from '@zy/shared/vehicle/data-acces-facade';
-import { LayoutFeatureLayoutIvdsGridModule } from '@zy/layout/feature-layout-ivds';
 
 import { VehicleFeatureVehicleRouting } from './vehicle-feature-vehicle-routing.module';
 
 import { VehiclesComponent } from './containers/vehicles/vehicles.component';
 import { VehicleDetailsComponent } from './containers/vehicle-details/vehicle-details.component';
+import { SharedUiGridModule } from '@zy/shared/ui-grid';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { VehicleDetailsComponent } from './containers/vehicle-details/vehicle-de
     SharedVehicleDataAccesFacadeModule,
     VehicleFeatureVehicleRouting,
     TranslateModule,
-    LayoutFeatureLayoutIvdsGridModule,
+    SharedUiGridModule,
     InputTextModule
   ],
   declarations: [VehiclesComponent, VehicleDetailsComponent],

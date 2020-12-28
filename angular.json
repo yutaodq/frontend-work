@@ -37,7 +37,7 @@
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeicons/primeicons.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css",
-               "node_modules/ag-grid-community/dist/styles/ag-grid.css",
+              "node_modules/ag-grid-community/dist/styles/ag-grid.css",
               "node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css"
             ],
             "stylePreprocessorOptions": {
@@ -596,6 +596,36 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/vehicle/data-acces-facade/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-ui-grid": {
+      "projectType": "library",
+      "root": "libs/shared/ui-grid",
+      "sourceRoot": "libs/shared/ui-grid/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ui-grid/tsconfig.lib.json",
+              "libs/shared/ui-grid/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/ui-grid/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui-grid/jest.config.js",
             "passWithNoTests": true
           }
         }

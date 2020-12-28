@@ -5,14 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedDataAccessStoreModule } from '@zy/store';
 import { HttpServiceModule } from '@zy/shared/data-access-http';
 import { LayoutFeatureLayoutIvdsI18nModule } from './i18n/layout-feature-layout-ivds-i18n.module';
-import { LayoutFeatureLayoutIvdsGridModule } from './grid/layout-feature-layout-ivds-grid.module';
 
 import { MainModule } from './main/main.module';
+import { SharedUiGridModule } from '@zy/shared/ui-grid';
 
 const EXPORTS_MODULES = [
   MainModule,
-  LayoutFeatureLayoutIvdsGridModule,
-
+  SharedUiGridModule
 ];
 
 @NgModule({
@@ -20,7 +19,7 @@ const EXPORTS_MODULES = [
     CommonModule,
     HttpClientModule,
     LayoutFeatureLayoutIvdsI18nModule,
-    LayoutFeatureLayoutIvdsGridModule,
+    SharedUiGridModule,
     SharedDataAccessStoreModule.forRoot(),
     HttpServiceModule.forRoot()
   ],

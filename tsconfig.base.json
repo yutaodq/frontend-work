@@ -41,7 +41,8 @@
       ],
       "@zy/shared/vehicle/data-acces-facade": [
         "libs/shared/vehicle/data-acces-facade/src/index.ts"
-      ]
+      ],
+      "@zy/shared/ui-grid": ["libs/shared/ui-grid/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
