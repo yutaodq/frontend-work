@@ -7,6 +7,7 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
+console.log(`在控制台打印:`);
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)

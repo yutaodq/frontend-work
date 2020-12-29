@@ -30,6 +30,7 @@ export class ButtonRenderedComponent implements ICellRendererAngularComp {
 
   onClick($event) {
     if (this.params.onClick instanceof Function) {
+      console.log(`在控制台打印:onClick($event)`);
       // Put anything into params u want pass into parents component
       const params = {
         event: $event,

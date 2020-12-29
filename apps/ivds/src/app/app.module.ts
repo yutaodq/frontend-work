@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { LayoutFeatureLayoutIvdsModule } from '@zy/layout/feature-layout-ivds';
-console.log(`在控制台打印:`);
 
 @NgModule({
   declarations: [AppComponent],
