@@ -14,6 +14,8 @@ export class VehiclesComponent implements OnInit {
   private _columnDefs;
   private _defaultColDef;
 private _gridOptions: GridOptions;
+  private _gridApi;
+
   constructor(
     private _vehiclesSandbox: VehicleFacade,
     private i18n: TranslateService
@@ -43,7 +45,18 @@ private _gridOptions: GridOptions;
     return this._gridOptions;
   }
 
-
+  onGridReady(params) {
+    params.api.sizeColumnsToFit(); //调整表格大小自适应
+    // this._gridApi = params.api;
+    // To auto-height AG-Grid
+    // this._gridApi.setDomLayout("autoHeight");
+  }
+  onFirstDataRendered(params) {
+    params.api.sizeColumnsToFit(); //调整表格大小自适应
+    // this._gridApi = params.api;
+    // To auto-height AG-Grid
+    // this._gridApi.setDomLayout("autoHeight");
+  }
   sizeColumns () {
     this._gridOptions.api.sizeColumnsToFit();//调整表格大小自适应
   }
@@ -94,11 +107,11 @@ const ColumnDefs = [
     editable: false,
     sortable: false,
     filter: false,
-    cellRenderer: 'buttonRendered',
-    cellRendererParams: {
-      fa: 'info-circle',
-      iconClass: 'detail-icon'
-    },
+    // cellRenderer: 'buttonRendered',
+    // cellRendererParams: {
+    //   fa: 'info-circle',
+    //   iconClass: 'detail-icon'
+    // },
 
   }
 ];
