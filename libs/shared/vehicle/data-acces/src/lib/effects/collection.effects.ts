@@ -31,7 +31,7 @@ export class CollectionEffects {
 
   loadCollection$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(CollectionPageActions.enter),
+      ofType(CollectionPageActions.load),
       switchMap(() =>
         this.apiClient.getCollection().pipe(
           map((vehicles: Vehicle[]) =>

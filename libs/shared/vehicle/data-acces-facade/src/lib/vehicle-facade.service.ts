@@ -6,6 +6,7 @@ import { Sandbox } from '@zy/shared/util';
 import * as store from '@zy/store';
 // import { CollectionPageActions } from '@zy/shared/vehicles/data-acces';
 import * as fromVehicles from '@zy/shared/vehicle/data-acces';
+import { Vehicle } from '@zy/model';
 
 @Injectable()
 export class VehicleFacade extends Sandbox {
@@ -25,10 +26,10 @@ export class VehicleFacade extends Sandbox {
   }
 
   /**
-   * Loads products from the server
+   * Loads vehicles from the server
    */
   public loadVehicles(): void {
-    this.appState$.dispatch(fromVehicles.CollectionPageActions.enter());
+    this.appState$.dispatch(fromVehicles.CollectionPageActions.load());
   }
 
   // /**
@@ -38,13 +39,14 @@ export class VehicleFacade extends Sandbox {
   //   this.appState$.dispatch(new productDetailsActions.LoadAction(id))
   // }
   //
-  // /**
-  //  * Dispatches an action to select product details
-  //  */
-  // public selectProduct(product: Product): void {
-  //   this.appState$.dispatch(new productDetailsActions.LoadSuccessAction(product))
-  // }
-  //
+  /**
+   * Dispatches an action to select product details
+   */
+  public selectVehicle(vehicle: Vehicle): void {
+    this.appState$.dispatch(fromVehicles.VehicleActions.loadVehicle({ vehicle }))
+    // this.appState$.dispatch(new productDetailsActions.LoadSuccessAction(product))
+  }
+  // BookActions.loadBook({ book: bookEntity })
   // /**
   //  * Unsubscribes from events
   //  */

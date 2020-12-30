@@ -4,15 +4,20 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'welcome',
+    path: '',
     loadChildren: () => import('@zy/vehicle/feature-vehicle')
       .then((m) => m.VehicleFeatureVehicleModule),
   },
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'welcome',
-  },
+  // {
+  //   path: 'welcome',
+  //   loadChildren: () => import('@zy/vehicle/feature-vehicle')
+  //     .then((m) => m.VehicleFeatureVehicleModule),
+  // },
+  // {
+  //   path: '',
+  //   pathMatch: 'full',
+  //   redirectTo: 'welcome',
+  // },
 ];
 
 @NgModule({

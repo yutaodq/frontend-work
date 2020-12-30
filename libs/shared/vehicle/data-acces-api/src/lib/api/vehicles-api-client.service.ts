@@ -10,7 +10,7 @@ export class VehiclesApiClient extends HttpService {
    * Retrieves all products
    */
   @GET('/vehicles')
-  @Adapter(VehiclesService.gridAdapter)
+  // @Adapter(VehiclesService.gridAdapter)
   public getCollection(): Observable<any> {
 
     return null;
@@ -30,7 +30,7 @@ export class VehiclesApiClient extends HttpService {
    * @param id
    */
   @GET('/vehicles/{id}')
-  @Adapter(VehiclesService.vehicleDetailsAdapter)
+  // @Adapter(VehiclesService.vehicleDetailsAdapter)
   public getVehicleDetails(@Path('id') id: number): Observable<any> {
     return null;
   }

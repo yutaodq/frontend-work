@@ -4,6 +4,7 @@ import { VehicleFacade } from '@zy/shared/vehicle/data-acces-facade';
 import { TranslateService } from '@ngx-translate/core';
 import { GridOptions } from 'ag-grid-community';
 import { ButtonRenderedComponent } from '@zy/shared/ui-grid';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'zy-vehicle-vehicle',
@@ -12,7 +13,7 @@ import { ButtonRenderedComponent } from '@zy/shared/ui-grid';
 })
 
 export class VehiclesComponent implements OnInit {
-  private _columnDefs= [
+  private _columnDefs = [
     {
       headerName: '标识',
       field: 'id',
@@ -22,7 +23,7 @@ export class VehiclesComponent implements OnInit {
     {
       headerName: '车辆名称',
       field: 'name',
-      minWidth: 200,
+      minWidth: 200
     },
     {
       headerName: '牌照',
@@ -48,19 +49,21 @@ export class VehiclesComponent implements OnInit {
       cellRenderer: 'buttonRendered',
       cellRendererParams: {
         iconClass: 'fa-sign-out-alt',
-        onClick: this.onDetail.bind(this),
-      },
+        onClick: this.onDetail.bind(this)
+      }
 
     }
   ];
   private _defaultColDef;
-private _gridOptions: GridOptions;
+  private _gridOptions: GridOptions;
   private _gridApi;
   private _frameworkComponents = {
-    buttonRendered: ButtonRenderedComponent};
+    buttonRendered: ButtonRenderedComponent
+  };
 
   constructor(
     private _vehiclesSandbox: VehicleFacade,
+    private router: Router,
     private i18n: TranslateService
   ) {
 
@@ -70,16 +73,18 @@ private _gridOptions: GridOptions;
     // this._columnDefs = ColumnDefs;
     this._defaultColDef = DefaultColDer;
 
-    this._gridOptions = <GridOptions> {
+    this._gridOptions = <GridOptions>{
       defaultColDef: this._defaultColDef,
       columnDefs: this._columnDefs,
-      frameworkComponents: this._frameworkComponents,
-    }
+      frameworkComponents: this._frameworkComponents
+    };
   }
-  // onGridReady: this.sizeColumns
+
   onDetail(event) {
     console.log(`在控制台打印:onDetail($event)`);
-    // this.router.navigate([event.rowData.employeeId], { relativeTo: this.activeRouter });
+    this._vehiclesSandbox.selectVehicle(event.rowData);
+    this.router.navigate(['vehicles', event.rowData.id]);
+    // this.router.navigate(['detail', event.rowData.employeeId], { relativeTo: this.activeRouter });
   }
 
   get vehiclesSandbox() {
@@ -89,6 +94,7 @@ private _gridOptions: GridOptions;
   get columnDefs() {
     return this._columnDefs;
   }
+
   get gridOptions() {
     return this._gridOptions;
   }
@@ -99,13 +105,15 @@ private _gridOptions: GridOptions;
     // To auto-height AG-Grid
     // this._gridApi.setDomLayout("autoHeight");
   }
+
   onFirstDataRendered(params) {
     params.api.sizeColumnsToFit(); //调整表格大小自适应
     // this._gridApi = params.api;
     // To auto-height AG-Grid
     // this._gridApi.setDomLayout("autoHeight");
   }
-  sizeColumns () {
+
+  sizeColumns() {
     this._gridOptions.api.sizeColumnsToFit();//调整表格大小自适应
   }
 
@@ -132,7 +140,7 @@ const ColumnDefs = [
   {
     headerName: '车辆名称',
     field: 'name',
-    minWidth: 200,
+    minWidth: 200
   },
   {
     headerName: '牌照',
@@ -159,7 +167,7 @@ const ColumnDefs = [
     cellRendererParams: {
       fa: 'info-circle',
       iconClass: 'detail-icon'
-    },
+    }
 
   }
 ];

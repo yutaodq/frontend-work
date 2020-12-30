@@ -24,7 +24,7 @@ export class VehicleDetailsComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.registerEvents();
+    // this.registerEvents();
   }
 
   ngOnDestroy() {
@@ -36,11 +36,11 @@ export class VehicleDetailsComponent implements OnInit, OnDestroy {
    */
   private registerEvents(): void {
     // Subscribes to vehicle details
-    this.subscriptions.push(this.vehiclesSandbox.vehicleDetails$.subscribe((vehicle: any) => {
-      if (vehicle) {
-        this.changeDetector.markForCheck();
-        this.vehicle = vehicle;
-      }
-    }));
+    // this.subscriptions.push(this.vehiclesSandbox.vehicleDetails$.subscribe((vehicle: any) => {
+    //   if (vehicle) {
+    //     this.changeDetector.markForCheck();
+    //     this.vehicle = vehicle;
+    //   }
+    // }));
   }
 }
