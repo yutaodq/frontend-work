@@ -82,8 +82,8 @@ export class VehiclesComponent implements OnInit {
 
   onDetail(event) {
     console.log(`在控制台打印:onDetail($event)`);
-    this._vehiclesSandbox.selectVehicle(event.rowData);
-    this.router.navigate(['vehicles', event.rowData.id]);
+    this._vehiclesSandbox.selectVehicle(event.id);
+    this.router.navigate(['vehicles', event.id]);
     // this.router.navigate(['detail', event.rowData.employeeId], { relativeTo: this.activeRouter });
   }
 

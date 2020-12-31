@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 import { Sandbox } from '@zy/shared/util';
 import * as store from '@zy/store';
@@ -16,7 +16,13 @@ export class VehicleFacade extends Sandbox {
   // public productDetailsLoading$ = this.appState$.select(store.getProductDetailsLoading);
   // public loggedUser$            = this.appState$.select(store.getLoggedUser);
   public vehicles$ = this.appState$.pipe(select(fromVehicles.selectVehicleCollection));
-  public vehicleDetails$        = this.appState$.select(fromVehicles.selectSelectedVehicle);
+  // public vehicleDetails$        = this.appState$.select(fromVehicles.selectSelectedVehicle);
+  public vehicleDetails$        = this.appState$.pipe(select(fromVehicles.selectSelectedVehicle)) as Observable<
+    Vehicle
+    >;
+  // this.book$ = store.pipe(select(fromBooks.selectSelectedBook)) as Observable<
+  //   Book
+  //   >;
 
   private subscriptions: Array<Subscription> = [];
 
@@ -42,8 +48,8 @@ export class VehicleFacade extends Sandbox {
   /**
    * Dispatches an action to select product details
    */
-  public selectVehicle(vehicle: Vehicle): void {
-    this.appState$.dispatch(fromVehicles.VehicleActions.loadVehicle({ vehicle }))
+  public selectVehicle(id: string): void {
+    this.appState$.dispatch(fromVehicles.ViewVehiclePageActions.selectVehicle({ id }))
     // this.appState$.dispatch(new productDetailsActions.LoadSuccessAction(product))
   }
   // BookActions.loadBook({ book: bookEntity })
