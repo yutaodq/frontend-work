@@ -88,7 +88,11 @@ export const {
   selectAll: selectAllVehicles,
   selectTotal: selectTotalVehicles,
 } = fromVehicles.adapter.getSelectors(selectVehicleEntitiesState);
-
+/*
+   return a || b;
+   return a && b;
+   return a , b , c;
+ */
 export const selectSelectedVehicle = createSelector(
   selectVehicleEntities,
   selectSelectedVehicleId,
