@@ -1,4 +1,7 @@
-﻿export * from './button/index';
+﻿// AgGrid学习案例
+// https://github.com/Manjuanand021/ls_perfect
+
+// export * from './button/index';
 export * from './container/index';
 export * from './compose/index';
 export * from './dialog/index';
