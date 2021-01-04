@@ -665,6 +665,36 @@
           "style": "scss"
         }
       }
+    },
+    "shared-util-logging": {
+      "projectType": "library",
+      "root": "libs/shared/util-logging",
+      "sourceRoot": "libs/shared/util-logging/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/util-logging/tsconfig.lib.json",
+              "libs/shared/util-logging/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/util-logging/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/util-logging/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

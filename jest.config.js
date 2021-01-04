@@ -19,5 +19,6 @@ module.exports = {
     '<rootDir>/libs/shared/vehicles/data-acces-facade',
     '<rootDir>/libs/shared/ui-grid',
     '<rootDir>/libs/shared/util-i18n',
+    '<rootDir>/libs/shared/util-logging',
   ],
 };
