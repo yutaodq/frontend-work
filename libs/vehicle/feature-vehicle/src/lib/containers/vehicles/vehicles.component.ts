@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { GridOptions } from 'ag-grid-community';
 import { ButtonRenderedComponent } from '@zy/shared/ui-grid';
 import { Router } from '@angular/router';
+import { localeTextGrid } from '@zy/shared/util';
 
 @Component({
   selector: 'zy-vehicle-vehicle',
@@ -74,6 +75,7 @@ export class VehiclesComponent implements OnInit {
     this._defaultColDef = DefaultColDer;
 
     this._gridOptions = <GridOptions>{
+      localeText: localeTextGrid,
       defaultColDef: this._defaultColDef,
       columnDefs: this._columnDefs,
       frameworkComponents: this._frameworkComponents
