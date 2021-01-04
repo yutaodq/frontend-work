@@ -1,3 +1,5 @@
+// 参照 https://github.com/Manjuanand021/ls_perfect
+
 export * from './components';
 
 // export * from './options';
