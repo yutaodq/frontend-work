@@ -4,10 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { SharedDataAccessStoreModule } from '@zy/store';
 import { HttpServiceModule } from '@zy/shared/data-access-http';
-import { LayoutFeatureLayoutIvdsI18nModule } from './i18n/layout-feature-layout-ivds-i18n.module';
 
 import { MainModule } from './main/main.module';
 import { SharedUiGridModule } from '@zy/shared/ui-grid';
+import { SharedUtilI18nModule } from '@frontend-work/shared/util-i18n';
 
 const EXPORTS_MODULES = [
   MainModule,
@@ -18,7 +18,7 @@ const EXPORTS_MODULES = [
   imports: [
     CommonModule,
     HttpClientModule,
-    LayoutFeatureLayoutIvdsI18nModule,
+    SharedUtilI18nModule,
     SharedUiGridModule,
     SharedDataAccessStoreModule.forRoot(),
     HttpServiceModule.forRoot()

@@ -28,5 +28,4 @@ export function HttpLoaderFactory(http: HttpClient) {
     ...EXPORTS_MODULES
   ],
 })
-export class LayoutFeatureLayoutIvdsI18nModule {
-}
+export class SharedUtilI18nModule {}
