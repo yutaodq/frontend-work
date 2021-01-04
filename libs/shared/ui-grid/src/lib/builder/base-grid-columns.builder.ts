@@ -1,8 +1,6 @@
-// import { I18n } from 'life-core/i18n-cms';
-import { RouterAccessor } from 'zyapp/base-ui/routing';
 import {Injector} from "@angular/core";
-import {ActivatedRoute, Router} from "@angular/router";
 import { DataGridColumns, IDataGridColumn } from '../model';
+
 export interface IGridColumnsBuilder {
     build(...params: any[]): DataGridColumns;
     addColumn(column: IDataGridColumn): void;
@@ -11,12 +9,11 @@ export interface IGridColumnsBuilder {
 export abstract class BaseGridColumnsBuilder implements IGridColumnsBuilder {
     protected injector: Injector;
     protected columns: DataGridColumns;
-    protected routerAccessor: RouterAccessor;
+    // protected routerAccessor: RouterAccessor;
 
     protected constructor(injector: Injector) {
         this.injector = injector;
         this.columns = new DataGridColumns();
-        this.routerAccessor = new RouterAccessor(injector.get(Router), injector.get(ActivatedRoute));
     }
 
     public abstract build(...params: any[]): DataGridColumns;

@@ -1,10 +1,13 @@
-import {GridOptions, ColDef, CellFocusedEvent, ColumnResizedEvent} from '@ag-grid-community/all-modules';
+import { GridOptions, ColDef, CellFocusedEvent, ColumnResizedEvent } from 'ag-grid-community';
 
-import {IDataGridCommonOptions} from 'zyapp/grid/options/data-grid-common-options';
-import {NoRowsOverlayComponent} from 'zyapp/grid/components/overlay/no-rows-overlay.component';
-import {LoadingOverlayComponent} from 'zyapp/grid/components/overlay/loading-overlay.component';
-import { RendererComponent, ButtonRenderedComponent } from 'zyapp/grid/components/renderer';
 import { IDataGridColumn } from '../model';
+import { IDataGridCommonOptions } from './data-grid-common-options';
+import {
+  ButtonRenderedComponent,
+  LoadingOverlayComponent,
+  NoRowsOverlayComponent,
+  RendererComponent
+} from '@zy/shared/ui-grid';
 export const HEADER_ROW_HEIGHT = 25;   // 标题行高度
 export const DataGridRowNumber = {
     Small: 4,
