@@ -6,6 +6,7 @@ import { GridOptions } from 'ag-grid-community';
 import { ButtonRenderedComponent } from '@zy/shared/ui-grid';
 import { Router } from '@angular/router';
 import { localeTextGrid } from '@zy/shared/util';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
   selector: 'zy-vehicle-vehicle',
@@ -65,12 +66,14 @@ export class VehiclesComponent implements OnInit {
   constructor(
     private _vehiclesSandbox: VehicleFacade,
     private router: Router,
-    private i18n: TranslateService
+    private i18n: TranslateService,
+    private _logger: NGXLogger
   ) {
 
   }
 
   ngOnInit(): void {
+    this._logger.debug('日志功能：Your log message goes here');
     // this._columnDefs = ColumnDefs;
     this._defaultColDef = DefaultColDer;
 

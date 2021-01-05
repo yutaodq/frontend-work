@@ -8113,6 +8113,14 @@ next-tick@~1.0.0:
   resolved "https://registry.npm.taobao.org/next-tick/download/next-tick-1.0.0.tgz?cache=0&sync_timestamp=1581394203989&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnext-tick%2Fdownload%2Fnext-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
+ngx-logger@^4.1.9:
+  version "4.1.9"
+  resolved "https://registry.npm.taobao.org/ngx-logger/download/ngx-logger-4.1.9.tgz#35b782c805343b9c8496e97a155b910086bec4bc"
+  integrity sha1-NbeCyAU0O5yElul6FVuRAIa+xLw=
+  dependencies:
+    tslib "^1.9.0"
+    vlq "^1.0.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/nice-try/download/nice-try-1.0.5.tgz?cache=0&sync_timestamp=1602353248777&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnice-try%2Fdownload%2Fnice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -11802,6 +11810,11 @@ viz.js@^1.8.1:
   version "1.8.2"
   resolved "https://registry.npm.taobao.org/viz.js/download/viz.js-1.8.2.tgz#d9cc04cd99f98ec986bf9054db76a6cbcdc5d97a"
   integrity sha1-2cwEzZn5jsmGv5BU23amy83F2Xo=
+
+vlq@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/vlq/download/vlq-1.0.1.tgz#c003f6e7c0b4c1edd623fd6ee50bbc0d6a1de468"
+  integrity sha1-wAP258C0we3WI/1u5Qu8DWod5Gg=
 
 vm-browserify@^1.0.1:
   version "1.1.2"
