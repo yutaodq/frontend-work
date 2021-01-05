@@ -3,4 +3,4 @@ export interface DataGridField {
     headerNameId: string;
 }
 
-export type DataGridFields = { readonly [fieldKey: string]: DataGridField };
+export interface DataGridFields { readonly [fieldKey: string]: DataGridField }

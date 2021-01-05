@@ -1,11 +1,20 @@
-import { Component, ElementRef, forwardRef, Input, Output, EventEmitter, Provider, ViewChild } from '@angular/core';
-import { DomHandler } from 'primeng/components/dom/domhandler';
+import {
+  Component,
+  ElementRef,
+  forwardRef,
+  Input,
+  Output,
+  EventEmitter,
+  Provider,
+  ViewChild,
+  AfterViewInit
+} from '@angular/core';
 
-import { AuthorizationLevel } from 'life-core/authorization';
 import { ConvertUtil } from 'life-core/util/lang/convert.util';
-import { ButtonActionType } from 'life-core/component/shared/button/button.model';
 
-import { ISecureComponent, SecureComponent, AuthorizationUtil } from '../authorization';
+import { ISecureComponent, SecureComponent, AuthorizationUtil, AuthorizationLevel } from '../authorization';
+import { DomHandler } from 'primeng/dom';
+import { ButtonActionType } from '../shared/button';
 
 export const BUTTON_PROVIDERS: Array<Provider> = [DomHandler];
 
@@ -19,12 +28,12 @@ export const BUTTON_PROVIDERS: Array<Provider> = [DomHandler];
  * LfButton component. Code copied from PrimeNG button, with the modification that this.el.nativeElement
  * is replaced by this.el.nativeElement.children[0] because in our case button is a child element under lf-button.
  */
-export class LfButton implements ISecureComponent {
+export class LfButton implements ISecureComponent, AfterViewInit {
     @Input()
     public type: string;
 
     @Input()
-    public iconPos: string = 'left';
+    public iconPos = 'left';
 
     @Input()
     public cornerStyleClass = 'ui-corner-all';
@@ -75,7 +84,7 @@ export class LfButton implements ISecureComponent {
     public getStyleClass(): string {
         let styleClass = `ui-button ui-widget ui-state-default ${this.cornerStyleClass}`;
         if (this.icon) {
-            if (this.label != null && this.label != undefined) {
+            if (this.label !== null && this.label !== undefined) {
                 styleClass =
                     this.iconPos == 'left'
                         ? `${styleClass} ui-button-text-icon-left`

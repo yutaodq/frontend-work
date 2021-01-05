@@ -1,4 +1,3 @@
-import {Injector} from "@angular/core";
 import { DataGridColumns, IDataGridColumn } from '../model';
 
 export interface IGridColumnsBuilder {
@@ -7,12 +6,9 @@ export interface IGridColumnsBuilder {
 }
 
 export abstract class BaseGridColumnsBuilder implements IGridColumnsBuilder {
-    protected injector: Injector;
     protected columns: DataGridColumns;
-    // protected routerAccessor: RouterAccessor;
 
-    protected constructor(injector: Injector) {
-        this.injector = injector;
+    protected constructor() {
         this.columns = new DataGridColumns();
     }
 

@@ -135,6 +135,7 @@ const DefaultColDer = {
   filter: true
 };
 
+// @ts-ignore
 const ColumnDefs = [
   {
     headerName: '标识',
@@ -163,18 +164,7 @@ const ColumnDefs = [
     headerName: '使用状态',
     field: 'zt'
   },
-  {
-    headerName: '操作',
-    editable: false,
-    sortable: false,
-    filter: false,
-    cellRenderer: 'buttonRendered',
-    cellRendererParams: {
-      fa: 'info-circle',
-      iconClass: 'detail-icon'
-    }
 
-  }
 ];
 
 // headerName: '操作',

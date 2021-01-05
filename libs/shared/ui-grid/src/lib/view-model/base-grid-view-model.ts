@@ -1,24 +1,21 @@
-import {AfterViewInit, Injector, OnInit, ViewChild} from '@angular/core';
-import {RowNode, GridReadyEvent, GridApi, Module, AllCommunityModules} from '@ag-grid-community/all-modules';
+import { AfterViewInit, Component, Injector, OnInit, ViewChild } from '@angular/core';
 
-import { IDataGridOptions,
-    DataGridOptionsUtil
-} from "zyapp/grid/options/data-grid-options";
-import { DataGridCommonOptions } from 'zyapp/grid/options/data-grid-common-options';
-import {
-    DataGridColumns,
-    IDataGridColumn
-} from 'zyapp/grid/model/data-grid-column.model';
-import { IGridColumnsBuilder } from 'zyapp/grid/builder/base-grid-columns.builder';
-import { GridState} from "zyapp/grid/view-model/grid-state";
-import {GridLocaleService} from "zyapp/grid/service/grid-locale.service";
+import { GridReadyEvent, Module } from 'ag-grid-community';
+import { AgGridModule } from 'ag-grid-angular';
+import { GridLocaleService } from '../service';
+import { DataGridCommonOptions, DataGridOptionsUtil, IDataGridOptions } from '../options';
+import { GridState } from './grid-state';
+import { DataGridColumns, IDataGridColumn } from '../model';
+import { IGridColumnsBuilder } from '../builder';
 
-import { GridFilterFrameworkComponents } from 'zyapp/grid/filter/filter-components';
 
+@Component({
+  template: ''
+})
 export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
+
     private readonly _gridLocaleService: GridLocaleService;
-    protected readonly agGridModules: Module[] = AllCommunityModules;
-    protected gridOptions: IDataGridOptions;
+  public gridOptions: IDataGridOptions;
     public title: string;
     public rowCount = 0;
     public filterModel: any;
@@ -28,12 +25,16 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
     protected gridState: GridState<T>;
 
     private _gridColumns: DataGridColumns;
-    private readonly _gridColumnsBuilder: IGridColumnsBuilder;
+  protected  _gridColumnsBuilder: IGridColumnsBuilder;
 
-    protected constructor(injector: Injector, gridColumnsBuilder: IGridColumnsBuilder) {
-        this._gridColumnsBuilder = gridColumnsBuilder;
+  // protected constructor(injector: Injector,
+  //                       gridColumnsBuilder: IGridColumnsBuilder,
+  //                       gridLocaleService: GridLocaleService) {
+    protected constructor(gridLocaleService: GridLocaleService) {
+        // this._gridColumnsBuilder = gridColumnsBuilder;
         this.cacheBlockSize = 50;
-        this._gridLocaleService = injector.get(GridLocaleService);
+        this._gridLocaleService = gridLocaleService;
+        // injector.get(GridLocaleService);
     }
 
     ngOnInit() {
@@ -66,7 +67,7 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
                 rowDeselection: true, // 设置为true时，如果按住Ctrl并单击该行，则允许取消选定行  https://www.ag-grid.com/javascript-grid-selection/
                 maxConcurrentDatasourceRequests: 2, // 不知道的功能
                 floatingFilter: true, // 设置为true直接显示过滤器，如果为false 需要点击列头
-                frameworkComponents: GridFilterFrameworkComponents,
+                // frameworkComponents: GridFilterFrameworkComponents,
                 enableRowDetail: this.enableRowDetail, // 不知道的功能
                 headerRows: this.getHeaderRowsCount(), // 标题行的高度(px)。如果没有指定，它将获取rowHeight值。
                 suppressMenuHide: true, //  设置为true以始终显示列菜单按钮，而不是仅在鼠标位于列标题上时显示。

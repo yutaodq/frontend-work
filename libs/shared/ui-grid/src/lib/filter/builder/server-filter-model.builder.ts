@@ -1,9 +1,9 @@
 ﻿import { Inject, Injectable } from '@angular/core';
 
-import { IServerFilter } from 'zyapp/base-ui/service';
 import { IFilterBuilder, GridFilterBuilderRegistryType } from './filter-builder.type';
-import { GridFilter } from '../model/grid-filter.model';
+import { GridFilter } from '..';
 import { GRID_FILTER_BUILDER_REGISTRY } from './grid-filter-builder.registry';
+import { IServerFilter } from '@zy/shared/util';
 
 @Injectable()
 export class ServerFilterModelBuilder implements IFilterBuilder {

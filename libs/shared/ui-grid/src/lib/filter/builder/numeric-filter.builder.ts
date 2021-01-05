@@ -1,6 +1,6 @@
-﻿import { IServerFilter } from 'zyapp/base-ui/service';
-import { GridFilter, NumericGridFilter, GridFilterCompareOpMap } from '../model/grid-filter.model';
-import { IFilterBuilder } from './filter-builder.type';
+﻿import { IFilterBuilder } from './filter-builder.type';
+import { GridFilter, GridFilterCompareOpMap, NumericGridFilter } from '..';
+import { IServerFilter } from '@zy/shared/util';
 
 export abstract class NumericFilterBuilder implements IFilterBuilder {
     public build(fields: string[], gridFilter: GridFilter): IServerFilter {

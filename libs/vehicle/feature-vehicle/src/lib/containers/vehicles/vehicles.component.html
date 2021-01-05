@@ -18,7 +18,11 @@
                     </span>
     </div>
 
-    <zy-ui-grid></zy-ui-grid>
+
+    <zy-vehicle-grid [_vehicles]="vehiclesSandbox.vehicles$ | async">
+
+    </zy-vehicle-grid>
+
 
     <div style="display: flex; flex-direction: row; height: 100%;">
       <div style=" overflow: hidden; flex-grow: 1">
