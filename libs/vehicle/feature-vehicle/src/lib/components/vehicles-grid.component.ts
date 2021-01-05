@@ -1,7 +1,16 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Injector, Input, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  inject,
+  Injector,
+  Input,
+  OnInit,
+  Output
+} from '@angular/core';
 import { Vehicle } from '@zy/model';
 import { VehicleColumnsBuilder } from '../grid/vehicle-columns.builder';
-import { BaseGridViewModel, GridLocaleService } from '@zy/shared/ui-grid';
+import { BaseGridViewModel, GridLocaleService, IGridColumnsBuilder } from '@zy/shared/ui-grid';
 
 @Component({
   selector: 'zy-vehicle-grid',
@@ -17,13 +26,11 @@ export class VehiclesGridComponent extends BaseGridViewModel<Vehicle> {
   @Input() private _vehicles: Vehicle[];
   @Input() loading = true;
 
-  // private _gridOptions: GridOptions;
   private readonly _gridHelperService: GridLocaleService;
   private noRowsOverlayComponentParams;
 
-  // constructor(injector: Injector, vehicleColumnsBuilder: VehicleColumnsBuilder, gridLocaleService: GridLocaleService) {
-  constructor( vehicleColumnsBuilder: VehicleColumnsBuilder, gridLocaleService: GridLocaleService) {
-    super(  gridLocaleService);
+  constructor(injector: Injector, vehicleColumnsBuilder: VehicleColumnsBuilder) {
+    super( injector);
     this._gridColumnsBuilder = vehicleColumnsBuilder
   }
 get vehicles() {

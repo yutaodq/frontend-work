@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Injector, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Inject, Injector, OnInit, ViewChild } from '@angular/core';
 
 import { GridReadyEvent, Module } from 'ag-grid-community';
 import { AgGridModule } from 'ag-grid-angular';
@@ -26,15 +26,11 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
 
     private _gridColumns: DataGridColumns;
   protected  _gridColumnsBuilder: IGridColumnsBuilder;
-
-  // protected constructor(injector: Injector,
-  //                       gridColumnsBuilder: IGridColumnsBuilder,
-  //                       gridLocaleService: GridLocaleService) {
-    protected constructor(gridLocaleService: GridLocaleService) {
-        // this._gridColumnsBuilder = gridColumnsBuilder;
+  // @Inject(IGridColumnsBuilder)
+  protected constructor(injector: Injector,
+                        ) {
         this.cacheBlockSize = 50;
-        this._gridLocaleService = gridLocaleService;
-        // injector.get(GridLocaleService);
+        this._gridLocaleService =  injector.get(GridLocaleService);
     }
 
     ngOnInit() {

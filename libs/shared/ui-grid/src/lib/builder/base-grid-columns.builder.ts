@@ -1,5 +1,6 @@
 import { DataGridColumns, IDataGridColumn } from '../model';
-
+import { inject } from '@angular/core';
+// @inject
 export interface IGridColumnsBuilder {
     build(...params: any[]): DataGridColumns;
     addColumn(column: IDataGridColumn): void;
