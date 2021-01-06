@@ -1,16 +1,16 @@
 import { Directive, ElementRef, AfterViewInit, OnDestroy, Input } from '@angular/core';
+import { DomHandler } from 'primeng/dom';
 
-import { DomHandler } from 'primeng/components/dom/domhandler';
 
 @Directive({
-    selector: '[lfInfo]',
+    selector: '[zyUiLfInfo]',
     providers: [DomHandler]
 })
 export class LfInfoDirective implements AfterViewInit, OnDestroy {
     @Input()
-    public cornerStyleClass: string = 'ui-corner-all';
+    public cornerStyleClass = 'ui-corner-all';
 
-    private _infoLabel: string = '';
+    private _infoLabel = '';
 
     private _initialized: boolean;
 
@@ -35,7 +35,7 @@ export class LfInfoDirective implements AfterViewInit, OnDestroy {
         this._infoLabel = val;
 
         if (this._initialized) {
-            (this.domHandler.findSingle(
+            (DomHandler.findSingle(
                 this.el.nativeElement,
                 `.${this.infoTextClass}`
             ) as HTMLElement).innerHTML = this._infoLabel;

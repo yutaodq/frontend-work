@@ -6,7 +6,7 @@ export abstract class TextFilterBuilder implements IFilterBuilder {
     public build(fields: string[], gridFilter: GridFilter): IServerFilter {
         const textGridFilter = <TextGridFilter>gridFilter;
         const compareOp = GridFilterCompareOpMap[textGridFilter.type];
-        if (fields.length == 0 || textGridFilter.filter == null || textGridFilter.filter == '') {
+        if (fields.length === 0 || textGridFilter.filter == null || textGridFilter.filter === '') {
             return null;
         }
         return this.getTextFilter(fields, textGridFilter, compareOp);

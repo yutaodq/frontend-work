@@ -7,14 +7,15 @@ import {
   EventEmitter,
   Provider,
   ViewChild,
-  AfterViewInit
+  AfterViewInit, OnDestroy
 } from '@angular/core';
 
-import { ConvertUtil } from 'life-core/util/lang/convert.util';
+// import { ConvertUtil } from 'life-core/util/lang/convert.util';
 
 import { ISecureComponent, SecureComponent, AuthorizationUtil, AuthorizationLevel } from '../authorization';
 import { DomHandler } from 'primeng/dom';
 import { ButtonActionType } from '../shared/button';
+import { ConvertUtil } from '@zy/shared/util';
 
 export const BUTTON_PROVIDERS: Array<Provider> = [DomHandler];
 
@@ -28,7 +29,7 @@ export const BUTTON_PROVIDERS: Array<Provider> = [DomHandler];
  * LfButton component. Code copied from PrimeNG button, with the modification that this.el.nativeElement
  * is replaced by this.el.nativeElement.children[0] because in our case button is a child element under lf-button.
  */
-export class LfButton implements ISecureComponent, AfterViewInit {
+export class LfButton implements ISecureComponent, AfterViewInit, OnDestroy {
     @Input()
     public type: string;
 
@@ -77,7 +78,8 @@ export class LfButton implements ISecureComponent, AfterViewInit {
     constructor(public el: ElementRef<HTMLElement>, public domHandler: DomHandler) {}
 
     public ngAfterViewInit(): void {
-        this.domHandler.addMultipleClasses(this.el.nativeElement.children[0], this.getStyleClass());
+        // this.domHandler.addMultipleClasses(this.el.nativeElement.children[0], this.getStyleClass());
+      DomHandler.addMultipleClasses(this.el.nativeElement.children[0], this.getStyleClass());
         this.initialized = true;
     }
 
@@ -86,7 +88,7 @@ export class LfButton implements ISecureComponent, AfterViewInit {
         if (this.icon) {
             if (this.label !== null && this.label !== undefined) {
                 styleClass =
-                    this.iconPos == 'left'
+                    this.iconPos === 'left'
                         ? `${styleClass} ui-button-text-icon-left`
                         : `${styleClass} ui-button-text-icon-right`;
             } else {
@@ -107,7 +109,7 @@ export class LfButton implements ISecureComponent, AfterViewInit {
         this._label = val;
 
         if (this.initialized) {
-            this.domHandler.findSingle(this.el.nativeElement.children[0], '.ui-button-text').textContent = this._label;
+          DomHandler.findSingle(this.el.nativeElement.children[0], '.ui-button-text').textContent = this._label;
         }
     }
 
@@ -121,8 +123,8 @@ export class LfButton implements ISecureComponent, AfterViewInit {
         if (this.initialized) {
             // Custom change start
             // changed class '.ui-clickable .fa fa-fw' to just '.ui-clickable'
-            const iconPosClass = this.iconPos == 'right' ? 'ui-button-icon-right' : 'ui-button-icon-left';
-            this.domHandler.findSingle(
+            const iconPosClass = this.iconPos === 'right' ? 'ui-button-icon-right' : 'ui-button-icon-left';
+          DomHandler.findSingle(
                 this.el.nativeElement.children[0],
                 '.ui-clickable'
             ).className = `${iconPosClass} ui-clickable ${this.icon}`;

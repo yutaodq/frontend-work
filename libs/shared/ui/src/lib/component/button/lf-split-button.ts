@@ -3,12 +3,12 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Router } from '@angular/router';
 
 import { SplitButton } from 'primeng/splitbutton';
-import { DomHandler } from 'primeng/components/dom/domhandler';
 
 import { MenuItem } from 'life-core/component/menu';
+import { DomHandler } from 'primeng/dom';
 
 @Component({
-    selector: 'lf-split-button',
+    selector: 'zy-ui-lf-split-button',
     templateUrl: './lf-split-button.html',
     providers: [DomHandler],
     animations: [
@@ -34,7 +34,7 @@ import { MenuItem } from 'life-core/component/menu';
 })
 export class LfSplitButton extends SplitButton {
     @Input()
-    public id: string = '';
+    public id = '';
 
     @Input()
     public name: string;
@@ -87,7 +87,7 @@ export class LfSplitButton extends SplitButton {
     @Input()
     public set selectedMenuItemId(id: string) {
         this._selectedMenuItemId = id;
-        this.selectedMenuItem = this.model.find(menuItem => (<MenuItem>menuItem).id == id) as MenuItem;
+        this.selectedMenuItem = this.model.find(menuItem => (<MenuItem>menuItem).id === id) as MenuItem;
     }
 
     public get selectedMenuItemId(): string {

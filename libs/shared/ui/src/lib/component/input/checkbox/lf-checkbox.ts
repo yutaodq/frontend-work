@@ -15,8 +15,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Checkbox } from 'primeng/checkbox';
 
 import { FormInputAccessor } from '../shared/form-input.accessor';
-import { AuthorizationLevel } from 'life-core/authorization';
-import { ISecureComponent, SecureComponent, AuthorizationUtil } from '../../authorization';
+import { ISecureComponent, SecureComponent, AuthorizationUtil, AuthorizationLevel } from '../../authorization';
 
 export const CHECKBOX_VALUE_ACCESSOR: Provider = {
     provide: NG_VALUE_ACCESSOR,
@@ -33,7 +32,7 @@ export const CHECKBOX_VALUE_ACCESSOR: Provider = {
 export class LfCheckbox extends Checkbox implements FormInputAccessor, ISecureComponent, OnDestroy {
     // Override declaration from base class
     @Input()
-    public binary: string = 'true';
+    public binary = 'true';
 
     @Input()
     public valueType: LfCheckboxValueType;

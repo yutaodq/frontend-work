@@ -23,34 +23,32 @@ import { BaseGridViewModel, GridLocaleService, IGridColumnsBuilder } from '@zy/s
 
 export class VehiclesGridComponent extends BaseGridViewModel<Vehicle> {
 
-  @Input() private _vehicles: Vehicle[];
   @Input() loading = true;
+  private _gridColumnsBuilder: IGridColumnsBuilder;
 
-  private readonly _gridHelperService: GridLocaleService;
   private noRowsOverlayComponentParams;
 
   constructor(injector: Injector, vehicleColumnsBuilder: VehicleColumnsBuilder) {
     super( injector);
     this._gridColumnsBuilder = vehicleColumnsBuilder
   }
-get vehicles() {
-    return this._vehicles;
-}
-  // ngOnInit() {
-  //     this.initGridOptions();
-  // }
+
+  protected getGridColumnsBuilder(): IGridColumnsBuilder {
+    return this._gridColumnsBuilder;
+  }
+
   onBtShowLoading() {
-    this.getGridOptions().api.showLoadingOverlay();
+    this.gridOptions.api.showLoadingOverlay();
     // this.gridApi.showLoadingOverlay();
   }
 
   onBtShowNoRows() {
-    this.getGridOptions().api.showNoRowsOverlay();
+    this.gridOptions.api.showNoRowsOverlay();
     // this.gridApi.showNoRowsOverlay();
   }
 
   onBtHide() {
-    this.getGridOptions().api.hideOverlay();
+    this.gridOptions.api.hideOverlay();
   }
 
   protected registerFilterChangeHandlers(): void {

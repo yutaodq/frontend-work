@@ -1,4 +1,4 @@
-import { EnumUtil } from 'life-core/util/lang';
+import { EnumUtil } from '@zy/shared/util';
 
 export type ContainerType = 'body' | 'dialog' | 'popover';
 

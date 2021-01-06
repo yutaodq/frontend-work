@@ -3,4 +3,6 @@ export * from './lib/logging';
 export * from './lib/utility';
 export * from './lib/services';
 export * from './lib/ag-grid';
+export * from './lib/lang';
+export * from './lib/dom';
 

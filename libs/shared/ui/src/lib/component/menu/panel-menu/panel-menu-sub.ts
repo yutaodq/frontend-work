@@ -6,7 +6,7 @@ import { MenuItem } from '../model/menu-item.model';
 import { MenuItemClickEvent } from '../event/menu.event';
 
 @Component({
-    selector: 'panel-menu-sub',
+    selector: 'zy-ui-panel-menu-sub',
     templateUrl: './panel-menu-sub.html',
     animations: [
         trigger('submenu', [

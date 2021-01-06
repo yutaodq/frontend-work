@@ -13,8 +13,8 @@ import {
 import { Router, NavigationEnd } from '@angular/router';
 import { PlatformLocation } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { DOMUtil } from '@zy/shared/util';
 
-import { DOMUtil } from 'life-core/util';
 
 /**
  * @whatItDoes Lets you add a CSS class to an element when the link's url becomes active.
@@ -33,7 +33,7 @@ import { DOMUtil } from 'life-core/util';
  * Adopted from Angular's RouterLinkActive directive.
  */
 @Directive({
-    selector: '[hrefLinkActive]',
+    selector: '[zyUiHrefLinkActive]',
     exportAs: 'hrefLinkActive'
 })
 export class HrefLinkActiveDirective implements OnChanges, OnDestroy, AfterContentInit {

@@ -1,15 +1,13 @@
 import { Component, Input, ElementRef, Renderer2, ViewEncapsulation, forwardRef } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
-import { DomHandler } from 'primeng/components/dom/domhandler';
-
-import { SecureComponent } from 'life-core/component/authorization';
-
 import { LfButton } from './lf-button';
 import { InfoButtonClickEvent } from './info-button.event';
+import { SecureComponent } from '../authorization';
+import { DomHandler } from 'primeng/dom';
 
 @Component({
-    selector: 'lf-info-button',
+    selector: 'zy-ui-lf-info-button',
     templateUrl: './lf-info-button.html',
     styleUrls: ['./lf-info-button.css'],
     providers: [DomHandler, { provide: SecureComponent, useExisting: forwardRef(() => LfInfoButton) }],

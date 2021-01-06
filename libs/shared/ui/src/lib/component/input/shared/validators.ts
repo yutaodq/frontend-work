@@ -23,7 +23,7 @@ export interface RangeValidationError extends ValidationError {
     maxValue?: any;
 }
 
-export type ValidationResult = { [key: string]: ValidationError };
+export interface ValidationResult { [key: string]: ValidationError }
 
 export class ValidatorFactory {
     public static createRangeMinValidator(validatorType: string, minValue: any): Validator {

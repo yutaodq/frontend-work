@@ -1,5 +1,5 @@
-import { LangUtil } from 'zyapp/base-ui/util/lang';
 import { GridFilteringType } from './model/grid-filter.model';
+import { LangUtil } from '@zy/shared/util';
 
 export class FilterUtil {
     public static passFilter<T>(filteringType: string, value: T, filterValue: T, filterToValue?: T): boolean {

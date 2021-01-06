@@ -11,7 +11,8 @@
     ViewContainerRef
 } from '@angular/core';
 import { ComposeService } from './compose.service';
-import { IndexSignatureUtil } from 'life-core/util/lang';
+import { IndexSignatureUtil } from '@zy/shared/util';
+// import { IndexSignatureUtil } from 'life-core/util/lang';
 
 @Component({
     selector: 'zy-ui-compose',
@@ -98,7 +99,7 @@ export class Compose implements OnInit, OnChanges, OnDestroy {
     }
 
     private isICompose(component: any): component is ICompose {
-        return component['setModel'] != undefined;
+        return component['setModel'] !== undefined;
     }
 
     public onModelChange(): void {

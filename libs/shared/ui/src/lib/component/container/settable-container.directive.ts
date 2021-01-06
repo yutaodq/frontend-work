@@ -7,7 +7,7 @@ export abstract class SettableContainerComponent {
 }
 
 @Directive({
-    selector: '[container]'
+    selector: '[zyUiContainer]'
 })
 /**
  * Directive to set container for components with popover sub-component, such as InputDate and Dropdown.

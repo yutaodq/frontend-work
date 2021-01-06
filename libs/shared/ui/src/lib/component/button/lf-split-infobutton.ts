@@ -3,11 +3,11 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 
 import { Router } from '@angular/router';
 
-import { DomHandler } from 'primeng/components/dom/domhandler';
 
 import { LfSplitButton } from './lf-split-button';
 import { SplitButtonClickEvent } from './split-button.event';
 import { MenuItem } from 'life-core/component/menu';
+import { DomHandler } from 'primeng/dom';
 
 @Component({
     selector: 'lf-split-infobutton',
