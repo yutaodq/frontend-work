@@ -8,15 +8,21 @@ import { ButtonRenderedComponent, RendererComponent } from './components/rendere
 import { LoadingOverlayComponent, NoRowsOverlayComponent } from './components/overlay';
 // import { SortableHeaderComponent } from './components/header';
 import { DataGrid } from './data-grid';
+import { SharedUiGridComponentModule } from './components';
 
 const COMPONENT = [
-  RendererComponent,
-  ButtonRenderedComponent,
-  // SortableHeaderComponent,
-  NoRowsOverlayComponent,
-  LoadingOverlayComponent,
+  // SearchComponent,
+  // RendererComponent,
+  // ButtonRenderedComponent,
+  // // SortableHeaderComponent,
+  // NoRowsOverlayComponent,
+  // LoadingOverlayComponent,
   DataGrid
 ];
+const EXPORTS_COMPONENT = [
+  // SearchComponent,
+];
+
 const IMPORTS_MODULES = [
   CommonModule,
   FormsModule,
@@ -25,6 +31,7 @@ const IMPORTS_MODULES = [
 ];
 const EXPORTS_MODULES = [
   AgGridModule,
+  SharedUiGridComponentModule,
 ];
 export const DATA_GRID_EXPORTS: Array<any> = [DataGrid];
 
@@ -34,7 +41,7 @@ const PROVIDERS = [];
   imports: [IMPORTS_MODULES],
   // providers: [BaseComponentFactory],
   declarations: [...COMPONENT],
-  exports: [...EXPORTS_MODULES, DATA_GRID_EXPORTS ],
+  exports: [...EXPORTS_MODULES, ...EXPORTS_COMPONENT, DATA_GRID_EXPORTS ],
   entryComponents: [
     NoRowsOverlayComponent,
     LoadingOverlayComponent

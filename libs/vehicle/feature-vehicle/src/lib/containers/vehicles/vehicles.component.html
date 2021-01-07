@@ -17,7 +17,9 @@
                         <input pInputText type="text" placeholder="搜索关键字"/>
                     </span>
     </div>
-
+<div>
+  <zy-ui-grid-search></zy-ui-grid-search>
+</div>
     <div style="display: flex; flex-direction: row; height: 100%;">
       <div style=" overflow: hidden; flex-grow: 1">
         <zy-vehicle-grid [items]="vehiclesSandbox.vehicles$ | async">
@@ -29,8 +31,6 @@ dddddd
           class="ag-theme-alpine"
           [rowData]="vehiclesSandbox.vehicles$ | async"
           [gridOptions]="gridOptions"
-                (gridReady)="onGridReady($event)"
-                (firstDataRendered) = "onFirstDataRendered($event)"
         >
         </ag-grid-angular>
 <!--        (gridReady)="onGridReady($event)"-->
@@ -40,6 +40,7 @@ dddddd
 <!--        [columnDefs]="columnDefs"-->
 <!--        [defaultColDef]="defaultColDef"-->
 <!--        [onGridReady]:-->
+<!--        (firstDataRendered) = "onFirstDataRendered($event)"-->
 
       </div>
     </div>

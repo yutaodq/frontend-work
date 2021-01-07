@@ -1,9 +1,11 @@
+<input (keyup)="onQuickFilterChanged($event)" id="quickFilterInput" style="width: 175px"
+       class="form-control" placeholder="Type text to filter..."/>
+
 <ag-grid-angular
   #agGrid
   style="height: 50vh;"
   class="ag-theme-alpine"
   [gridOptions]="gridOptions"
-(firstDataRendered) = "onFirstDataRendered($event)"
 >
 </ag-grid-angular>
 <!--(firstDataRendered) = "onFirstDataRendered($event)"-->

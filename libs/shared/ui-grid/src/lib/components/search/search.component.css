@@ -1,0 +1,43 @@
+:host {
+    width: 100%;
+}
+.main-table-div {
+    display: flex;
+    justify-content: space-between;    
+}
+div.search-icon {
+    position: relative;
+}
+div.search-icon i {
+    position: absolute;
+    left: 81%;
+    top: 0px;
+    bottom: 0;
+    height: 14px;
+    margin: auto;
+    font-size: 16px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.control-search {
+    width: 90%;
+    margin-left: 0px;
+}
+.control-btns {
+    margin-right: 0px;
+}
+.control-search {    
+    margin-left: 0px;
+}
+.control-btns {
+    margin-right: 8px;
+}
+.control-page-size {
+    font-size: 0.9rem;
+}
+.control-select {
+    font-size: 0.9rem;
+    height: 30px;
+    margin-right: 0;
+}

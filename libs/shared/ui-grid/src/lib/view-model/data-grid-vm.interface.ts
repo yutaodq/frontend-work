@@ -4,9 +4,9 @@ export interface IDataGridViewModel {
   gridOptions: IDataGridOptions;
   gridColumns: DataGridColumns;
 
-  initGridOptions(): IDataGridOptions;
+  createGridOptions(): IDataGridOptions;
 
-  initGridColumns(): DataGridColumns;
+  createGridColumns(): DataGridColumns;
 }
 
 export interface IDataSourceContext {

@@ -1,13 +1,13 @@
 export const LOCALE_TEXT_GRID = {
   // for filter panel
-  page: 'Página',
+  page: '页',
   more: '...',
   to: '-',
   of: 'de',
-  next: 'Siguiente',
-  last: 'Último',
-  first: 'Primero',
-  previous: 'Anterior',
+  next: '下一个',
+  last: '最后一个',
+  first: '第一个',
+  previous: '前一个',
   loadingOoo: 'Cargando...',
 
   // for set filter
@@ -18,8 +18,8 @@ export const LOCALE_TEXT_GRID = {
   // for number filter and text filter
   filterOoo: 'Filtrando...',
   applyFilter: 'Aplicando filtro...',
-  equals: 'Igual a',
-  notEqual: 'No es igual a',
+  equals: '等于',
+  notEqual: '不等于',
 
   // for number filter
   lessThan: 'Menor que',
@@ -33,7 +33,6 @@ export const LOCALE_TEXT_GRID = {
   notContains: '不包含',
   startsWith: '以…开头',
   endsWith: '以…结束',
-  igualA: '相等',
   // the header of the default group column
   //group: 'Grupo',
 
@@ -77,12 +76,12 @@ export const LOCALE_TEXT_GRID = {
 
   // enterprise menu aggregation and status bar
   sum: 'Suma',
-  min: 'Mínimo',
-  max: 'Máximo',
-  none: 'Ninguno',
-  count: 'Conteo',
-  average: 'Promedio',
-  avg: 'Promedio',
+  min: '最小',
+  max: '最大',
+  none: '没有',
+  count: '计数',
+  average: '平均值',
+  avg: '平均数',
 
   // enterprise menu aggregation and status bar
   filteredRows: 'Filas filtradas',

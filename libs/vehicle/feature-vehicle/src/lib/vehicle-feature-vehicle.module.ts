@@ -9,7 +9,7 @@ import { VehicleFeatureVehicleRouting } from './vehicle-feature-vehicle-routing.
 
 import { VehiclesComponent } from './containers/vehicles/vehicles.component';
 import { VehicleDetailsComponent } from './containers/vehicle-details/vehicle-details.component';
-import { SharedUiGridModule } from '@zy/shared/ui-grid';
+import { SharedUiGridComponentModule, SharedUiGridModule } from '@zy/shared/ui-grid';
 import { VehiclesGridComponent } from './components/vehicles-grid.component';
 
 @NgModule({
@@ -19,6 +19,7 @@ import { VehiclesGridComponent } from './components/vehicles-grid.component';
     VehicleFeatureVehicleRouting,
     TranslateModule,
     SharedUiGridModule,
+    // SharedUiGridComponentModule,
     InputTextModule
   ],
   declarations: [VehiclesComponent, VehicleDetailsComponent, VehiclesGridComponent],

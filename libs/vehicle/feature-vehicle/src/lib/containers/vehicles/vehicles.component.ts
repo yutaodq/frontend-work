@@ -3,10 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { VehicleFacade } from '@zy/shared/vehicle/data-acces-facade';
 import { TranslateService } from '@ngx-translate/core';
 import { GridOptions } from 'ag-grid-community';
-import { ButtonRenderedComponent } from '@zy/shared/ui-grid';
+// import { ButtonRenderedComponent } from '@zy/shared/ui-grid';
 import { Router } from '@angular/router';
 import { localeTextGrid } from '@zy/shared/util';
 import { NGXLogger } from 'ngx-logger';
+import { ButtonRenderedComponent } from '@zy/shared/ui-grid';
 
 @Component({
   selector: 'zy-vehicle-vehicle',
@@ -74,11 +75,12 @@ export class VehiclesComponent implements OnInit {
 
   ngOnInit(): void {
     this._logger.debug('日志功能：Your log message goes here');
-    // this._columnDefs = ColumnDefs;
     this._defaultColDef = DefaultColDer;
 
     this._gridOptions = <GridOptions>{
-      localeText: localeTextGrid,
+      // rowHeight :40,
+      // localeText: localeTextGrid,
+      floatingFilter: true, // 设置为true直接显示过滤器，如果为false 需要点击列头
       defaultColDef: this._defaultColDef,
       columnDefs: this._columnDefs,
       frameworkComponents: this._frameworkComponents
