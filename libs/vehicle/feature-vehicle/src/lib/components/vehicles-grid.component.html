@@ -1,7 +1,9 @@
 <ag-grid-angular
   #agGrid
-  class="ag-theme-balham"
   style="height: 50vh;"
+  class="ag-theme-alpine"
   [gridOptions]="gridOptions"
+(firstDataRendered) = "onFirstDataRendered($event)"
 >
 </ag-grid-angular>
+<!--(firstDataRendered) = "onFirstDataRendered($event)"-->

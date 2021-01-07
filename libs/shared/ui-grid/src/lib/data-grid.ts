@@ -9,9 +9,9 @@ import {
 } from '@angular/core';
 
 import { GridReadyEvent } from 'ag-grid-community';
-import { IDataGridColumn } from './model/data-grid-column.model';
 import { IDataGridOptions } from './options/data-grid-options';
 import { AgGridAngular, AngularFrameworkComponentWrapper, AngularFrameworkOverrides } from 'ag-grid-angular';
+import { ColDef } from 'ag-grid-community';
 
 @Component({
   selector: 'zy-ui-grid',
@@ -112,7 +112,7 @@ export class DataGrid extends AgGridAngular implements OnDestroy, AfterViewInit,
     this.gridOptions.api.purgeInfiniteCache(); // this refreshes the grid to again call getRows() in data source
   }
 
-  public rebuildGrid(columns: Array<IDataGridColumn>): void {
+  public rebuildGrid(columns: Array<ColDef>): void {
     this.api.setColumnDefs(columns);
     this.api.sizeColumnsToFit();
   }

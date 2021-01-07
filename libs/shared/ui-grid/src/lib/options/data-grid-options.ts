@@ -1,6 +1,6 @@
 import { GridOptions, ColDef, CellFocusedEvent, ColumnResizedEvent } from 'ag-grid-community';
 
-import { IDataGridColumn } from '../model';
+// import { IDataGridColumn } from '../model';
 import { IDataGridCommonOptions } from './data-grid-common-options';
 import { LoadingOverlayComponent, NoRowsOverlayComponent } from '../components/overlay';
 import { ButtonRenderedComponent, RendererComponent } from '../components/renderer';
@@ -29,7 +29,13 @@ export interface IDataGridOptions extends GridOptions {
   enableRowDetail?: boolean;
 }
 
-// gridOptions.headerRows
+/*
+DataGridOptionsUtil.getGridOptions(options: IDataGridOptions,
+    commonOptions: IDataGridCommonOptions)
+    参数 options 是自定义的grid Options属性
+    参数 commonOptions 是grid Options属性中一些通用的属性，用一个常量设置的
+
+ */
 export class DataGridOptionsUtil {
   public static getGridOptions(
     options: IDataGridOptions,
@@ -40,23 +46,23 @@ export class DataGridOptionsUtil {
     };
 
     // gridOptions.headerRows 标题行的高度(px)。如果没有指定，它将获取rowHeight值。
-    if (gridOptions.headerRows) {
-      this.setHeaderHeight(gridOptions);
-    }
-    if (!gridOptions.height) {
-      this.setHeight(gridOptions);
-    }
-    this.setOverlayComponents(gridOptions);
-    if (this.needToHandleColumnResize(gridOptions)) {
-      this.addColumnResizedHandler(gridOptions);
-    }
-    // 显示 checkbox 可以多选
-    if (gridOptions.checkboxColumn) {
-      this.insertCheckboxColumn(gridOptions);
-    }
-    this.setRowSelection(gridOptions);
-    // 后加入的
-    this.setRenderComponents(gridOptions);
+    // if (gridOptions.headerRows) {
+    //   this.setHeaderHeight(gridOptions);
+    // }
+    // if (!gridOptions.height) {
+    //   this.setHeight(gridOptions);
+    // }
+    // this.setOverlayComponents(gridOptions);
+    // if (this.needToHandleColumnResize(gridOptions)) {
+    //   this.addColumnResizedHandler(gridOptions);
+    // }
+    // // 显示 checkbox 可以多选
+    // if (gridOptions.checkboxColumn) {
+    //   this.insertCheckboxColumn(gridOptions);
+    // }
+    // this.setRowSelection(gridOptions);
+    // // 后加入的
+    // this.setRenderComponents(gridOptions);
     return gridOptions;
   }
 
@@ -112,7 +118,7 @@ export class DataGridOptionsUtil {
   }
 
   private static insertCheckboxColumn(options: IDataGridOptions): void {
-    const checkboxColumn: IDataGridColumn = {
+    const checkboxColumn: ColDef = {
       headerName: '',
       width: 50,
       headerCheckboxSelection: true,

@@ -5,15 +5,17 @@ import { AgGridModule } from 'ag-grid-angular';
 import { GridLocaleService } from '../service';
 import { DataGridCommonOptions, DataGridOptionsUtil, IDataGridOptions } from '../options';
 import { GridState } from './grid-state';
-import { DataGridColumns, IDataGridColumn } from '../model';
+import { DataGridColumns } from '../model';
 import { IGridColumnsBuilder } from '../builder';
-import { Vehicle } from '@zy/model';
+import { IDataGridViewModel } from './data-grid-vm.interface';
+import { COLUMN_DEFAULT_VALUE } from '../options/column-default-value';
+import { LOCALE_TEXT_GRID } from '../util/locale-text-grid';
 
 
 @Component({
   template: ''
 })
-export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
+export abstract class BaseGridViewModel<T> implements IDataGridViewModel, OnInit, AfterViewInit {
   private _items: T[];
   @Input()
   public set items(value: T[]) {
@@ -24,6 +26,8 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
   private readonly _gridLocaleService: GridLocaleService;
 
   private _gridOptions: IDataGridOptions;
+  private _gridColumns: DataGridColumns;
+
   public title: string;
   private _rowCount = 0;
   public filterModel: any;
@@ -32,64 +36,41 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
   protected cacheBlockSize: number;
   protected gridState: GridState<T>;
 
-  // private _gridColumns: DataGridColumns;
-
   protected constructor(injector: Injector) {
     this.cacheBlockSize = 50;
     this._gridLocaleService = injector.get(GridLocaleService);
   }
 
   ngOnInit() {
-    this.loadData();
+    this.initGrid();
   }
 
   public ngAfterViewInit(): void {
     this.registerFilterChangeHandlers();
   }
 
-  private loadData(): void {
-    this._gridOptions = this.gridOptionsBuilder();
+  private initGrid(): void {
+    this._gridOptions = this.initGridOptions();
     this.setRowCount(this._gridOptions.rowData.length);
     // this.bindGridReady();
   }
-  public gridOptionsBuilder(): IDataGridOptions {
-    const gridColumns = this.getGridColumns();
+  public initGridOptions(): IDataGridOptions {
+    this._gridColumns = this.initGridColumns();
     const rowSelection = this.getRowSelectionType();
     // this.setColumnSortOrder();
     return DataGridOptionsUtil.getGridOptions(
       {
         rowData: this._items,
-        columnDefs: gridColumns.getLayout(),
-        defaultColDef: DEFAULT_COLUMN,
-        // rowModelType: 'infinite',  //设置后不显示数据 客户端行模型 https://www.ag-grid.com/javascript-grid-infinite-scrolling/
-        cacheBlockSize: this.cacheBlockSize, // 一次取50行 (~200K)
-        maxBlocksInCache: 10, // 在缓存中保留最多500行 (~2000K)
-        rowSelection: rowSelection, // 选择行
-        checkboxColumn: this.showCheckboxColumn(),
-        rowDeselection: true, // 设置为true时，如果按住Ctrl并单击该行，则允许取消选定行  https://www.ag-grid.com/javascript-grid-selection/
-        maxConcurrentDatasourceRequests: 2, // 不知道的功能
-        floatingFilter: true, // 设置为true直接显示过滤器，如果为false 需要点击列头
-        // frameworkComponents: GridFilterFrameworkComponents,
-        enableRowDetail: this.enableRowDetail, // 不知道的功能
-        headerRows: this.getHeaderRowsCount(), // 标题行的高度(px)。如果没有指定，它将获取rowHeight值。
-        suppressMenuHide: true, //  设置为true以始终显示列菜单按钮，而不是仅在鼠标位于列标题上时显示。
-        rows: 2,
-        // rows: this.getGridMinRows(), // 不知道的功能
-        localeTextFunc: (key, defaultValue) => this._gridLocaleService.agGridLang(key, defaultValue),
+        columnDefs: this._gridColumns.getLayout(),
+        defaultColDef: COLUMN_DEFAULT_VALUE,
+        localeText: LOCALE_TEXT_GRID,
         cacheQuickFilter: true, // Quick Filter Cache
-        context: {
-          hostComponent: this
-        }
       },
       DataGridCommonOptions
     );
   }
 
-  // protected setGridColumns(): void {
-  //   this._gridColumns = this.getGridColumns();
-  // }
-
-  public getGridColumns(): DataGridColumns {
+  public initGridColumns(): DataGridColumns {
     return this.getGridColumnsBuilder().build();
   }
 
@@ -202,18 +183,11 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
     return this._gridOptions;
   }
 
+  public get gridColumns(): DataGridColumns {
+    return this._gridColumns;
+  }
 
 }
 
 // 表头行高
 const DEFAULT_HEADER_ROWS = 2;
-const DEFAULT_COLUMN = {
-  resizable: true,   // 允许拖动修改列宽
-  sortable: true,
-  suppressSizeToFit: true,    // 设置为true,则开启宽度自适应时这一栏宽度固定，否则，会按照各个栏的宽度比例自适应
-  filter: true
-  // headerComponent: 'sortableHeaderComponent',
-  // headerComponentParams: {
-  //   menuIcon: 'bars'
-  // }
-};

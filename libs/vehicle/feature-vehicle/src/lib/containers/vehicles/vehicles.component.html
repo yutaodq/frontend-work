@@ -18,14 +18,12 @@
                     </span>
     </div>
 
-
-    <zy-vehicle-grid [items]="vehiclesSandbox.vehicles$ | async">
-
-    </zy-vehicle-grid>
-
-
     <div style="display: flex; flex-direction: row; height: 100%;">
       <div style=" overflow: hidden; flex-grow: 1">
+        <zy-vehicle-grid [items]="vehiclesSandbox.vehicles$ | async">
+
+        </zy-vehicle-grid>
+dddddd
         <ag-grid-angular
                 style="height: 50vh;"
           class="ag-theme-alpine"

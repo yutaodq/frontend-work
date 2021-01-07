@@ -1,20 +1,19 @@
 import { ColDef } from 'ag-grid-community';
 
-// tslint:disable-next-line:no-empty-interface
-export interface IDataGridColumn extends ColDef {}
+// export interface IDataGridColumn extends ColDef {}
 
 export class DataGridColumns {
-    private _columns: Array<IDataGridColumn>;
+    private _columns: Array<ColDef>;
 
     constructor() {
         this._columns = [];
     }
 
-    public add(column: IDataGridColumn): void {
+    public add(column: ColDef): void {
         this._columns.push(column);
     }
 
-    public item(index: number): IDataGridColumn {
+    public item(index: number): ColDef {
         return this._columns[index];
     }
 
@@ -33,7 +32,7 @@ export class DataGridColumns {
         return this._columns.length;
     }
 
-    public itemByField(field: string): IDataGridColumn {
+    public itemByField(field: string): ColDef {
         return this._columns.find(column => {
             return column.field === field;
         });
@@ -45,7 +44,7 @@ export class DataGridColumns {
         });
     }
 
-    public getLayout(): Array<IDataGridColumn> {
+    public getLayout(): Array<ColDef> {
         return this._columns;
     }
 }

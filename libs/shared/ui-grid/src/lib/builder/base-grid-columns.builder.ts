@@ -1,9 +1,10 @@
-import { DataGridColumns, IDataGridColumn } from '../model';
-import { inject } from '@angular/core';
-// @inject
+import { ColDef } from 'ag-grid-community';
+import { DataGridColumns } from '../model';
+// import { DataGridColumns, IDataGridColumn } from '../model';
+
 export interface IGridColumnsBuilder {
     build(...params: any[]): DataGridColumns;
-    addColumn(column: IDataGridColumn): void;
+    addColumn(column: ColDef): void;
 }
 
 export abstract class BaseGridColumnsBuilder implements IGridColumnsBuilder {
@@ -15,7 +16,7 @@ export abstract class BaseGridColumnsBuilder implements IGridColumnsBuilder {
 
     public abstract build(...params: any[]): DataGridColumns;
 
-    public addColumn(column: IDataGridColumn): void {
+    public addColumn(column: ColDef): void {
         this.adjustColumnProperties(column);
         this.columns.add(column);
     }
@@ -24,7 +25,7 @@ export abstract class BaseGridColumnsBuilder implements IGridColumnsBuilder {
         this.columns.removeAll();
     }
 
-    private adjustColumnProperties(column: IDataGridColumn): void {
+    private adjustColumnProperties(column: ColDef): void {
         if (column.filter) {
             if (!column.menuTabs) {
                 column.menuTabs = ['filterMenuTab'];
