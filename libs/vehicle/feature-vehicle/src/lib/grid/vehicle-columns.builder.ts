@@ -14,12 +14,6 @@ export class VehicleColumnsBuilder extends BaseGridColumnsBuilder {
   }
 
   private getVehicleGridColumns(): void {
-    this.addColumn(  {
-      headerName: '标识',
-      field: 'id',
-      minWidth: 50,
-      maxWidth: 90
-    });
     this.addColumn({
       headerName: '车辆名称',
       field: 'name',

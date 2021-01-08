@@ -94,6 +94,13 @@ export class VehiclesComponent implements OnInit {
     // this.router.navigate(['detail', event.rowData.employeeId], { relativeTo: this.activeRouter });
   }
 
+  onSelectData(selectDataId: string) {
+    console.log(`onSelectData(event):` + selectDataId);
+    this._vehiclesSandbox.selectVehicle(selectDataId);
+    this.router.navigate(['vehicles', selectDataId]);
+    // this.router.navigate(['vehicles', selectDataId], { relativeTo: this.activeRouter });
+  }
+
   get vehiclesSandbox() {
     return this._vehiclesSandbox;
   }

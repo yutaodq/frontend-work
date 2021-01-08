@@ -4,10 +4,10 @@ import { ColDef } from 'ag-grid-community';
 export interface IDataGridViewModel {
   gridOptions: IDataGridOptions;
   dataGridColumns: DataGridColumns;
-
+  gridColumns: Array<ColDef>;
   createGridOptions(): IDataGridOptions;
 
-  buildGridColumns(): Array<ColDef>;
+  // get gridColumns(): Array<ColDef>;
 }
 
 export interface IDataSourceContext {

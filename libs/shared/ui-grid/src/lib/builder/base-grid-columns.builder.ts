@@ -1,6 +1,5 @@
 import { ColDef } from 'ag-grid-community';
 import { DataGridColumns } from '../model';
-// import { DataGridColumns, IDataGridColumn } from '../model';
 
 export interface IGridColumnsBuilder {
     build(...params: any[]): DataGridColumns;

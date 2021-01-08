@@ -1,4 +1,13 @@
-import { AfterViewInit, Component, Inject, Injector, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Inject,
+  Injector,
+  Input,
+  OnInit,
+  EventEmitter,
+  ViewChild, Output
+} from '@angular/core';
 
 import { ColDef, GridReadyEvent, Module } from 'ag-grid-community';
 import { AgGridModule } from 'ag-grid-angular';
@@ -11,26 +20,34 @@ import { IDataGridViewModel } from './data-grid-vm.interface';
 import { COLUMN_DEFAULT_VALUE, ROW_HEIGHT } from '../options/column-default-value';
 import { LOCALE_TEXT_GRID } from '../util/locale-text-grid';
 import { SearchGridService } from '@zy/shared/util';
+import { ButtonRenderedComponent } from '../components/renderer';
+import { ActionsColumnRendererComponent } from '../components/renderer/actions-column-renderer/actions-column-renderer.component';
 
 
 @Component({
   template: ''
 })
-export abstract class BaseGridViewModel<T> implements IDataGridViewModel, OnInit, AfterViewInit {
+export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
   private _items: T[];
 
   private _gridOptions: IDataGridOptions;
-  private _gridColumns: DataGridColumns;
+  private _gridColumns: Array<ColDef>;
+  private _frameworkComponents;
 
   protected cacheBlockSize: number;
   protected gridState: GridState<T>;
 
+  @Output() selectDataEvent = new EventEmitter<string>();
 
   protected constructor(private _searchGridService: SearchGridService) {
     this.cacheBlockSize = 50;
   }
 
   ngOnInit() {
+    this._frameworkComponents = {
+      buttonRendered: ButtonRenderedComponent,
+      actionsColRendered: ActionsColumnRendererComponent
+    };
     this.initGrid();
     this._searchGridService.globalFilterSubject.subscribe(val => {
       if (this.gridOptions.api) {
@@ -46,8 +63,8 @@ export abstract class BaseGridViewModel<T> implements IDataGridViewModel, OnInit
   }
 
   private initGrid(): void {
-    this.setGridOptions(this.createGridOptions())
-    this.setRowHeight(this._gridOptions)
+    this.setGridOptions(this.createGridOptions());
+    this.setRowHeight(this._gridOptions);
   }
 
   public createGridOptions(): IDataGridOptions {
@@ -56,35 +73,44 @@ export abstract class BaseGridViewModel<T> implements IDataGridViewModel, OnInit
     return DataGridOptionsUtil.getGridOptions(
       {
         rowData: this.items,
-        columnDefs: this.actionGridColumns(),
+        columnDefs: this.gridColumns,
         defaultColDef: COLUMN_DEFAULT_VALUE,
         localeText: LOCALE_TEXT_GRID,
-        cacheQuickFilter: true, // Quick Filter Cache
+        frameworkComponents: this._frameworkComponents,
+        context: { componentParent: this },
+        cacheQuickFilter: true // Quick Filter Cache
       },
       DataGridCommonOptions
     );
   }
+
   // columnDefs: this.gridColumns.getLayout(),
 
-  public set dataGridColumns(actionGridColumns) {
+  public createGridColumns() {
     const gridColumns = this.getGridColumnsBuilder().build().getLayout();
-    return [...gridColumns,     {
-      headerName: '操作',
+    return [...gridColumns, {
+      headerName: '',
       editable: false,
       sortable: false,
       filter: false,
-      // cellRenderer: 'buttonRendered',
-      // cellRendererParams: {
-      //   iconClass: 'fa-sign-out-alt',
-      //   onClick: this.onDetail.bind(this)
-      // }
+      width: 65,
+      fixedWidth: true,
+      lockPinned: true,
+      pinned: "right",
+      cellRenderer: 'actionsColRendered'
 
-    }]
+    }];
   }
 
-  public buildGridColumns(): Array<ColDef> {
-    return this.getGridColumnsBuilder().build().getLayout()];
+  // cellRenderer: 'buttonRendered',
+
+  public selectData(selectDataId: string): void {
+    this.selectDataEvent.emit(selectDataId);
   }
+
+  // public buildGridColumns(): Array<ColDef> {
+  //   return this.getGridColumnsBuilder().build().getLayout();
+  // }
 
   protected abstract getGridColumnsBuilder(): IGridColumnsBuilder;
 
@@ -124,7 +150,7 @@ export abstract class BaseGridViewModel<T> implements IDataGridViewModel, OnInit
     if (this.gridOptions && this.gridOptions.api) {
       this.gridOptions.api.setRowData(this.items);
       this.gridOptions.rowData = this.items;
-      this.setRowHeight(this.gridOptions)
+      this.setRowHeight(this.gridOptions);
     }
   }
 
@@ -138,16 +164,16 @@ export abstract class BaseGridViewModel<T> implements IDataGridViewModel, OnInit
   }
 
   public get items(): T[] {
-    return this._items ;
+    return this._items;
   }
 
 
-  private setGridColumns(gridColumns: DataGridColumns) {
+  private setGridColumns(gridColumns: Array<ColDef>) {
     this._gridColumns = gridColumns;
   }
 
   private setRowHeight(gridOptions: IDataGridOptions) {
-    gridOptions.rowHeight= ROW_HEIGHT;
+    gridOptions.rowHeight = ROW_HEIGHT;
   }
 
   private setGridOptions(gridOptions: IDataGridOptions) {
@@ -158,7 +184,7 @@ export abstract class BaseGridViewModel<T> implements IDataGridViewModel, OnInit
     return this._gridOptions;
   }
 
-  public get dataGridColumns(): DataGridColumns {
+  public get gridColumns(): Array<ColDef> {
     return this._gridColumns;
   }
 

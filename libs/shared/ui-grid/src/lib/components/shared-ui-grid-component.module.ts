@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { ButtonRenderedComponent, RendererComponent } from './renderer';
 import { LoadingOverlayComponent, NoRowsOverlayComponent } from './overlay';
+import { ActionsColumnRendererComponent } from './renderer/actions-column-renderer/actions-column-renderer.component';
 
 const COMPONENT = [
   SearchComponent,
@@ -11,6 +12,7 @@ const COMPONENT = [
   ButtonRenderedComponent,
   NoRowsOverlayComponent,
   LoadingOverlayComponent,
+  ActionsColumnRendererComponent
 ];
 const EXPORTS_COMPONENT = [
   SearchComponent,
@@ -18,6 +20,7 @@ const EXPORTS_COMPONENT = [
   ButtonRenderedComponent,
   NoRowsOverlayComponent,
   LoadingOverlayComponent,
+  ActionsColumnRendererComponent
 ];
 
 const IMPORTS_MODULES = [

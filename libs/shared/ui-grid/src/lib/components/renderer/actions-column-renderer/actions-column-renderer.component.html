@@ -1,40 +1,8 @@
-<ng-container *ngIf="(params.data.Confirmed || params.data.PostRecordId !== null);else renderEdit">
-  <span class= "fa fa-edit fa-disabl" data-toggle="tooltip" data-placement="bottom" title="Edit"></span>
+
+<ng-container>
+  <span class="fa fa-tasks" data-toggle="tooltip" data-placement="bottom" title="查看详细资料" (click)="onSelectData()"></span>
 </ng-container>
 
-<ng-container *ngIf="(params.data.Confirmed || params.data.PostRecordId !== null);else renderReject">
-  <span class="fa fa-remove fa-disabl" data-toggle="tooltip" data-placement="bottom" title="Reject"></span>
-</ng-container>
-
-<ng-container *ngIf="(params.data.Confirmed || params.data.PostRecordId !== null);else renderSplit">
-  <span class="fa fa-tasks fa-disabl" data-toggle="tooltip" data-placement="bottom" title="Split"></span>
-</ng-container>
-
-<ng-container *ngIf="(params.data.Confirmed || params.data.PostRecordId === null);else renderPost">
-  <span class="fa fa-arrows-alt fa-disabl" data-toggle="tooltip" data-placement="bottom" title="Post"></span>
-</ng-container>
-
-<ng-template #renderEdit>
-  <ng-container>
-    <span class= "fa fa-edit" data-toggle="tooltip" data-placement="bottom" title="Edit" (click)="setRowData();smartModalService.getModal('confirmViewEdit').open()"></span>
-  </ng-container>  
-</ng-template>
-
-<ng-template #renderReject>
-  <ng-container>
-    <span class="fa fa-remove" data-toggle="tooltip" data-placement="bottom" title="Reject" (click)="setRowData();smartModalService.getModal('confirmViewReject').open()"></span>
-  </ng-container> 
-</ng-template>
-
-<ng-template #renderSplit>
-  <ng-container>
-    <span class="fa fa-tasks" data-toggle="tooltip" data-placement="bottom" title="Split" (click)="setRowData();smartModalService.getModal('confirmViewSplit').open()"></span>
-  </ng-container>
-</ng-template>
-
-<ng-template #renderPost>
-  <ng-container>
-    <span class="fa fa-arrows-alt" data-toggle="tooltip" data-placement="bottom" title="Post" (click)="setRowData();smartModalService.getModal('confirmViewPost').open()"></span>
-  </ng-container>
-</ng-template>
-
+<!--  <ng-container>-->
+<!--    <span class="fa fa-edit" data-toggle="tooltip" data-placement="bottom" title="Reject" (click)="deleteSplit()"></span>-->
+<!--  </ng-container>-->
