@@ -1,12 +1,13 @@
 import { DataGridColumns, GridState, IDataGridOptions } from '@zy/shared/ui-grid';
+import { ColDef } from 'ag-grid-community';
 
 export interface IDataGridViewModel {
   gridOptions: IDataGridOptions;
-  gridColumns: DataGridColumns;
+  dataGridColumns: DataGridColumns;
 
   createGridOptions(): IDataGridOptions;
 
-  createGridColumns(): DataGridColumns;
+  buildGridColumns(): Array<ColDef>;
 }
 
 export interface IDataSourceContext {

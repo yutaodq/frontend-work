@@ -4,7 +4,7 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 import { DashboardService } from '../../../../../shared/services/dashboard.service';
 
 @Component({
-    selector: 'app-actions-column-renderer',
+    selector: 'zy-ui-grid-actions-column-renderer',
     templateUrl: './actions-column-renderer.component.html',
     styleUrls: ['./actions-column-renderer.component.css']
 })

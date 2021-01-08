@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Inject, Injector, Input, OnInit, ViewChild } from '@angular/core';
 
-import { GridReadyEvent, Module } from 'ag-grid-community';
+import { ColDef, GridReadyEvent, Module } from 'ag-grid-community';
 import { AgGridModule } from 'ag-grid-angular';
 import { GridLocaleService } from '../service';
 import { DataGridCommonOptions, DataGridOptionsUtil, IDataGridOptions } from '../options';
@@ -56,7 +56,7 @@ export abstract class BaseGridViewModel<T> implements IDataGridViewModel, OnInit
     return DataGridOptionsUtil.getGridOptions(
       {
         rowData: this.items,
-        columnDefs: this.gridColumns.getLayout(),
+        columnDefs: this.actionGridColumns(),
         defaultColDef: COLUMN_DEFAULT_VALUE,
         localeText: LOCALE_TEXT_GRID,
         cacheQuickFilter: true, // Quick Filter Cache
@@ -64,9 +64,26 @@ export abstract class BaseGridViewModel<T> implements IDataGridViewModel, OnInit
       DataGridCommonOptions
     );
   }
+  // columnDefs: this.gridColumns.getLayout(),
 
-  public createGridColumns(): DataGridColumns {
-    return this.getGridColumnsBuilder().build();
+  public set dataGridColumns(actionGridColumns) {
+    const gridColumns = this.getGridColumnsBuilder().build().getLayout();
+    return [...gridColumns,     {
+      headerName: '操作',
+      editable: false,
+      sortable: false,
+      filter: false,
+      // cellRenderer: 'buttonRendered',
+      // cellRendererParams: {
+      //   iconClass: 'fa-sign-out-alt',
+      //   onClick: this.onDetail.bind(this)
+      // }
+
+    }]
+  }
+
+  public buildGridColumns(): Array<ColDef> {
+    return this.getGridColumnsBuilder().build().getLayout()];
   }
 
   protected abstract getGridColumnsBuilder(): IGridColumnsBuilder;
@@ -141,7 +158,7 @@ export abstract class BaseGridViewModel<T> implements IDataGridViewModel, OnInit
     return this._gridOptions;
   }
 
-  public get gridColumns(): DataGridColumns {
+  public get dataGridColumns(): DataGridColumns {
     return this._gridColumns;
   }
 
