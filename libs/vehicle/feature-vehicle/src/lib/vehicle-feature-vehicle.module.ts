@@ -12,6 +12,7 @@ import { SharedUiGridComponentModule, SharedUiGridModule } from '@zy/shared/ui-g
 import { VehiclesGridComponent } from './components/vehicles-grid.component';
 import { ThemePrimengModule } from '@zy/shared/util';
 import { SharedUiComponentModule } from '@zy/shared/ui';
+import { VehicleCreateComponent } from './containers/create/vehicle-create.component';
 
 @NgModule({
   imports: [
@@ -24,6 +25,10 @@ import { SharedUiComponentModule } from '@zy/shared/ui';
     // SharedUiGridComponentModule,
     ThemePrimengModule
   ],
-  declarations: [VehiclesComponent, VehicleDetailsComponent, VehiclesGridComponent],
+  declarations: [VehiclesComponent,
+    VehicleDetailsComponent,
+    VehiclesGridComponent,
+    VehicleCreateComponent
+  ],
 })
 export class VehicleFeatureVehicleModule {}

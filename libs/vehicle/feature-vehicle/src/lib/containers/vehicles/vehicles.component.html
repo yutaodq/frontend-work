@@ -4,9 +4,8 @@
     <p>档案主要记录车辆所属单位</p>
   </div>
 
-<zy-ui-button-new (onClick)="create()">
-
-</zy-ui-button-new>
+  <zy-ui-button-new (onClick)="create()">
+  </zy-ui-button-new>
 </div>
 
 <div class="content-section implementation">
@@ -19,34 +18,13 @@
         <zy-ui-grid-search [globalFilterInp]="''"></zy-ui-grid-search>
 
       </div>
-        <div style="display: flex; flex-direction: row; height: 100%;">
-          <div style=" overflow: hidden; flex-grow: 1">
-            <zy-vehicle-grid
-              [items]="vehiclesSandbox.vehicles$ | async"
-              (selectDataEvent)="onSelectData($event)"
-            >
-            </zy-vehicle-grid>
-          </div>
+      <zy-vehicle-grid
+        [items]="vehiclesSandbox.vehicles$ | async"
+        (selectDataEvent)="onSelectData($event)"
+      >
+      </zy-vehicle-grid>
 
-      </div>
     </div>
 
   </div>
 </div>
-
-<!--dddddd-->
-<!--<ag-grid-angular-->
-<!--  style="height: 50vh;"-->
-<!--  class="ag-theme-alpine"-->
-<!--  [rowData]="vehiclesSandbox.vehicles$ | async"-->
-<!--  [gridOptions]="gridOptions"-->
-<!--&gt;-->
-<!--</ag-grid-angular>-->
-<!--&lt;!&ndash;        (gridReady)="onGridReady($event)"&ndash;&gt;-->
-<!--&lt;!&ndash;        style="height: 50vh;"&ndash;&gt;-->
-<!--&lt;!&ndash;        style="width: 100%; height: 100%;"&ndash;&gt;-->
-<!--&lt;!&ndash;        style="height: 50vh;"&ndash;&gt;-->
-<!--&lt;!&ndash;        [columnDefs]="columnDefs"&ndash;&gt;-->
-<!--&lt;!&ndash;        [defaultColDef]="defaultColDef"&ndash;&gt;-->
-<!--&lt;!&ndash;        [onGridReady]:&ndash;&gt;-->
-<!--&lt;!&ndash;        (firstDataRendered) = "onFirstDataRendered($event)"&ndash;&gt;-->

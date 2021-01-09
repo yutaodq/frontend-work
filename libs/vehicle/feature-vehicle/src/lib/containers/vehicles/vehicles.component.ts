@@ -16,53 +16,7 @@ import { ButtonRenderedComponent } from '@zy/shared/ui-grid';
 })
 
 export class VehiclesComponent implements OnInit {
-  private _columnDefs = [
-    {
-      headerName: '标识',
-      field: 'id',
-      minWidth: 50,
-      maxWidth: 90
-    },
-    {
-      headerName: '车辆名称',
-      field: 'name',
-      minWidth: 200
-    },
-    {
-      headerName: '牌照',
-      field: 'pz'
-    },
-    {
-      headerName: '内部牌照',
-      field: 'nbpz'
-    },
-    {
-      headerName: '设备类型',
-      field: 'type'
-    },
-    {
-      headerName: '使用状态',
-      field: 'zt'
-    },
-    {
-      headerName: '操作',
-      editable: false,
-      sortable: false,
-      filter: false,
-      cellRenderer: 'buttonRendered',
-      cellRendererParams: {
-        iconClass: 'fa-sign-out-alt',
-        onClick: this.onDetail.bind(this)
-      }
 
-    }
-  ];
-  private _defaultColDef;
-  private _gridOptions: GridOptions;
-  private _gridApi;
-  private _frameworkComponents = {
-    buttonRendered: ButtonRenderedComponent
-  };
 
   constructor(
     private _vehiclesSandbox: VehicleFacade,
@@ -75,27 +29,9 @@ export class VehiclesComponent implements OnInit {
 
   ngOnInit(): void {
     this._logger.debug('日志功能：Your log message goes here');
-    this._defaultColDef = DefaultColDer;
-
-    this._gridOptions = <GridOptions>{
-      // rowHeight :40,
-      // localeText: localeTextGrid,
-      floatingFilter: true, // 设置为true直接显示过滤器，如果为false 需要点击列头
-      defaultColDef: this._defaultColDef,
-      columnDefs: this._columnDefs,
-      frameworkComponents: this._frameworkComponents
-    };
-  }
-
-  onDetail(event) {
-    console.log(`在控制台打印:onDetail($event)`);
-    this._vehiclesSandbox.selectVehicle(event.id);
-    this.router.navigate(['vehicles', event.id]);
-    // this.router.navigate(['detail', event.rowData.employeeId], { relativeTo: this.activeRouter });
   }
 
   onSelectData(selectDataId: {id: string}) {
-  // onSelectData(selectDataId: string) {
     console.log(`onSelectData(event):` + selectDataId);
     this._vehiclesSandbox.selectVehicle(selectDataId.id);
     this.router.navigate(['vehicles', selectDataId.id]);
@@ -106,88 +42,9 @@ export class VehiclesComponent implements OnInit {
     return this._vehiclesSandbox;
   }
 
-  get columnDefs() {
-    return this._columnDefs;
-  }
-
-  get gridOptions() {
-    return this._gridOptions;
-  }
-
-  onGridReady(params) {
-    params.api.sizeColumnsToFit(); //调整表格大小自适应
-    // this._gridApi = params.api;
-    // To auto-height AG-Grid
-    // this._gridApi.setDomLayout("autoHeight");
-  }
-
-  onFirstDataRendered(params) {
-    params.api.sizeColumnsToFit(); //调整表格大小自适应
-    // this._gridApi = params.api;
-    // To auto-height AG-Grid
-    // this._gridApi.setDomLayout("autoHeight");
-  }
-
-  sizeColumns() {
-    this._gridOptions.api.sizeColumnsToFit();//调整表格大小自适应
-  }
-
-  get defaultColDef() {
-    return this._defaultColDef;
-  }
-
   create() {
     this._logger.debug('日志功能：create');
+    this.router.navigate(['vehicles', 'create']);
 
   }
 }
-
-const DefaultColDer = {
-  initialWidth: 100,
-  sortable: true,
-  resizable: true,
-  filter: true
-};
-
-// @ts-ignore
-const ColumnDefs = [
-  {
-    headerName: '标识',
-    field: 'id',
-    minWidth: 50,
-    maxWidth: 90
-  },
-  {
-    headerName: '车辆名称',
-    field: 'name',
-    minWidth: 200
-  },
-  {
-    headerName: '牌照',
-    field: 'pz'
-  },
-  {
-    headerName: '内部牌照',
-    field: 'nbpz'
-  },
-  {
-    headerName: '设备类型',
-    field: 'type'
-  },
-  {
-    headerName: '使用状态',
-    field: 'zt'
-  },
-
-];
-
-// headerName: '操作',
-//   editable: false,
-//   sortable: false,
-//   filter: false,
-//   cellRenderer: 'buttonRendered',
-//   cellRendererParams: {
-//   onClick: this.onShowDetail.bind(this),
-//     fa: 'info-circle',
-//     iconClass: 'detail-icon'
-// },
