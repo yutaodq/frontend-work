@@ -40,9 +40,6 @@ export class VehiclesGridComponent extends BaseGridViewModel<Vehicle> {
 
   onFirstDataRendered(params) {
     params.api.sizeColumnsToFit(); //调整表格大小自适应
-    // this._gridApi = params.api;
-    // To auto-height AG-Grid
-    // this._gridApi.setDomLayout("autoHeight");
   }
   onBtShowLoading() {
     this.gridOptions.api.showLoadingOverlay();

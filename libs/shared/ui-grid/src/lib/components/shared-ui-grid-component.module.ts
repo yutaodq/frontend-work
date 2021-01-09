@@ -5,6 +5,7 @@ import { SearchComponent } from './search/search.component';
 import { ButtonRenderedComponent, RendererComponent } from './renderer';
 import { LoadingOverlayComponent, NoRowsOverlayComponent } from './overlay';
 import { ActionsColumnRendererComponent } from './renderer/actions-column-renderer/actions-column-renderer.component';
+import { ThemePrimengModule } from '@zy/shared/util';
 
 const COMPONENT = [
   SearchComponent,
@@ -26,6 +27,8 @@ const EXPORTS_COMPONENT = [
 const IMPORTS_MODULES = [
   CommonModule,
   FormsModule,
+  ThemePrimengModule,
+
 ];
 const EXPORTS_MODULES = [
 ];

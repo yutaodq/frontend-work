@@ -65,4 +65,11 @@ export class SearchComponent implements OnInit {
     this.searchGridService.clearSearchSubject.next(true);
   }
 
+  public isShowSearchIcon(): boolean {
+    return this.globalFilter.length === 0;
+  }
+  public isShowClearIcon(): boolean {
+    return !this.isShowSearchIcon();
+  }
+
 }

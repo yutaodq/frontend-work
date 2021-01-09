@@ -4,49 +4,49 @@
     <p>档案主要记录车辆所属单位</p>
   </div>
 
+<zy-ui-button-new (onClick)="create()">
+
+</zy-ui-button-new>
 </div>
 
 <div class="content-section implementation">
   <div class="card">
-    <h5>Filter Menu</h5>
-    {{ 'ConfirmPassword' | translate }}
-    <p>Filters are displayed in an overlay.</p>
-    <div class="p-d-flex">
-                    <span class="p-input-icon-left p-ml-auto">
-                        <i class="pi pi-search"></i>
-                        <input pInputText type="text" placeholder="搜索关键字"/>
-                    </span>
-    </div>
-<div>
-  <zy-ui-grid-search></zy-ui-grid-search>
-</div>
-    <div style="display: flex; flex-direction: row; height: 100%;">
-      <div style=" overflow: hidden; flex-grow: 1">
-        <zy-vehicle-grid
-          [items]="vehiclesSandbox.vehicles$ | async"
-          (selectDataEvent) = "onSelectData($event)"
-        >
+    <div class="container">
+      <div class="row">
+        <h5>Filter Menu</h5>
+        {{ 'ConfirmPassword' | translate }}
+        <p>Filters are displayed in an overlay.</p>
+        <zy-ui-grid-search [globalFilterInp]="''"></zy-ui-grid-search>
 
-        </zy-vehicle-grid>
-dddddd
-        <ag-grid-angular
-                style="height: 50vh;"
-          class="ag-theme-alpine"
-          [rowData]="vehiclesSandbox.vehicles$ | async"
-          [gridOptions]="gridOptions"
-        >
-        </ag-grid-angular>
-<!--        (gridReady)="onGridReady($event)"-->
-<!--        style="height: 50vh;"-->
-<!--        style="width: 100%; height: 100%;"-->
-<!--        style="height: 50vh;"-->
-<!--        [columnDefs]="columnDefs"-->
-<!--        [defaultColDef]="defaultColDef"-->
-<!--        [onGridReady]:-->
-<!--        (firstDataRendered) = "onFirstDataRendered($event)"-->
+      </div>
+        <div style="display: flex; flex-direction: row; height: 100%;">
+          <div style=" overflow: hidden; flex-grow: 1">
+            <zy-vehicle-grid
+              [items]="vehiclesSandbox.vehicles$ | async"
+              (selectDataEvent)="onSelectData($event)"
+            >
+            </zy-vehicle-grid>
+          </div>
 
       </div>
     </div>
+
   </div>
 </div>
 
+<!--dddddd-->
+<!--<ag-grid-angular-->
+<!--  style="height: 50vh;"-->
+<!--  class="ag-theme-alpine"-->
+<!--  [rowData]="vehiclesSandbox.vehicles$ | async"-->
+<!--  [gridOptions]="gridOptions"-->
+<!--&gt;-->
+<!--</ag-grid-angular>-->
+<!--&lt;!&ndash;        (gridReady)="onGridReady($event)"&ndash;&gt;-->
+<!--&lt;!&ndash;        style="height: 50vh;"&ndash;&gt;-->
+<!--&lt;!&ndash;        style="width: 100%; height: 100%;"&ndash;&gt;-->
+<!--&lt;!&ndash;        style="height: 50vh;"&ndash;&gt;-->
+<!--&lt;!&ndash;        [columnDefs]="columnDefs"&ndash;&gt;-->
+<!--&lt;!&ndash;        [defaultColDef]="defaultColDef"&ndash;&gt;-->
+<!--&lt;!&ndash;        [onGridReady]:&ndash;&gt;-->
+<!--&lt;!&ndash;        (firstDataRendered) = "onFirstDataRendered($event)"&ndash;&gt;-->

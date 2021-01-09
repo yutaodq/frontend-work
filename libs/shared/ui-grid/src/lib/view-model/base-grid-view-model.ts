@@ -37,7 +37,7 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
   protected cacheBlockSize: number;
   protected gridState: GridState<T>;
 
-  @Output() selectDataEvent = new EventEmitter<string>();
+  @Output() selectDataEvent = new EventEmitter<{id: string}>();
 
   protected constructor(private _searchGridService: SearchGridService) {
     this.cacheBlockSize = 50;
@@ -50,14 +50,28 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
     };
     this.initGrid();
     this._searchGridService.globalFilterSubject.subscribe(val => {
-      if (this.gridOptions.api) {
-        this.gridOptions.api.setQuickFilter(val);
+      if (this.hasGridOptionsApi()) {
+        this.quickFilter(val);
       }
     });
-    // this.gridOptions.api.setQuickFilter($event.target.value);
+
+    this._searchGridService.clearSearchSubject.subscribe(flag => {
+      if (flag) {
+        if (this.hasGridOptionsApi()) {
+          this._searchGridService.globalFilterResetSubject.next('');
+          this.quickFilter('');
+        }
+      }
+    });
 
   }
+  private hasGridOptionsApi() : boolean {
+    return !!this.gridOptions.api;
+  }
+private  quickFilter(filterValue: any){
+  this.gridOptions.api.setQuickFilter(filterValue);
 
+}
   public ngAfterViewInit(): void {
     this.registerFilterChangeHandlers();
   }
@@ -87,7 +101,7 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
   // columnDefs: this.gridColumns.getLayout(),
 
   public createGridColumns() {
-    const gridColumns = this.getGridColumnsBuilder().build().getLayout();
+    const gridColumns = this.buildEntityColumns();
     return [...gridColumns, {
       headerName: '',
       editable: false,
@@ -105,12 +119,12 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
   // cellRenderer: 'buttonRendered',
 
   public selectData(selectDataId: string): void {
-    this.selectDataEvent.emit(selectDataId);
+    this.selectDataEvent.emit({id: selectDataId});
   }
 
-  // public buildGridColumns(): Array<ColDef> {
-  //   return this.getGridColumnsBuilder().build().getLayout();
-  // }
+  private buildEntityColumns(): Array<ColDef> {
+    return this.getGridColumnsBuilder().build().getLayout();
+  }
 
   protected abstract getGridColumnsBuilder(): IGridColumnsBuilder;
 

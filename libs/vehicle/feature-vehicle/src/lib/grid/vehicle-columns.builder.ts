@@ -16,34 +16,34 @@ export class VehicleColumnsBuilder extends BaseGridColumnsBuilder {
   private getVehicleGridColumns(): void {
     this.addColumn({
       headerName: '车辆名称',
-      field: 'name',
+      field: VehicleGridFields.name,
       minWidth: 200
     });
     this.addColumn(    {
       headerName: '牌照',
-      field: 'pz'
+      field: VehicleGridFields.pz
     });
     this.addColumn({
       headerName: '内部牌照',
-      field: 'nbpz'
+      field: VehicleGridFields.nbpz
     });
     this.addColumn(   {
       headerName: '设备类型',
-      field: 'type'
+      field: VehicleGridFields.type
     });
     this.addColumn( {
       headerName: '使用状态',
-      field: 'zt'
+      field: VehicleGridFields.zt
     });
 
   }
 }
 
-// const VehicleGridFields = {
-//   id： 'id',
-//   name: 'name',
-//   pz: 'pz',
-//   Nbpz： 'nbpz',
-//   type: 'type',
-//   zt: 'zt'
-// };
+const VehicleGridFields = {
+  id: 'id',
+  name: 'name',
+  pz: 'pz',
+  nbpz: 'nbpz',
+  type: 'type',
+  zt: 'zt'
+};

@@ -1,12 +1,12 @@
-<div class="main-table-div">
-  <div class="search-icon">
-    <input type="text" id="filter-text-box" class="control-btns control-search" placeholder="Search..."
-           [ngModel]="globalFilter" (keyup)="onGlobalFilterChanged($event.target.value)"/>
-    <i [ngClass]="{'d-none': globalFilter?.length === 0}" class="fa fa-times-circle-o" (click)="clearSearch()"></i>
-  </div>
-  <div>
-    <button class="fa fa-envelope-square control-btns" data-toggle="tooltip" data-placement="bottom" title="Email"
-            type="button"></button>
-  </div>
-</div>
+<div class="p-d-flex">
+   <span class="p-ml-auto p-input-icon-right" >
+       <input pInputText type="text" placeholder="Search keyword"
+              [ngModel]="globalFilter" (keyup)="onGlobalFilterChanged($event.target.value)"
+       />
+       <i class="pi pi-search" *ngIf=" isShowSearchIcon()"></i>
+       <i *ngIf="isShowClearIcon()"
+          class="pi pi-times" (click)="clearSearch()">
+    </i>
 
+   </span>
+</div>

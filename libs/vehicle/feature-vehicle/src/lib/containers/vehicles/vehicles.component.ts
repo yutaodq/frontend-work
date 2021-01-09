@@ -94,10 +94,11 @@ export class VehiclesComponent implements OnInit {
     // this.router.navigate(['detail', event.rowData.employeeId], { relativeTo: this.activeRouter });
   }
 
-  onSelectData(selectDataId: string) {
+  onSelectData(selectDataId: {id: string}) {
+  // onSelectData(selectDataId: string) {
     console.log(`onSelectData(event):` + selectDataId);
-    this._vehiclesSandbox.selectVehicle(selectDataId);
-    this.router.navigate(['vehicles', selectDataId]);
+    this._vehiclesSandbox.selectVehicle(selectDataId.id);
+    this.router.navigate(['vehicles', selectDataId.id]);
     // this.router.navigate(['vehicles', selectDataId], { relativeTo: this.activeRouter });
   }
 
@@ -135,6 +136,10 @@ export class VehiclesComponent implements OnInit {
     return this._defaultColDef;
   }
 
+  create() {
+    this._logger.debug('日志功能：create');
+
+  }
 }
 
 const DefaultColDer = {

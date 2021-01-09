@@ -9,6 +9,7 @@ import { LoadingOverlayComponent, NoRowsOverlayComponent } from './components/ov
 // import { SortableHeaderComponent } from './components/header';
 import { DataGrid } from './data-grid';
 import { SharedUiGridComponentModule } from './components';
+import { ThemePrimengModule } from '@zy/shared/util';
 
 const COMPONENT = [
   // SearchComponent,
@@ -26,6 +27,7 @@ const EXPORTS_COMPONENT = [
 const IMPORTS_MODULES = [
   CommonModule,
   FormsModule,
+  ThemePrimengModule,
   AgGridModule.withComponents(
     [...COMPONENT]),
 ];
