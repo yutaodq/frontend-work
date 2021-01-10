@@ -54,7 +54,6 @@ export const reducer = createReducer(
    * sort each record upon entry into the sorted array.
    */
   on(
-    VehiclesApiActions.searchSuccess,
     CollectionApiActions.loadVehiclesSuccess,
     (state, { vehicles }) => adapter.addMany(vehicles, state)
   ),

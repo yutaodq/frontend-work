@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { Vehicle } from '@zy/model';
-import { VehicleFacade } from '@zy/shared/vehicle/data-acces-facade';
+import { VehiclesFacade } from '@zy/shared/vehicle/data-acces-facade';
 /*
 https://github.com/vladeye/druo-dashboard-app/tree/master/src/app/content/pages
 D:\学习案例\druo-dashboard\src\app\content\pages\components\invoices\invoices-routing.module.ts
@@ -22,7 +22,7 @@ export class VehicleCreateComponent implements OnInit, OnDestroy {
   private subscriptions: Array<Subscription> = [];
 
   constructor(
-    public vehiclesSandbox: VehicleFacade,
+    public vehiclesSandbox: VehiclesFacade,
     private changeDetector: ChangeDetectorRef,
     private activatedRoute: ActivatedRoute) {}
 

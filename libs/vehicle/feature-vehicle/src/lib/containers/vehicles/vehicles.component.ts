@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { VehicleFacade } from '@zy/shared/vehicle/data-acces-facade';
+import { VehiclesFacade } from '@zy/shared/vehicle/data-acces-facade';
 import { TranslateService } from '@ngx-translate/core';
 import { GridOptions } from 'ag-grid-community';
 // import { ButtonRenderedComponent } from '@zy/shared/ui-grid';
@@ -19,7 +19,7 @@ export class VehiclesComponent implements OnInit {
 
 
   constructor(
-    private _vehiclesSandbox: VehicleFacade,
+    private _vehiclesFacade: VehiclesFacade,
     private router: Router,
     private i18n: TranslateService,
     private _logger: NGXLogger
@@ -33,13 +33,13 @@ export class VehiclesComponent implements OnInit {
 
   onSelectData(selectDataId: {id: string}) {
     console.log(`onSelectData(event):` + selectDataId);
-    this._vehiclesSandbox.selectVehicle(selectDataId.id);
-    this.router.navigate(['vehicles', selectDataId.id]);
+    // this._vehiclesFacade.selectVehicle(selectDataId.id);
+    this.router.navigate(['vehicles', selectDataId.id,'detail']);
     // this.router.navigate(['vehicles', selectDataId], { relativeTo: this.activeRouter });
   }
 
   get vehiclesSandbox() {
-    return this._vehiclesSandbox;
+    return this._vehiclesFacade;
   }
 
   create() {

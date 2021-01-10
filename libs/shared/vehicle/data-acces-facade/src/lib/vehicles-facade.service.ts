@@ -9,7 +9,7 @@ import * as fromVehicles from '@zy/shared/vehicle/data-acces';
 import { Vehicle } from '@zy/model';
 
 @Injectable()
-export class VehicleFacade extends Sandbox {
+export class VehiclesFacade extends Sandbox {
   // public products$ = this.appState$.select(store.getProductsData);
   // public productsLoading$       = this.appState$.select(store.getProductsLoading);
   // public productDetails$        = this.appState$.select(store.getProductDetailsData);
@@ -38,20 +38,30 @@ export class VehicleFacade extends Sandbox {
     this.appState$.dispatch(fromVehicles.CollectionPageActions.load());
   }
 
-  // /**
-  //  * Loads product details from the server
-  //  */
-  // public loadProductDetails(id: number): void {
-  //   this.appState$.dispatch(new productDetailsActions.LoadAction(id))
-  // }
-  //
+  /**
+   * Loads product details from the server
+   * loadVehicle
+   */
+  public loadVehicleDetails(id: string): void {
+    this.appState$.dispatch(fromVehicles.VehicleActions.loadVehicle({id}))
+  }
+
   /**
    * Dispatches an action to select product details
    */
-  public selectVehicle(id: string): void {
-    this.appState$.dispatch(fromVehicles.ViewVehiclePageActions.selectVehicle({ id }))
+  public selectVehicle(vehicle: Vehicle): void {
+    this.appState$.dispatch(fromVehicles.ViewVehiclePageActions.selectVehicle({ vehicle }))
     // this.appState$.dispatch(new productDetailsActions.LoadSuccessAction(product))
   }
+
+  // /**
+  //  * Dispatches an action to select product details
+  //  */
+  // public selectProduct(product: Product): void {
+  //   this.appState$.dispatch(new productDetailsActions.LoadSuccessAction(product))
+  // }
+
+
   // BookActions.loadBook({ book: bookEntity })
   // /**
   //  * Unsubscribes from events

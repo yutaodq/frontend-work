@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VehicleFacade } from './vehicle-facade.service';
+import { VehiclesFacade } from './vehicles-facade.service';
 import { SharedVehicleDataAccesModule } from '@zy/shared/vehicle/data-acces';
 
 @NgModule({
@@ -8,6 +8,6 @@ import { SharedVehicleDataAccesModule } from '@zy/shared/vehicle/data-acces';
     CommonModule,
     SharedVehicleDataAccesModule
   ],
-  providers: [VehicleFacade]
+  providers: [VehiclesFacade]
 })
 export class SharedVehicleDataAccesFacadeModule {}

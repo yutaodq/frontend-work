@@ -15,7 +15,7 @@ const vehiclesRoutes: Routes = [
     component: VehicleCreateComponent,
   },
   {
-    path: ':id',
+    path: ':id/detail',
     component: VehicleDetailsComponent
   }
 ];
