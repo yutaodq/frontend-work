@@ -32,7 +32,7 @@ export class VehiclesFacade extends Sandbox {
    * loadVehicle
    */
   public loadVehicleDetails(id: string): void {
-    // this.appState$.dispatch(fromVehicles.VehicleActions.loadVehicle({id}))
+    this.appState$.dispatch(fromVehicles.CollectionPageActions.loadEntity({id}))
   }
 
   /**
