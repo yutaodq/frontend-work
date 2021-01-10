@@ -2,10 +2,7 @@ import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { createReducer, on } from '@ngrx/store';
 
 import {
-  VehicleActions,
-  VehiclesApiActions,
   CollectionApiActions,
-  ViewVehiclePageActions,
 } from '../actions';
 import { Vehicle } from '@zy/model';
 
@@ -54,7 +51,7 @@ export const reducer = createReducer(
    * sort each record upon entry into the sorted array.
    */
   on(
-    CollectionApiActions.loadVehiclesSuccess,
+    CollectionApiActions.loadCollectionSuccess,
     (state, { vehicles }) => adapter.addMany(vehicles, state)
   ),
   /**
@@ -64,22 +61,14 @@ export const reducer = createReducer(
    * exist already. If the collection is to be sorted, the adapter will
    * insert the new record into the sorted array.
    */
-  on(VehicleActions.loadVehicle, (state, { vehicle }) =>
-    adapter.addOne(vehicle, state)
-  ),
-  on(ViewVehiclePageActions.selectVehicle, (state, { id }) => ({
-    ...state,
-    selectedVehicleId: id,
-  }))
+  // on(VehicleActions.loadVehicle, (state, { vehicle }) =>
+  //   adapter.addOne(vehicle, state)
+  // ),
+  // on(ViewVehiclePageActions.selectVehicle, (state, { id }) => ({
+  //   ...state,
+  //   selectedVehicleId: id,
+  // }))
 );
 
-/**
- * Because the data structure is defined within the reducer it is optimal to
- * locate our selector functions at this level. If store is to be thought of
- * as a database, and reducers the tables, selectors can be considered the
- * queries into said database. Remember to keep your selectors small and
- * focused so they can be combined and composed to fit each particular
- * use-case.
- */
 
 export const selectId = (state: State) => state.selectedVehicleId;

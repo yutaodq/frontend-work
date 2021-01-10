@@ -5,7 +5,6 @@ import {
   combineReducers,
   Action,
 } from '@ngrx/store';
-import * as fromSearch from './search.reducer';
 import * as fromVehicles from './vehicles.reducer';
 import * as fromCollection from './collection.reducer';
 import * as fromRoot from '@zy/store';
@@ -13,7 +12,6 @@ import * as fromRoot from '@zy/store';
 export const vehiclesFeatureKey = 'vehicles';
 
 export interface VehiclesState {
-  [fromSearch.searchFeatureKey]: fromSearch.State;
   [fromVehicles.vehiclesFeatureKey]: fromVehicles.State;
   [fromCollection.collectionFeatureKey]: fromCollection.State;
 }
@@ -25,7 +23,6 @@ export interface State extends fromRoot.AppState {
 /** Provide reducer in AoT-compilation happy way */
 export function reducers(state: VehiclesState | undefined, action: Action) {
   return combineReducers({
-    [fromSearch.searchFeatureKey]: fromSearch.reducer,
     [fromVehicles.vehiclesFeatureKey]: fromVehicles.reducer,
     [fromCollection.collectionFeatureKey]: fromCollection.reducer,
   })(state, action);
@@ -101,45 +98,6 @@ export const selectSelectedVehicle = createSelector(
   }
 );
 
-/**
- * Just like with the books selectors, we also have to compose the search
- * reducer's and collection reducer's selectors.
- */
-export const selectSearchState = createSelector(
-  selectVehiclesState,
-  (state) => state.search
-);
-
-export const selectSearchVehicleIds = createSelector(
-  selectSearchState,
-  fromSearch.getIds
-);
-export const selectSearchQuery = createSelector(
-  selectSearchState,
-  fromSearch.getQuery
-);
-export const selectSearchLoading = createSelector(
-  selectSearchState,
-  fromSearch.getLoading
-);
-export const selectSearchError = createSelector(
-  selectSearchState,
-  fromSearch.getError
-);
-
-/**
- * Some selector functions create joins across parts of state. This selector
- * composes the search result IDs to return an array of books in the store.
- */
-export const selectSearchResults = createSelector(
-  selectVehicleEntities,
-  selectSearchVehicleIds,
-  (vehicles, searchIds) => {
-    return searchIds
-      .map((id) => vehicles[id])
-      .filter((vehicle): vehicle is Vehicle => vehicle != null);
-  }
-);
 
 export const selectCollectionState = createSelector(
   selectVehiclesState,
@@ -154,6 +112,12 @@ export const getCollectionLoading = createSelector(
   selectCollectionState,
   fromCollection.getLoading
 );
+
+export const getCollectionLoadFailed = createSelector(
+  selectCollectionState,
+  fromCollection.getLoadFailed
+);
+
 export const selectCollectionVehicleIds = createSelector(
   selectCollectionState,
   fromCollection.getIds
@@ -169,10 +133,10 @@ export const selectVehicleCollection = createSelector(
   }
 );
 
-export const isSelectedVehicleInCollection = createSelector(
-  selectCollectionVehicleIds,
-  selectSelectedVehicleId,
-  (ids, selected) => {
-    return !!selected && ids.indexOf(selected) > -1;
-  }
-);
+// export const isSelectedVehicleInCollection = createSelector(
+//   selectCollectionVehicleIds,
+//   selectSelectedVehicleId,
+//   (ids, selected) => {
+//     return !!selected && ids.indexOf(selected) > -1;
+//   }
+// );

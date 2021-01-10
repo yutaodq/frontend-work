@@ -5,12 +5,12 @@ import { Vehicle } from '@zy/model';
 /**
  * Load Collection Actions
  */
-export const loadVehiclesSuccess = createAction(
+export const loadCollectionSuccess = createAction(
   '[Collection/API] Load Vehicles Success',
   props<{ vehicles: Vehicle[] }>()
 );
 
-export const loadVehiclesFailure = createAction(
+export const loadCollectionFailure = createAction(
   '[Collection/API] Load Vehicles Failure',
   props<{ error: any }>()
 );
