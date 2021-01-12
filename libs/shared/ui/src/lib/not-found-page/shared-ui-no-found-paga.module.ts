@@ -1,23 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderModule } from './layout/header/header.module';
-import { NavbarModule } from './layout/navbar/navbar.module';
-import { MenuModule } from './layout/menu/menu.module';
-import { ConfigModule } from './layout/config/config.module';
-import { FooterModule } from './layout/footer/footer.module';
+import { NotFoundPageComponent } from './not-found-page.component';
+import { RouterModule, Routes } from '@angular/router';
 
-const EXPORTS_MODULES = [
-  HeaderModule,
-  NavbarModule,
-  MenuModule,
-  ConfigModule,
-  FooterModule
+const EXPORTS_COMPONENT = [
+  NotFoundPageComponent
   ]
+
+const routes: Routes = [
+  {
+    path: '',
+    component: NotFoundPageComponent,
+    data: { title: 'Page Not Found' }
+  }
+];
+
 @NgModule({
-  imports: [CommonModule],
-  declarations: [],
+  imports: [CommonModule, RouterModule.forChild(routes)],
+  declarations: [NotFoundPageComponent],
   exports: [
-    ...EXPORTS_MODULES
+    ...EXPORTS_COMPONENT
   ]
 })
 export class SharedUiNoFoundPagaModule {}
