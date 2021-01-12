@@ -2,7 +2,7 @@ import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { createReducer, on } from '@ngrx/store';
 
 import {
-  CollectionApiActions,
+  CollectionApiActions, CollectionPageActions
 } from '../actions';
 import { Vehicle } from '@zy/model';
 
@@ -64,10 +64,10 @@ export const reducer = createReducer(
   // on(VehicleActions.loadVehicle, (state, { vehicle }) =>
   //   adapter.addOne(vehicle, state)
   // ),
-  // on(ViewVehiclePageActions.selectVehicle, (state, { id }) => ({
-  //   ...state,
-  //   selectedVehicleId: id,
-  // }))
+  on(CollectionPageActions.selectEntity, (state, { id }) => ({
+    ...state,
+    selectedVehicleId: id,
+  }))
 );
 
 

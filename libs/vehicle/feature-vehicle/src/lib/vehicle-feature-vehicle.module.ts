@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import {FormsModule}  from '@angular/forms';
 
 import { SharedVehicleDataAccesFacadeModule } from '@zy/shared/vehicle/data-acces-facade';
 
@@ -13,11 +14,12 @@ import { VehiclesGridComponent } from './components/vehicles-grid.component';
 import { ThemePrimengModule } from '@zy/shared/util';
 import { SharedUiComponentModule } from '@zy/shared/ui';
 import { VehicleCreateComponent } from './containers/create/vehicle-create.component';
-import { VehicleExistsGuard } from './guard/vehicle-exists.guard';
+import { VehiclesResolver } from './guard/vehicles.resolve';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     SharedVehicleDataAccesFacadeModule,
     VehicleFeatureVehicleRouting,
     TranslateModule,
@@ -30,7 +32,7 @@ import { VehicleExistsGuard } from './guard/vehicle-exists.guard';
     VehiclesGridComponent,
     VehicleCreateComponent
   ],
-  providers: [VehicleExistsGuard]
+  providers: [ VehiclesResolver]
 })
 export class VehicleFeatureVehicleModule {}
 

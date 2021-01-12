@@ -5,13 +5,14 @@ import { Observable, Subscription } from 'rxjs';
 import { Sandbox } from '@zy/shared/util';
 import * as fromVehicles from '@zy/shared/vehicle/data-acces';
 import { Vehicle } from '@zy/model';
+import { filter, map, take } from 'rxjs/operators';
 
 @Injectable()
 export class VehiclesFacade extends Sandbox {
   public vehicles$ = this.appState$.pipe(select(fromVehicles.selectVehicleCollection));
   public vehicleDetails$ =
     this.appState$.pipe(select(fromVehicles.selectSelectedVehicle)) as Observable<Vehicle>;
-  public vehiclesCollectionLoaded$ = this.appState$.pipe(select(fromVehicles.getCollectionLoading));
+  public vehiclesCollectionLoaded$ = this.appState$.pipe(select(fromVehicles.selectCollectionLoaded));
 
   private subscriptions: Array<Subscription> = [];
 
@@ -33,7 +34,7 @@ export class VehiclesFacade extends Sandbox {
    * loadVehicle
    */
   public loadVehicleDetails(id: string): void {
-    this.appState$.dispatch(fromVehicles.CollectionPageActions.loadEntity({id}))
+    this.appState$.dispatch(fromVehicles.CollectionPageActions.selectEntity({ id }));
   }
 
   /**

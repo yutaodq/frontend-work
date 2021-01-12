@@ -1,3 +1,6 @@
+/*
+https://netmedia.io/dev/angular-architecture-patterns-high-level-project-architecture_5589
+ */
 import { Injectable }       from '@angular/core';
 import {
   Resolve,
@@ -13,8 +16,8 @@ export class VehiclesResolver implements Resolve<any> {
   constructor(public vehiclesFacade: VehiclesFacade) {}
 
   /**
-   * Triggered when application hits product details route.
-   * It subscribes to product list data and finds one with id from the route params.
+   * Triggered when application hits vehicle details route.
+   * It subscribes to vehicle list data and finds one with id from the route params.
    *
    * @param route
    */
@@ -26,7 +29,6 @@ export class VehiclesResolver implements Resolve<any> {
         this.vehiclesFacade.loadVehicleDetails(route.params.id);
         return;
       }
-
       this.vehiclesFacade.selectVehicle(vehicle);
     });
   }

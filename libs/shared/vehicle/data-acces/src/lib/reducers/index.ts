@@ -133,10 +133,3 @@ export const selectVehicleCollection = createSelector(
   }
 );
 
-// export const isSelectedVehicleInCollection = createSelector(
-//   selectCollectionVehicleIds,
-//   selectSelectedVehicleId,
-//   (ids, selected) => {
-//     return !!selected && ids.indexOf(selected) > -1;
-//   }
-// );
