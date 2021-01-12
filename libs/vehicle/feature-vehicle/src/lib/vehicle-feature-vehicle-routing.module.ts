@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { VehiclesComponent } from './containers/vehicles/vehicles.component';
 import { VehicleDetailsComponent } from './containers/vehicle-details/vehicle-details.component';
 import { VehicleCreateComponent } from './containers/create/vehicle-create.component';
+import { VehicleExistsGuard } from './guard/vehicle-exists.guard';
 
 const vehiclesRoutes: Routes = [
   { path: '', redirectTo: 'list', pathMatch: 'full' },
@@ -16,7 +17,8 @@ const vehiclesRoutes: Routes = [
   },
   {
     path: ':id/detail',
-    component: VehicleDetailsComponent
+    component: VehicleDetailsComponent,
+    canActivate: [VehicleExistsGuard],
   }
 ];
 

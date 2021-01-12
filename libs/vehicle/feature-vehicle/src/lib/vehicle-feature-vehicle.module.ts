@@ -8,11 +8,12 @@ import { VehicleFeatureVehicleRouting } from './vehicle-feature-vehicle-routing.
 
 import { VehiclesComponent } from './containers/vehicles/vehicles.component';
 import { VehicleDetailsComponent } from './containers/vehicle-details/vehicle-details.component';
-import { SharedUiGridComponentModule, SharedUiGridModule } from '@zy/shared/ui-grid';
+import { SharedUiGridModule } from '@zy/shared/ui-grid';
 import { VehiclesGridComponent } from './components/vehicles-grid.component';
 import { ThemePrimengModule } from '@zy/shared/util';
 import { SharedUiComponentModule } from '@zy/shared/ui';
 import { VehicleCreateComponent } from './containers/create/vehicle-create.component';
+import { VehicleExistsGuard } from './guard/vehicle-exists.guard';
 
 @NgModule({
   imports: [
@@ -22,7 +23,6 @@ import { VehicleCreateComponent } from './containers/create/vehicle-create.compo
     TranslateModule,
     SharedUiGridModule,
     SharedUiComponentModule,
-    // SharedUiGridComponentModule,
     ThemePrimengModule
   ],
   declarations: [VehiclesComponent,
@@ -30,5 +30,7 @@ import { VehicleCreateComponent } from './containers/create/vehicle-create.compo
     VehiclesGridComponent,
     VehicleCreateComponent
   ],
+  providers: [VehicleExistsGuard]
 })
 export class VehicleFeatureVehicleModule {}
+
