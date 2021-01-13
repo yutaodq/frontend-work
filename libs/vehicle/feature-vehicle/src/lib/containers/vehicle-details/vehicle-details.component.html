@@ -6,20 +6,41 @@
   </div>
 <!--  <app-inputStyleSwitch></app-inputStyleSwitch>-->
 </div>
-<div class="content-section implementation">
+<div class="container content-section implementation">
+<!--  <div class="container-fluid content-section implementation">-->
   <p>vehicle-details works!</p>
   {{ vehicle.name }}
   <div class="card">
     <h5>Advanced</h5>
     <div class="p-fluid p-formgrid p-grid">
-      <div class="p-field p-col-12 p-md-6">
-        <label for="firstname6">车辆名称</label>
-        <input id="firstname6" type="text" [ngModel]="vehicle.name" pInputText disabled="flase">
+
+<!--      <div class="p-field p-col-12 p-md-6">-->
+<!--<zy-ui-details-input [value]="vehicle.name">-->
+
+<!--</zy-ui-details-input>-->
+<!--      </div>-->
+      <div class="row">
+        <div class="col">
+          <zy-ui-details-input [value]="vehicle.name">
+
+          </zy-ui-details-input>
+<!--          <label for="firstname6">车辆名称</label>-->
+<!--          <input id="firstname6" type="text" [ngModel]="vehicle.name" pInputText disabled="flase">-->
+        </div>
+        <div class="col">
+          <label for="lastname6">车辆类型</label>
+          <input id="lastname6" type="text" pInputText>
+        </div>
       </div>
-      <div class="p-field p-col-12 p-md-6">
-        <label for="lastname6">车辆类型</label>
-        <input id="lastname6" type="text" pInputText>
-      </div>
+
+<!--      <div class="p-field p-col-12 p-md-6">-->
+<!--        <label for="firstname6">车辆名称</label>-->
+<!--        <input id="firstname6" type="text" [ngModel]="vehicle.name" pInputText disabled="flase">-->
+<!--      </div>-->
+<!--      <div class="p-field p-col-12 p-md-6">-->
+<!--        <label for="lastname6">车辆类型</label>-->
+<!--        <input id="lastname6" type="text" pInputText>-->
+<!--      </div>-->
       <div class="p-field p-col-12">
         <label for="address">Address</label>
         <textarea id="address" type="text" rows="4" pInputTextarea></textarea>

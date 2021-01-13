@@ -1,4 +1,4 @@
-﻿export * from './zy-button.module'
+﻿export * from './shared-ui-button.module'
 
 // export * from './lf-info.directive';
 // export * from './lf-button';

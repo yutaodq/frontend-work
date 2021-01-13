@@ -12,7 +12,7 @@ import { VehicleDetailsComponent } from './containers/vehicle-details/vehicle-de
 import { SharedUiGridModule } from '@zy/shared/ui-grid';
 import { VehiclesGridComponent } from './components/vehicles-grid.component';
 import { ThemePrimengModule } from '@zy/shared/util';
-import { SharedUiComponentModule } from '@zy/shared/ui';
+import { SharedUiComponentModule} from '@zy/shared/ui';
 import { VehicleCreateComponent } from './containers/create/vehicle-create.component';
 import { VehiclesResolver } from './guard/vehicles.resolve';
 
@@ -25,7 +25,7 @@ import { VehiclesResolver } from './guard/vehicles.resolve';
     TranslateModule,
     SharedUiGridModule,
     SharedUiComponentModule,
-    ThemePrimengModule
+    ThemePrimengModule,
   ],
   declarations: [VehiclesComponent,
     VehicleDetailsComponent,

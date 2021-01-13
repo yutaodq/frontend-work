@@ -56,7 +56,7 @@ export abstract class LfInputComponent<T> extends _LfInputComponentMixinBase
 
     public readonly elementRef: any;
 
-    public focused: boolean = false;
+    public focused = false;
 
     protected inputElement: ElementRef<HTMLElement>;
 

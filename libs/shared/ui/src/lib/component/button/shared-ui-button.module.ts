@@ -15,4 +15,4 @@ export const ZY_BUTTON_EXPORTS: Array<any> = [
   declarations: [ZyButtonNewComponent],
   exports: [...ZY_BUTTON_EXPORTS]
 })
-export class ZyButtonModule {}
+export class SharedUiButtonModule {}
