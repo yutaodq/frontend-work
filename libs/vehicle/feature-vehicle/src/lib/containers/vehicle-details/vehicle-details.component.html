@@ -13,11 +13,11 @@
     <h5>Advanced</h5>
     <div class="p-fluid p-formgrid p-grid">
       <div class="p-field p-col-12 p-md-6">
-        <label for="firstname6">Firstname</label>
-        <input id="firstname6" type="text" pInputText>
+        <label for="firstname6">车辆名称</label>
+        <input id="firstname6" type="text" [ngModel]="vehicle.name" pInputText disabled="flase">
       </div>
       <div class="p-field p-col-12 p-md-6">
-        <label for="lastname6">Lastname</label>
+        <label for="lastname6">车辆类型</label>
         <input id="lastname6" type="text" pInputText>
       </div>
       <div class="p-field p-col-12">
@@ -25,17 +25,22 @@
         <textarea id="address" type="text" rows="4" pInputTextarea></textarea>
       </div>
       <div class="p-field p-col-12 p-md-6">
-        <label for="city">City</label>
+        <label for="city">外部牌照</label>
         <input id="city" type="text" pInputText>
       </div>
-<!--      <div class="p-field p-col-12 p-md-6">-->
-<!--        <label for="aa">City</label>-->
-<!--        <input id="aa" type="text" pInputText>-->
-<!--      </div>-->
+      <div class="p-field p-col-12 p-md-6">
+        <label for="aa">外部牌照</label>
+        <input id="aa" type="text" pInputText>
+      </div>
 
       <div class="p-field p-col-12 p-md-3">
-        <label for="state">State</label>
+        <label for="state">车辆状态</label>
         <input id="state" type="text" pInputText>
+      </div>
+
+      <div class="p-field p-col-12">
+        <label for="address">备注</label>
+        <textarea id="address" type="text" rows="4" pInputTextarea></textarea>
       </div>
       <!--      <div class="p-field p-col-12 p-md-3">-->
 <!--        <label for="zip">Zip</label>-->
