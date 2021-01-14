@@ -1,0 +1,63 @@
+<div class="container content-section implementation">
+  <!--  <p-toolbar>-->
+  <!--    <div class="p-toolbar-group-left">-->
+  <!--      <p-button label="New" icon="pi pi-plus"></p-button>-->
+  <!--      <p-button label="Upload" icon="pi pi-upload" styleClass="p-button-success"></p-button>-->
+
+  <!--      <i class="pi pi-bars"></i>-->
+  <!--      <p-splitButton label="Save" icon="pi pi-check"  styleClass="p-button-warning"></p-splitButton>-->
+
+  <!--      &lt;!&ndash;      <p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="p-button-warning"></p-splitButton>&ndash;&gt;-->
+  <!--    </div>-->
+
+  <!--    <div class="p-toolbar-group-right">-->
+  <!--      <p-button icon="pi pi-search"></p-button>-->
+  <!--      <p-button icon="pi pi-calendar" styleClass="p-button-success"></p-button>-->
+  <!--      <p-button icon="pi pi-times" styleClass="p-button-danger"></p-button>-->
+  <!--    </div>-->
+  <!--  </p-toolbar>-->
+
+  <!--  <div class="container-fluid content-section implementation">-->
+  <div class="card">
+    <div class="p-fluid p-formgrid p-grid">
+
+      <div class="row">
+        <div class="col-md-6">
+          <zy-ui-details-input lable="车辆名称" [value]="vehicle.name">
+          </zy-ui-details-input>
+
+        </div>
+        <div class="col-md-6">
+          <zy-ui-details-input lable="车辆类型" [value]="vehicle.type">
+
+          </zy-ui-details-input>
+        </div>
+      </div>
+      <div class="w-100"></div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <zy-ui-details-input lable="外部牌照" [value]="vehicle.pz">
+
+          </zy-ui-details-input>
+        </div>
+        <div class="col-md-4">
+          <zy-ui-details-input lable="内部牌照" [value]="vehicle.nbpz">
+
+          </zy-ui-details-input>
+        </div>
+        <div class="col-md-4">
+          <zy-ui-details-input lable="车辆状态" [value]="vehicle.zt">
+          </zy-ui-details-input>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <zy-ui-details-input lable="备注" [value]="vehicle.bz" rows="4">
+          </zy-ui-details-input>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

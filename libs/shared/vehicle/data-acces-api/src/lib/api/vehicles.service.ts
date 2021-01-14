@@ -15,7 +15,7 @@ export class VehiclesService {
   // }
   //
   // /**
-  //  * Transforms product details recieved from the API into instance of 'Product'
+  //  * Transforms product vehicle-details-form recieved from the API into instance of 'Product'
   //  *
   //  * @param product
   //  */

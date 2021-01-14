@@ -30,7 +30,7 @@ export class VehiclesFacade extends Sandbox {
   }
 
   /**
-   * Loads product details from the server
+   * Loads product vehicle-details-form from the server
    * loadVehicle
    */
   public loadVehicleDetails(id: string): void {
@@ -38,7 +38,7 @@ export class VehiclesFacade extends Sandbox {
   }
 
   /**
-   * Dispatches an action to select product details
+   * Dispatches an action to select product vehicle-details-form
    */
   public selectVehicle(vehicle: Vehicle): void {
     // this.appState$.dispatch(fromVehicles.ViewVehiclePageActions.selectVehicle({ vehicle }))

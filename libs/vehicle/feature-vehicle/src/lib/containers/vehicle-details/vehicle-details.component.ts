@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 
-import { Subscription } from 'rxjs';
+import { Observable, of, Subscription } from 'rxjs';
 
 import { Vehicle } from '@zy/model';
 import { VehiclesFacade } from '@zy/shared/vehicle/data-acces-facade';
 
 @Component({
-  selector: 'zy-vehicle-vehicle-details',
+  selector: 'zy-vehicle-details',
   templateUrl: './vehicle-details.component.html',
   styleUrls: ['./vehicle-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -14,6 +14,7 @@ import { VehiclesFacade } from '@zy/shared/vehicle/data-acces-facade';
 
 export class VehicleDetailsComponent implements OnInit, OnDestroy {
 
+  public vehicle$:        Observable<Vehicle>;
   public vehicle:        Vehicle;
   private subscriptions: Array<Subscription> = [];
 
@@ -39,6 +40,7 @@ export class VehicleDetailsComponent implements OnInit, OnDestroy {
       if (vehicle) {
         this.changeDetector.markForCheck();
         this.vehicle = vehicle;
+        this.vehicle$ = of(vehicle);
       }
     }));
   }

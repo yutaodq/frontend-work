@@ -10,11 +10,12 @@ import { VehicleFeatureVehicleRouting } from './vehicle-feature-vehicle-routing.
 import { VehiclesComponent } from './containers/vehicles/vehicles.component';
 import { VehicleDetailsComponent } from './containers/vehicle-details/vehicle-details.component';
 import { SharedUiGridModule } from '@zy/shared/ui-grid';
-import { VehiclesGridComponent } from './components/vehicles-grid.component';
+import { VehiclesGridComponent } from './components/grid/vehicles-grid.component';
 import { ThemePrimengModule } from '@zy/shared/util';
 import { SharedUiComponentModule} from '@zy/shared/ui';
 import { VehicleCreateComponent } from './containers/create/vehicle-create.component';
 import { VehiclesResolver } from './guard/vehicles.resolve';
+import { VehicleDetailsFormComponent } from './components/vehicle-details-form/vehicle-details-form.component';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { VehiclesResolver } from './guard/vehicles.resolve';
   ],
   declarations: [VehiclesComponent,
     VehicleDetailsComponent,
+    VehicleDetailsFormComponent,
     VehiclesGridComponent,
     VehicleCreateComponent
   ],

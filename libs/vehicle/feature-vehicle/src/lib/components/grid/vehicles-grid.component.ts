@@ -9,7 +9,7 @@ import {
   Output
 } from '@angular/core';
 import { Vehicle } from '@zy/model';
-import { VehicleColumnsBuilder } from '../grid/vehicle-columns.builder';
+import { VehicleColumnsBuilder } from '../../grid/vehicle-columns.builder';
 import { BaseGridViewModel, GridLocaleService, IGridColumnsBuilder } from '@zy/shared/ui-grid';
 import { SearchGridService } from '@zy/shared/util';
 

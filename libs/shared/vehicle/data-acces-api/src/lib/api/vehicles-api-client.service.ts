@@ -25,7 +25,7 @@ export class VehiclesApiClient extends HttpService {
 
 
   /**
-   * Retrieves product details by a given id
+   * Retrieves product vehicle-details-form by a given id
    *
    * @param id
    */

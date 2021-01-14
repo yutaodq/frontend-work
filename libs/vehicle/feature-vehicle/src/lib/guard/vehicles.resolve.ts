@@ -16,7 +16,7 @@ export class VehiclesResolver implements Resolve<any> {
   constructor(public vehiclesFacade: VehiclesFacade) {}
 
   /**
-   * Triggered when application hits vehicle details route.
+   * Triggered when application hits vehicle vehicle-details-form route.
    * It subscribes to vehicle list data and finds one with id from the route params.
    *
    * @param route
