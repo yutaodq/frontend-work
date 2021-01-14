@@ -1,8 +1,9 @@
-<!--<div class="p-field p-col-12 p-md-6">-->
-  <label for="firstnamee6">车辆名称</label>
-  <input pInputText id="firstnamee6" type="text" [ngModel]="value"  disabled="flase">
-<!--</div>-->
+<div class="p-field">
+  <label>{{lable}}</label>
+  <input *ngIf="rows==0" pInputText type="text" [ngModel]="value" disabled="flase">
+  <textarea *ngIf="rows>0" pInputTextarea type="text" [ngModel]="value" [rows]="rows" ></textarea>
 
+</div>
 
 <!--<input #textInput pInputText type="text" [name]="name" [value]="value||''" [disabled]="disabled" [hidden]="hidden" [readonly]="readonly"-->
 <!--       [spellcheck]="spellcheck" [ngStyle]="style" [ngClass]="'ui-inputtext ui-widget'" [attr.maxlength]="maxLength" [attr.placeholder]="placeholder"-->

@@ -1,72 +1,71 @@
-<div class="content-section introduction">
-  <div>
+  <div class="container content-section introduction">
     <h1>Form Layout</h1>
-    <p>Form layout is a CSS utility optimized for creating forms with ease. FormLayout is not included in PrimeNG as it is provided by <a href="https://github.com/primefaces/primeflex">PrimeFlex</a>,
+    <p>Form layout is a CSS utility optimized for creating forms with <a href="http://www.xsdw.dqyt.petrochina/sites/cy6c/zydd/Pages/default.aspx">PrimeFlex</a>,
       a shared grid library between PrimeFaces, PrimeNG, PrimeReact and PrimeVue projects.</p>
-  </div>
 <!--  <app-inputStyleSwitch></app-inputStyleSwitch>-->
 </div>
 <div class="container content-section implementation">
-<!--  <div class="container-fluid content-section implementation">-->
+<!--  <p-toolbar>-->
+<!--    <div class="p-toolbar-group-left">-->
+<!--      <p-button label="New" icon="pi pi-plus"></p-button>-->
+<!--      <p-button label="Upload" icon="pi pi-upload" styleClass="p-button-success"></p-button>-->
+
+<!--      <i class="pi pi-bars"></i>-->
+<!--      <p-splitButton label="Save" icon="pi pi-check"  styleClass="p-button-warning"></p-splitButton>-->
+
+<!--      &lt;!&ndash;      <p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="p-button-warning"></p-splitButton>&ndash;&gt;-->
+<!--    </div>-->
+
+<!--    <div class="p-toolbar-group-right">-->
+<!--      <p-button icon="pi pi-search"></p-button>-->
+<!--      <p-button icon="pi pi-calendar" styleClass="p-button-success"></p-button>-->
+<!--      <p-button icon="pi pi-times" styleClass="p-button-danger"></p-button>-->
+<!--    </div>-->
+<!--  </p-toolbar>-->
+
+  <!--  <div class="container-fluid content-section implementation">-->
   <p>vehicle-details works!</p>
   {{ vehicle.name }}
   <div class="card">
     <h5>Advanced</h5>
     <div class="p-fluid p-formgrid p-grid">
 
-<!--      <div class="p-field p-col-12 p-md-6">-->
-<!--<zy-ui-details-input [value]="vehicle.name">-->
-
-<!--</zy-ui-details-input>-->
-<!--      </div>-->
       <div class="row">
-        <div class="col">
-          <zy-ui-details-input [value]="vehicle.name">
+        <div class="col-md-6">
+          <zy-ui-details-input lable="车辆名称" [value]="vehicle.name"/>
+
+        </div>
+        <div class="col-md-6">
+          <zy-ui-details-input lable="车辆类型" [value]="vehicle.type">
 
           </zy-ui-details-input>
-<!--          <label for="firstname6">车辆名称</label>-->
-<!--          <input id="firstname6" type="text" [ngModel]="vehicle.name" pInputText disabled="flase">-->
-        </div>
-        <div class="col">
-          <label for="lastname6">车辆类型</label>
-          <input id="lastname6" type="text" pInputText>
         </div>
       </div>
+      <div class="w-100"></div>
 
-<!--      <div class="p-field p-col-12 p-md-6">-->
-<!--        <label for="firstname6">车辆名称</label>-->
-<!--        <input id="firstname6" type="text" [ngModel]="vehicle.name" pInputText disabled="flase">-->
-<!--      </div>-->
-<!--      <div class="p-field p-col-12 p-md-6">-->
-<!--        <label for="lastname6">车辆类型</label>-->
-<!--        <input id="lastname6" type="text" pInputText>-->
-<!--      </div>-->
-      <div class="p-field p-col-12">
-        <label for="address">Address</label>
-        <textarea id="address" type="text" rows="4" pInputTextarea></textarea>
-      </div>
-      <div class="p-field p-col-12 p-md-6">
-        <label for="city">外部牌照</label>
-        <input id="city" type="text" pInputText>
-      </div>
-      <div class="p-field p-col-12 p-md-6">
-        <label for="aa">外部牌照</label>
-        <input id="aa" type="text" pInputText>
-      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <zy-ui-details-input lable="外部牌照" [value]="vehicle.pz">
 
-      <div class="p-field p-col-12 p-md-3">
-        <label for="state">车辆状态</label>
-        <input id="state" type="text" pInputText>
+          </zy-ui-details-input>
+        </div>
+        <div class="col-md-4">
+          <zy-ui-details-input lable="内部牌照" [value]="vehicle.nbpz">
+
+          </zy-ui-details-input>
+        </div>
+        <div class="col-md-4">
+          <zy-ui-details-input lable="车辆状态" [value]="vehicle.zt">
+          </zy-ui-details-input>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <zy-ui-details-input lable="备注" [value]="vehicle.bz" rows="4">
+          </zy-ui-details-input>
+        </div>
       </div>
 
-      <div class="p-field p-col-12">
-        <label for="address">备注</label>
-        <textarea id="address" type="text" rows="4" pInputTextarea></textarea>
-      </div>
-      <!--      <div class="p-field p-col-12 p-md-3">-->
-<!--        <label for="zip">Zip</label>-->
-<!--        <input id="zip" type="text" pInputText>-->
-<!--      </div>-->
-    </div>
+     </div>
   </div>
 </div>

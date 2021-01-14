@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DetailsInputComponent } from './details-input.component';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 export const ZY_DETAILS_INPUT_EXPORTS: Array<any> = [
   DetailsInputComponent
@@ -11,7 +12,9 @@ export const ZY_DETAILS_INPUT_EXPORTS: Array<any> = [
   imports: [
     CommonModule,
     FormsModule,
-    InputTextModule
+    InputTextModule,
+    InputTextareaModule,
+
   ],
   declarations: [DetailsInputComponent],
   exports: [

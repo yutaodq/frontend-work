@@ -31,9 +31,13 @@ export class VehicleColumnsBuilder extends BaseGridColumnsBuilder {
       headerName: '设备类型',
       field: VehicleGridFields.type
     });
-    this.addColumn( {
+     this.addColumn( {
       headerName: '使用状态',
       field: VehicleGridFields.zt
+    });
+    this.addColumn( {
+      headerName: '备注',
+      field: VehicleGridFields.bz
     });
 
   }
@@ -45,5 +49,6 @@ const VehicleGridFields = {
   pz: 'pz',
   nbpz: 'nbpz',
   type: 'type',
-  zt: 'zt'
+  zt: 'zt',
+  bz: 'bz'
 };

@@ -8,6 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DetailsInputComponent implements OnInit {
   @Input()
   public value: string;
+  @Input()
+  public lable="标签";
+  @Input()
+  public rows=0;
 
   constructor() { }
 

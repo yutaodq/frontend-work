@@ -1,21 +1,3 @@
-// export class Vehicle {
-//   public id: string;
-//   public name: string;
-//   public pz: string;
-//   public nbpz: string;
-//   public type: string;
-//   public zt: string;
-//
-//   constructor(vehicle: any = null) {
-//     this.id = vehicle ? vehicle.Id : null;
-//     this.name = vehicle ? vehicle.Name : '';
-//     this.pz = vehicle ? vehicle.Pz : '';
-//     this.nbpz = vehicle ? vehicle.Nbpz : '';
-//     this.type = vehicle ? vehicle.Type : '';
-//     this.zt = vehicle ? vehicle.Zt : '';
-//
-//   }
-// }
 export interface Vehicle {
   id: string;
   name: string;
@@ -23,18 +5,19 @@ export interface Vehicle {
   nbpz: string;
   type: string;
   zt: string;
+  bz: string;
 
 }
 
 export function generateMockVehicle(): Vehicle {
   return {
     id: '1',
-    name: "string",
-  pz: "string",
-  nbpz: "string",
-  type: "string",
-  zt: "string"
-
-}
+    name: '车辆名称',
+    pz: '车辆牌照',
+    nbpz: '内部牌照',
+    type: '车辆类型',
+    zt: '使用状态',
+    bz: '备注'
+  };
 }
 
