@@ -16,6 +16,7 @@ import { SharedUiComponentModule} from '@zy/shared/ui';
 import { VehicleCreateComponent } from './containers/create/vehicle-create.component';
 import { VehiclesResolver } from './guard/vehicles.resolve';
 import { VehicleDetailsFormComponent } from './components/vehicle-details-form/vehicle-details-form.component';
+import { VehicleDetailsToolbarComponent } from './components/vehicle-details-toolbar/vehicle-details-toolbar.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { VehicleDetailsFormComponent } from './components/vehicle-details-form/v
   declarations: [VehiclesComponent,
     VehicleDetailsComponent,
     VehicleDetailsFormComponent,
+    VehicleDetailsToolbarComponent,
     VehiclesGridComponent,
     VehicleCreateComponent
   ],
