@@ -16,6 +16,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MessagesModule } from 'primeng/messages';
 import {ToolbarModule} from 'primeng/toolbar';
 import {SplitButtonModule} from 'primeng/splitbutton';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 const EXPORTS_MODULES = [
   InputTextModule,
@@ -35,6 +36,8 @@ const EXPORTS_MODULES = [
   ToolbarModule,
   MessagesModule,
   SplitButtonModule,
+  ConfirmDialogModule,
+  DynamicDialogModule,
 ];
 
 @NgModule({
