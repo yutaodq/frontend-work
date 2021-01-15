@@ -13,6 +13,7 @@ import { VehiclesFacade } from '@zy/shared/vehicle/data-acces-facade';
 import { Router } from '@angular/router';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { VehicleDeleteDialogComponent } from '../vehicle-delete-dialog/vehicle-delete-dialog.component';
 
 @Component({
   selector: 'zy-vehicle-details-toolbar',
@@ -38,15 +39,17 @@ export class VehicleDetailsToolbarComponent  {
 
   delete() {
     console.log('Awesomeness Ensures!!!');
-    this.confirmationService.confirm({
-      message: 'Are you sure that you want to perform this action?',
-      header: 'Confirmation',
-      accept: () => {
-        console.log('Awesomeness Ensures!!!');
-      },
-      reject: () => {
-        console.log('Nope!!!');
-      },
+    this.ref = this.dialogService.open(VehicleDeleteDialogComponent, {
+      header: 'Choose a Product',
+      width: '70%',
+      contentStyle: {"max-height": "500px", "overflow": "auto"},
+      baseZIndex: 10000
+    });
+
+    this.ref.onClose.subscribe((product: string) =>{
+      if (product) {
+        // this.messageService.add({severity:'info', summary: 'Product Selected', detail: product.name});
+      }
     });
   }
   returnToList() {

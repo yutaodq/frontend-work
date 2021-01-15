@@ -14,7 +14,7 @@ import { ThemePrimengModule } from '@zy/shared/util';
 import { SharedUiComponentModule} from '@zy/shared/ui';
 import { VehicleCreateComponent } from './containers/create/vehicle-create.component';
 import { VehiclesResolver } from './guard/vehicles.resolve';
-import { VehicleFeatureVehicleComponentsModule } from './components/vehicle-feature-vehicle-components.module';
+import { VehicleFeatureVehicleComponentsModule } from './components';
 
 @NgModule({
   imports: [
@@ -30,9 +30,6 @@ import { VehicleFeatureVehicleComponentsModule } from './components/vehicle-feat
   ],
   declarations: [VehiclesComponent,
     VehicleDetailsComponent,
-    // VehicleDetailsFormComponent,
-    // VehicleDetailsToolbarComponent,
-    // VehiclesGridComponent,
     VehicleCreateComponent
   ],
   providers: [ VehiclesResolver]
