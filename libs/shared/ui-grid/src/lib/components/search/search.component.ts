@@ -61,7 +61,7 @@ export class SearchComponent implements OnInit {
   }
 
 
-  clearSearch() {
+  onClearSearch() {
     this.searchGridService.clearSearchSubject.next(true);
   }
 
