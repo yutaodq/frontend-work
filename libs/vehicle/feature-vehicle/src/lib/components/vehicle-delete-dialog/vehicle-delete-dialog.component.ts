@@ -9,6 +9,7 @@ import {
   Output
 } from '@angular/core';
 import { Vehicle } from '@zy/model';
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
 
 @Component({
   selector: 'zy-vehicle-delete-dialog',
@@ -20,7 +21,15 @@ import { Vehicle } from '@zy/model';
 
 export class VehicleDeleteDialogComponent  {
 
-  constructor() {
+  constructor( private _ref: DynamicDialogRef) {
+  }
+  public delete(): void{
+    this._ref.close(true)
+
+  }
+  public cancel(): void{
+    this._ref.close(false)
+
   }
 
 }

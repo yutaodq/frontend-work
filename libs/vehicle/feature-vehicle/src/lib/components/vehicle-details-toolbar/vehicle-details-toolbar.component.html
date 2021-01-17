@@ -4,8 +4,9 @@
     <p-button label="New" icon="pi pi-plus"></p-button>
     <p-button label="Upload" icon="pi pi-upload" styleClass="p-button-success"></p-button>
 
-    <p-button label="删除记录" icon="pi pi-times" (onClick)="delete()"  styleClass="p-button-danger"></p-button>
+    <p-button label="删除记录" icon="pi pi-times" (onClick)="delete($event)"  styleClass="p-button-danger"></p-button>
     <p-splitButton label="Save" clase="fa flaticon-plus"  styleClass="p-button-warning"></p-splitButton>
+<!--    <p-button label="取消删除" icon="pi flaticon-plus" (onClick)="cancel($event)"  styleClass="p-button-danger"></p-button>-->
 
     <!--      <p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="p-button-warning"></p-splitButton>-->
   </div>
@@ -14,7 +15,7 @@
     <p-button icon="pi pi-search"></p-button>
     <p-button icon="pi pi-calendar" styleClass="p-button-success"></p-button>
     <p-button icon="pi pi-times" styleClass="p-button-danger"></p-button>
-    <p-button icon="pi pi-list" (onClick)="returnToList()" styleClass="p-button-danger"></p-button>
+    <p-button icon="pi pi-list" (onClick)="toList($event)" styleClass="p-button-danger"></p-button>
 
   </div>
 </p-toolbar>

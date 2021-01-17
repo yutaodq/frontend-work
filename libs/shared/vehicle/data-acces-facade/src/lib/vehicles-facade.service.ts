@@ -6,6 +6,7 @@ import { Sandbox } from '@zy/shared/util';
 import * as fromVehicles from '@zy/shared/vehicle/data-acces';
 import { Vehicle } from '@zy/model';
 import { filter, map, take } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class VehiclesFacade extends Sandbox {
@@ -16,7 +17,10 @@ export class VehiclesFacade extends Sandbox {
 
   private subscriptions: Array<Subscription> = [];
 
-  constructor(protected appState$: Store<fromVehicles.State>) {
+  constructor(
+    protected appState$: Store<fromVehicles.State>,
+    private _router: Router,
+  ) {
     super(appState$);
     this.loadVehicles();
     this.registerEvents();
@@ -53,5 +57,9 @@ export class VehiclesFacade extends Sandbox {
    * Subscribes to events
    */
   private registerEvents(): void {
+  }
+
+  returnToList() {
+    this._router.navigate(['vehicles', 'list']);
   }
 }

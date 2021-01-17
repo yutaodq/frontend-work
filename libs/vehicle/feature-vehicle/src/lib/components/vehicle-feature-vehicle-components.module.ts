@@ -38,7 +38,10 @@ export const COMPONENTS_EXPORTS : Array<any> = [
   ],
   exports: [...COMPONENTS_EXPORTS],
 
-  providers: [ ]
+  providers: [ ],
+  entryComponents: [
+    VehicleDeleteDialogComponent
+  ]
 })
 export class VehicleFeatureVehicleComponentsModule {}
 
