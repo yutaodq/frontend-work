@@ -5,7 +5,6 @@ import { Observable, of } from 'rxjs';
 import { catchError, filter, map, switchMap, take, tap } from 'rxjs/operators';
 
 import { VehiclesFacade } from '@zy/shared/vehicle/data-acces-facade';
-import * as fromVehicles from '../../../../../shared/vehicle/data-acces/src/lib/shared-vehicle-data-acces.module';
 
 /**
  * ngrx 官网案例
@@ -31,20 +30,20 @@ export class VehicleExistsGuard implements CanActivate {
    * has finished.
    */
 
-  public waitForCollectionToLoad(): Observable<boolean> {
-    return this.appState$.pipe(select(fromVehicles.selectCollectionLoaded),
-      filter((loaded) => loaded),
-      take(1)
-    );
-  }
+  // public waitForCollectionToLoad(): Observable<boolean> {
+  //   return this.appState$.pipe(select(fromVehicles.selectCollectionLoaded),
+  //     filter((loaded) => loaded),
+  //     take(1)
+  //   );
+  // }
 
-  hasVehicleInStore(id: string): Observable<boolean> {
-    return this.appState$.pipe(
-      select(fromVehicles.selectVehicleEntities),
-      map((entities) => !!entities[id]),
-      take(1)
-    );
-  }
+  // hasVehicleInStore(id: string): Observable<boolean> {
+  //   return this.appState$.pipe(
+  //     select(fromVehicles.selectVehicleEntities),
+  //     map((entities) => !!entities[id]),
+  //     take(1)
+  //   );
+  // }
   waitForCollectionToLoad(): Observable<boolean> {
     return this._vehiclesFacade.waitForCollectionToLoad();
   }

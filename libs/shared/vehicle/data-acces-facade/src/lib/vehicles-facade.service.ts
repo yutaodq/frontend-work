@@ -62,4 +62,20 @@ export class VehiclesFacade extends Sandbox {
   returnToList() {
     this._router.navigate(['vehicles', 'list']);
   }
+
+
+  public waitForCollectionToLoad(): Observable<boolean> {
+    return this.appState$.pipe(select(fromVehicles.selectCollectionLoaded),
+      filter((loaded) => loaded),
+      take(1)
+    );
+  }
+  hasVehicleInStore(id: string): Observable<boolean> {
+    return this.appState$.pipe(
+      select(fromVehicles.selectVehicleEntities),
+      map((entities) => !!entities[id]),
+      take(1)
+    );
+  }
+
 }
