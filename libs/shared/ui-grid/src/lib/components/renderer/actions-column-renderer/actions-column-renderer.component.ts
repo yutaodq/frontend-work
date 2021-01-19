@@ -8,26 +8,29 @@ import { ICellRendererParams } from 'ag-grid-community';
   styleUrls: ['./actions-column-renderer.component.css']
 })
 export class ActionsColumnRendererComponent implements ICellRendererAngularComp {
-  public params: ICellRendererParams;
+  // public params: ICellRendererParams;
+  private _params;
 
   constructor() {
   }
 
-  agInit(params: ICellRendererParams): void {
-    this.params = params;
+  agInit(params): void {
+    this._params = params;
   }
 
 
-  public onSelectData() {
-    this.params.context.componentParent.selectData(this.getData());
+  public onClick($event) {
+      if (this._params.onClick instanceof Function) {
+        const params = {
+          event: $event,
+          rowData: this._params.node.data,
+          id:  this._params.node.data.id
+        };
+        this._params.onClick(params);
+      }
   }
 
-  private getData(): string {
-    return this.params.node.data;
-
-  }
-
-  refresh(): boolean {
-    return false;
+  refresh(params?: any): boolean {
+    return true;
   }
 }

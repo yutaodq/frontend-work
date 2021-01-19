@@ -111,15 +111,20 @@ private  quickFilter(filterValue: any){
       fixedWidth: true,
       lockPinned: true,
       pinned: "right",
-      cellRenderer: 'actionsColRendered'
+      cellRenderer: 'actionsColRendered',      cellRendererParams: {
+        onClick: this.onSelectData.bind(this),
+        fa: 'fa fa-info-circle',
+        iconClass: 'detail-icon'
+      },
+
 
     }];
   }
 
   // cellRenderer: 'buttonRendered',
 
-  public selectData(data: any): void {
-    this.selectDataEvent.emit(data);
+  public onSelectData(params: any): void {
+    this.selectDataEvent.emit(params.rowData);
   }
 
   private buildEntityColumns(): Array<ColDef> {
