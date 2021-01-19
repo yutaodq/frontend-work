@@ -22,7 +22,7 @@ export class VehicleEffects {
     this.actions$.pipe(
       ofType(VehiclePageActions.removeVehicle),
       mergeMap(({ vehicle }) =>
-        this.apiClient.getDelete(vehicle.id).pipe(
+        this.apiClient.getRemoveVehicle(vehicle.id).pipe(
           map(() => VehiclePageActions.removeVehicleSuccess({ vehicle })),
           catchError(() => of(VehiclePageActions.removeVehicleFailure({ vehicle })))
         )
