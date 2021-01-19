@@ -47,7 +47,6 @@ public returnList(): void{
 }
 
   public delete(): void{
-    console.log('Awesomeness Ensures!!!delete');
       this.ref = this._dialogService.open(VehicleDeleteDialogComponent, {
         header: '删除车辆信息档案',
         width: '70%',
@@ -57,7 +56,8 @@ public returnList(): void{
 
       this.ref.onClose.subscribe((isDelete) =>{
         if (isDelete) {
-          console.log('Awesomeness Ensures!!!cancelDeleteisDeleteisDeleteisDeleteisDeleteisDelete');
+          this.vehiclesFacade.removeVehicle(this.vehicle);
+
         }
       });
 

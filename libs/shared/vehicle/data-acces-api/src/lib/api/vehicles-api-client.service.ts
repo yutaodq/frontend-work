@@ -16,12 +16,13 @@ export class VehiclesApiClient extends HttpService {
     return null;
   }
 
-  // public getCollection(): Observable<any> {
-  //
-  //    const myurl = 'http://localhost:8080/vehicle';
-  //
-  //   return  this.http.get(myurl);
-  // }
+  public getDelete(id: string): Observable<any> {
+    console.log(`onSelectData(event):+ selectDataId+ selectDataId+ selectDataId` );
+
+     const myurl = 'http://localhost:8080/vehicle/{id}';
+
+    return  this.http.delete(myurl);
+  }
 
 
   /**
@@ -37,6 +38,8 @@ export class VehiclesApiClient extends HttpService {
   @DELETE('/vehicles/{id}')
   // @Adapter(VehiclesService.vehicleDetailsAdapter)
   public getRemoveVehicle(@Path('id') id: string): Observable<any> {
+    console.log(`onSelectData(event):+ selectDataId+ selectDataId+ selectDataId` );
+
     return null;
   }
 

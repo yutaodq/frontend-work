@@ -59,23 +59,26 @@ export class VehiclesFacade extends Sandbox {
   private registerEvents(): void {
   }
 
-  returnToList() {
+  public returnToList() {
     this._router.navigate(['vehicles', 'list']);
   }
+  public removeVehicle(vehicle: Vehicle) {
+    this.appState$.dispatch(fromVehicles.VehiclePageActions.removeVehicle( {vehicle} ))
+  }
 
 
-  public waitForCollectionToLoad(): Observable<boolean> {
-    return this.appState$.pipe(select(fromVehicles.selectCollectionLoaded),
-      filter((loaded) => loaded),
-      take(1)
-    );
-  }
-  hasVehicleInStore(id: string): Observable<boolean> {
-    return this.appState$.pipe(
-      select(fromVehicles.selectVehicleEntities),
-      map((entities) => !!entities[id]),
-      take(1)
-    );
-  }
+  // public waitForCollectionToLoad(): Observable<boolean> {
+  //   return this.appState$.pipe(select(fromVehicles.selectCollectionLoaded),
+  //     filter((loaded) => loaded),
+  //     take(1)
+  //   );
+  // }
+  // hasVehicleInStore(id: string): Observable<boolean> {
+  //   return this.appState$.pipe(
+  //     select(fromVehicles.selectVehicleEntities),
+  //     map((entities) => !!entities[id]),
+  //     take(1)
+  //   );
+  // }
 
 }
