@@ -118,8 +118,8 @@ private  quickFilter(filterValue: any){
 
   // cellRenderer: 'buttonRendered',
 
-  public selectData(selectDataId: string): void {
-    this.selectDataEvent.emit({id: selectDataId});
+  public selectData(data: any): void {
+    this.selectDataEvent.emit(data);
   }
 
   private buildEntityColumns(): Array<ColDef> {

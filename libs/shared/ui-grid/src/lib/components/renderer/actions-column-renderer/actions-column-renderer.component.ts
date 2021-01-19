@@ -19,11 +19,11 @@ export class ActionsColumnRendererComponent implements ICellRendererAngularComp 
 
 
   public onSelectData() {
-    this.params.context.componentParent.selectData(this.getDataId());
+    this.params.context.componentParent.selectData(this.getData());
   }
 
-  private getDataId(): string {
-    return this.params.node.data.id;
+  private getData(): string {
+    return this.params.node.data;
 
   }
 

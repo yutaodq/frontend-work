@@ -38,14 +38,14 @@ export class VehiclesFacade extends Sandbox {
    * loadVehicle
    */
   public loadVehicleDetails(id: string): void {
-    this.appState$.dispatch(fromVehicles.CollectionPageActions.selectEntity({ id }));
+    this.appState$.dispatch(fromVehicles.CollectionPageActions.selectVehicle({ id }));
   }
 
   /**
    * Dispatches an action to select product vehicle-details-form
    */
   public selectVehicle(vehicle: Vehicle): void {
-    // this.appState$.dispatch(fromVehicles.ViewVehiclePageActions.selectVehicle({ vehicle }))
+    this.appState$.dispatch(fromVehicles.CollectionPageActions.selectVehicle( vehicle ))
     // this.appState$.dispatch(new productDetailsActions.LoadSuccessAction(product))
   }
 

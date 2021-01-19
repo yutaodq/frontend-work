@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { localeTextGrid } from '@zy/shared/util';
 import { NGXLogger } from 'ngx-logger';
 import { ButtonRenderedComponent } from '@zy/shared/ui-grid';
+import { Vehicle } from '@zy/model';
 
 @Component({
   selector: 'zy-vehicle-vehicle',
@@ -31,10 +32,11 @@ export class VehiclesComponent implements OnInit {
     this._logger.debug('日志功能：Your log message goes here');
   }
 
-  onSelectData(selectDataId: {id: string}) {
-    console.log(`onSelectData(event):` + selectDataId);
-    // this._vehiclesFacade.selectVehicle(selectDataId.id);
-    this.router.navigate(['vehicles', selectDataId.id,'detail']);
+  onSelectData(vehicle: Vehicle) {
+    // console.log(`onSelectData(event):` + selectDataId);
+    // const id = selectDataId.id;
+    this._vehiclesFacade.selectVehicle(vehicle);
+    this.router.navigate(['vehicles', vehicle.id,'detail']);
     // this.router.navigate(['vehicles', selectDataId], { relativeTo: this.activeRouter });
   }
 

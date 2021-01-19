@@ -7,7 +7,7 @@ import { Vehicle } from '@zy/model';
  */
 export const loadCollection = createAction('[Collection Page] Load');
 
-export const selectEntity = createAction(
+export const selectVehicle = createAction(
   '[Vehicle Exists Guard] Select Vehicle',
   props<{ id: String }>()
 );

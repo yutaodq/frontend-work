@@ -27,7 +27,6 @@ export class VehiclesGridComponent extends BaseGridViewModel<Vehicle> {
   @Input() loading = true;
   private readonly _gridColumnsBuilder: IGridColumnsBuilder;
 
-  private noRowsOverlayComponentParams;
 
   constructor(searchGridService: SearchGridService, vehicleColumnsBuilder: VehicleColumnsBuilder) {
     super(searchGridService);
@@ -36,23 +35,6 @@ export class VehiclesGridComponent extends BaseGridViewModel<Vehicle> {
 
   protected getGridColumnsBuilder(): IGridColumnsBuilder {
     return this._gridColumnsBuilder;
-  }
-
-  onFirstDataRendered(params) {
-    params.api.sizeColumnsToFit(); //调整表格大小自适应
-  }
-  onBtShowLoading() {
-    this.gridOptions.api.showLoadingOverlay();
-    // this.gridApi.showLoadingOverlay();
-  }
-
-  onBtShowNoRows() {
-    this.gridOptions.api.showNoRowsOverlay();
-    // this.gridApi.showNoRowsOverlay();
-  }
-
-  onBtHide() {
-    this.gridOptions.api.hideOverlay();
   }
 
   protected registerFilterChangeHandlers(): void {
