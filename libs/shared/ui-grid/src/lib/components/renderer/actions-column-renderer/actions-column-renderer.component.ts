@@ -10,12 +10,16 @@ import { ICellRendererParams } from 'ag-grid-community';
 export class ActionsColumnRendererComponent implements ICellRendererAngularComp {
   // public params: ICellRendererParams;
   private _params;
+  fa: string;
+  iconClass: string;
 
   constructor() {
   }
 
   agInit(params): void {
     this._params = params;
+    this.fa = params.fa || null;
+    this.iconClass = params.iconClass || null;
   }
 
 

@@ -111,7 +111,8 @@ private  quickFilter(filterValue: any){
       fixedWidth: true,
       lockPinned: true,
       pinned: "right",
-      cellRenderer: 'actionsColRendered',      cellRendererParams: {
+      cellRenderer: 'actionsColRendered',
+      cellRendererParams: {
         onClick: this.onSelectData.bind(this),
         fa: 'fa fa-info-circle',
         iconClass: 'detail-icon'
