@@ -17,6 +17,9 @@ export const vehiclesFeatureKey = 'vehicles';
  */
 export interface State extends EntityState<Vehicle> {
   selectedVehicleId: string | null;
+  loading: boolean;
+  loaded:  boolean;
+  loadFailed:  boolean;
 }
 
 /**
@@ -39,6 +42,9 @@ export const adapter: EntityAdapter<Vehicle> = createEntityAdapter<Vehicle>({
  */
 export const initialState: State = adapter.getInitialState({
   selectedVehicleId: null,
+  loading: false,
+  loaded:  false,
+  loadFailed:  false,
 });
 
 export const reducer = createReducer(
