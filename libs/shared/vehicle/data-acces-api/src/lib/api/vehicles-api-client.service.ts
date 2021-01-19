@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Adapter, GET, HttpService, Path } from '@zy/shared/data-access-http';
+import { Adapter, GET, HttpService, Path, DELETE } from '@zy/shared/data-access-http';
 import { VehiclesService } from './vehicles.service';
 import { Observable } from 'rxjs';
 
@@ -31,7 +31,13 @@ export class VehiclesApiClient extends HttpService {
    */
   @GET('/vehicles/{id}')
   // @Adapter(VehiclesService.vehicleDetailsAdapter)
-  public getVehicleDetails(@Path('id') id: number): Observable<any> {
+  public getVehicleDetails(@Path('id') id: string): Observable<any> {
     return null;
   }
+  @DELETE('/vehicles/{id}')
+  // @Adapter(VehiclesService.vehicleDetailsAdapter)
+  public getRemoveVehicle(@Path('id') id: string): Observable<any> {
+    return null;
+  }
+
 }
