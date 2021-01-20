@@ -106,16 +106,16 @@ export const selectCollectionState = createSelector(
 
 export const selectCollectionLoaded = createSelector(
   selectCollectionState,
-  fromCollection.getLoaded
+  fromCollection.getCollectionLoaded
 );
-export const getCollectionLoading = createSelector(
+export const selectCollectionLoading = createSelector(
   selectCollectionState,
-  fromCollection.getLoading
+  fromCollection.getCollectionLoading
 );
 
 export const getCollectionLoadFailed = createSelector(
   selectCollectionState,
-  fromCollection.getLoadFailed
+  fromCollection.getCollectionLoadFailed
 );
 
 export const selectCollectionVehicleIds = createSelector(

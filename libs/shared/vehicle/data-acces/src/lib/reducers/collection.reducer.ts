@@ -3,6 +3,8 @@ import { createReducer, on } from '@ngrx/store';
 import {
   CollectionApiActions,
   CollectionPageActions,
+  VehiclePageActions
+
 } from '../actions';
 
 export const collectionFeatureKey = 'collection';
@@ -42,13 +44,36 @@ export const reducer = createReducer(
     loadFailed:  true,
     ids: [],
   })),
+  /**
+   * 乐观删除.
+   */
+  on(   VehiclePageActions.removeVehicle,
+    (state, { vehicle }) => ({
+      ...state,
+      ids: state.ids.filter((id) => id !== vehicle.id),
+    })
+  ),
+/**
+ * 删除失败
+ */
+on(VehiclePageActions.removeVehicleFailure,
+  (state, { vehicle }) => {
+    if (state.ids.indexOf(vehicle.id) > -1) {
+      return state;
+    }
+    return {
+      ...state,
+      ids: [...state.ids, vehicle.id],
+    };
+  }
+),
 
 );
 
-export const getLoaded = (state: State) => state.loaded;
+export const getCollectionLoaded = (state: State) => state.loaded;
 
-export const getLoading = (state: State) => state.loading;
+export const getCollectionLoading = (state: State) => state.loading;
 
 export const getIds = (state: State) => state.ids;
 
-export const getLoadFailed = (state: State) => state.loadFailed;
+export const getCollectionLoadFailed = (state: State) => state.loadFailed;

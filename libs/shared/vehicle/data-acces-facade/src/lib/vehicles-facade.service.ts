@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 @Injectable()
 export class VehiclesFacade extends Sandbox {
   public vehicles$ = this.appState$.pipe(select(fromVehicles.selectVehicleCollection));
+  public vehiclesLoading$       = this.appState$.pipe(select(fromVehicles.selectCollectionLoading ));
+
   public vehicleDetails$ =
     this.appState$.pipe(select(fromVehicles.selectSelectedVehicle)) as Observable<Vehicle>;
   public vehiclesCollectionLoaded$ = this.appState$.pipe(select(fromVehicles.selectCollectionLoaded));

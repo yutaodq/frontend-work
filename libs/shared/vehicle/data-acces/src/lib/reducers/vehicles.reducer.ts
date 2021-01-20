@@ -13,6 +13,7 @@ export interface State extends EntityState<Vehicle> {
   loading: boolean;
   loaded:  boolean;
   loadFailed:  boolean;
+  removeSuccess: boolean;
 }
 export const adapter: EntityAdapter<Vehicle> = createEntityAdapter<Vehicle>({
   selectId: (vehicle: Vehicle) => vehicle.id,
@@ -23,6 +24,8 @@ export const initialState: State = adapter.getInitialState({
   loading: false,
   loaded:  false,
   loadFailed:  false,
+  removeSuccess: false,
+
 });
 
 export const reducer = createReducer(
@@ -37,5 +40,10 @@ export const reducer = createReducer(
   }))
 );
 
-
 export const selectId = (state: State) => state.selectedVehicleId;
+
+export const getVehicleLoaded = (state: State) => state.loaded;
+
+export const getVehicleLoading = (state: State) => state.loading;
+
+export const getVehicleLoadFailed = (state: State) => state.loadFailed;

@@ -37,7 +37,7 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
   protected cacheBlockSize: number;
   protected gridState: GridState<T>;
 
-  @Output() selectDataEvent = new EventEmitter<{id: string}>();
+  @Output() selectDataEvent = new EventEmitter<T>();
 
   protected constructor(private _searchGridService: SearchGridService) {
     this.cacheBlockSize = 50;
@@ -160,9 +160,9 @@ private  quickFilter(filterValue: any){
   }
 
   // 快速过滤器
-  public onQuickFilterChanged($event) {
-    this.gridOptions.api.setQuickFilter($event.target.value);
-  }
+  // public onQuickFilterChanged($event) {
+  //   this.gridOptions.api.setQuickFilter($event.target.value);
+  // }
 
   protected abstract registerFilterChangeHandlers(): void;
 
