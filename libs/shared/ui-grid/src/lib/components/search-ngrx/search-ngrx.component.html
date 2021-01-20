@@ -1,0 +1,12 @@
+<div class="p-d-flex">
+   <span class="p-ml-auto p-input-icon-right" >
+       <input pInputText type="text" placeholder="Search keyword"
+              [ngModel]="globalFilter" (keyup)="onGlobalFilterChanged($event.target.value)"
+       />
+       <i class="pi pi-search" *ngIf=" isShowSearchIcon()"></i>
+       <i *ngIf="isShowClearIcon()"
+          class="pi pi-times" (click)="onClearSearch()">
+    </i>
+
+   </span>
+</div>

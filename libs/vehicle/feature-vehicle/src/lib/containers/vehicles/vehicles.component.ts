@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { VehiclesFacade } from '@zy/shared/vehicle/data-acces-facade';
+import { VehicleSearchNgrxGridService, VehiclesFacade } from '@zy/shared/vehicle/data-acces-facade';
 import { TranslateService } from '@ngx-translate/core';
 import { GridOptions } from 'ag-grid-community';
 // import { ButtonRenderedComponent } from '@zy/shared/ui-grid';
@@ -13,7 +13,8 @@ import { Vehicle } from '@zy/model';
 @Component({
   selector: 'zy-vehicle-vehicle',
   templateUrl: './vehicles.component.html',
-  styleUrls: ['./vehicles.component.scss']
+  styleUrls: ['./vehicles.component.scss'],
+  providers: []
 })
 
 export class VehiclesComponent implements OnInit {

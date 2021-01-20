@@ -13,6 +13,7 @@ export interface State {
   loaded: boolean;
   loading: boolean;
   loadFailed:  boolean;
+  query: string
   ids: string[];
 }
 
@@ -20,6 +21,7 @@ const initialState: State = {
   loaded: false,
   loading: false,
   loadFailed:  false,
+  query: '',
   ids: [],
 };
 
@@ -36,6 +38,7 @@ export const reducer = createReducer(
     loaded: true,
     loading: false,
     loadFailed:  false,
+    query:'',
     ids: vehicles.map((vehicle) => vehicle.id),
   })),
   on(CollectionApiActions.loadCollectionFailure, (state, { error }) => ({
@@ -44,7 +47,15 @@ export const reducer = createReducer(
     loadFailed:  true,
     ids: [],
   })),
+/*
+  查询
+ */
+  on(CollectionPageActions.searchCollection, (state, { query }) => ({
+    ...state,
+    query: query
+  })),
 
+  // searchVehicle
   /**
    * 乐观删除.
    */
@@ -79,3 +90,5 @@ export const getCollectionLoading = (state: State) => state.loading;
 export const getIds = (state: State) => state.ids;
 
 export const getCollectionLoadFailed = (state: State) => state.loadFailed;
+
+export const getCollectionQuery = (state: State) => state.query;

@@ -4,24 +4,15 @@ import { CommonModule } from '@angular/common';
 
 import { AgGridModule } from 'ag-grid-angular';
 
-import { ButtonRenderedComponent, RendererComponent } from './components/renderer';
 import { LoadingOverlayComponent, NoRowsOverlayComponent } from './components/overlay';
-// import { SortableHeaderComponent } from './components/header';
 import { DataGrid } from './data-grid';
 import { SharedUiGridComponentModule } from './components';
 import { ThemePrimengModule } from '@zy/shared/util';
 
 const COMPONENT = [
-  // SearchComponent,
-  // RendererComponent,
-  // ButtonRenderedComponent,
-  // // SortableHeaderComponent,
-  // NoRowsOverlayComponent,
-  // LoadingOverlayComponent,
   DataGrid
 ];
 const EXPORTS_COMPONENT = [
-  // SearchComponent,
 ];
 
 const IMPORTS_MODULES = [

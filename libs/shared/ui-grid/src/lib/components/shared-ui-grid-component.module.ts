@@ -6,9 +6,11 @@ import { ButtonRenderedComponent, RendererComponent } from './renderer';
 import { LoadingOverlayComponent, NoRowsOverlayComponent } from './overlay';
 import { ActionsColumnRendererComponent } from './renderer/actions-column-renderer/actions-column-renderer.component';
 import { ThemePrimengModule } from '@zy/shared/util';
+import { SearchNgrxComponent } from './search-ngrx/search-ngrx.component';
 
 const COMPONENT = [
   SearchComponent,
+  SearchNgrxComponent,
   RendererComponent,
   ButtonRenderedComponent,
   NoRowsOverlayComponent,
@@ -17,6 +19,7 @@ const COMPONENT = [
 ];
 const EXPORTS_COMPONENT = [
   SearchComponent,
+  SearchNgrxComponent,
   RendererComponent,
   ButtonRenderedComponent,
   NoRowsOverlayComponent,

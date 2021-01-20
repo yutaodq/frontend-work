@@ -28,23 +28,9 @@ export function reducers(state: VehiclesState | undefined, action: Action) {
   })(state, action);
 }
 
-/**
- * A selector function is a map function factory. We pass it parameters and it
- * returns a function that maps from the larger state tree into a smaller
- * piece of state. This selector simply selects the `books` state.
- *
- * Selectors are used with the `select` operator.
- *
- * ```ts
- * class MyComponent {
- *   constructor(state$: Observable<State>) {
- *     this.booksState$ = state$.pipe(select(getVehiclesState));
- *   }
- * }
- * ```
+/*
+select
  */
-
-
 export const selectVehiclesState = createFeatureSelector<State, VehiclesState>(
   vehiclesFeatureKey
 );
@@ -106,6 +92,12 @@ export const getCollectionLoadFailed = createSelector(
   selectCollectionState,
   fromCollection.getCollectionLoadFailed
 );
+
+export const selectCollectionQuery = createSelector(
+  selectCollectionState,
+  fromCollection.getCollectionQuery
+);
+
 
 export const selectCollectionVehicleIds = createSelector(
   selectCollectionState,
