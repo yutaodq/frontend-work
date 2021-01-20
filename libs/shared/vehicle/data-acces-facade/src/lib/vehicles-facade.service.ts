@@ -15,6 +15,10 @@ export class VehiclesFacade extends Sandbox {
 
   public vehicleDetails$ =
     this.appState$.pipe(select(fromVehicles.selectSelectedVehicle)) as Observable<Vehicle>;
+
+  public vehicleDetailsRemoveSuccess$ =
+    this.appState$.pipe(select(fromVehicles.selectVehicleRemoveSuccess)) as Observable<boolean>;
+
   public vehiclesCollectionLoaded$ = this.appState$.pipe(select(fromVehicles.selectCollectionLoaded));
 
   private subscriptions: Array<Subscription> = [];

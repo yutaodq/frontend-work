@@ -2,7 +2,7 @@ import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { createReducer, on } from '@ngrx/store';
 
 import {
-  CollectionApiActions, CollectionPageActions
+  CollectionApiActions, CollectionPageActions, VehiclePageActions
 } from '../actions';
 import { Vehicle } from '@zy/model';
 
@@ -25,7 +25,6 @@ export const initialState: State = adapter.getInitialState({
   loaded:  false,
   loadFailed:  false,
   removeSuccess: false,
-
 });
 
 export const reducer = createReducer(
@@ -37,13 +36,34 @@ export const reducer = createReducer(
   on(CollectionPageActions.selectVehicle, (state, { id }) => ({
     ...state,
     selectedVehicleId: id,
-  }))
+  })),
+  /**
+   * 删除失败
+   */
+  on(VehiclePageActions.removeVehicleFailure,(state, { vehicle, removeSuccess}) => ({
+        ...state,
+        removeSuccess: removeSuccess
+      }
+   )),
+  /**
+   * 删除成功
+   */
+  on(VehiclePageActions.removeVehicleSuccess,(state, { vehicle, removeSuccess}) => ({
+      ...state,
+      removeSuccess: removeSuccess
+    }
+  )),
+
+
 );
 
-export const selectId = (state: State) => state.selectedVehicleId;
+export const getId = (state: State) => state.selectedVehicleId;
 
 export const getVehicleLoaded = (state: State) => state.loaded;
 
 export const getVehicleLoading = (state: State) => state.loading;
 
 export const getVehicleLoadFailed = (state: State) => state.loadFailed;
+
+export const getVehicleRemoveSuccess = (state: State) => state.removeSuccess;
+

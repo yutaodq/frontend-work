@@ -23,8 +23,8 @@ export class VehicleEffects {
       ofType(VehiclePageActions.removeVehicle),
       mergeMap(({ vehicle }) =>
         this.apiClient.getRemoveVehicle(vehicle.id).pipe(
-          map(() => VehiclePageActions.removeVehicleSuccess({ vehicle })),
-          catchError(() => of(VehiclePageActions.removeVehicleFailure({ vehicle })))
+          map(() => VehiclePageActions.removeVehicleSuccess({ vehicle , removeSuccess: true })),
+          catchError(() => of(VehiclePageActions.removeVehicleFailure({ vehicle, removeSuccess: false })))
         )
       )
     )

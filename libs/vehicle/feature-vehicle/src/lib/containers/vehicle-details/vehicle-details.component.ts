@@ -35,8 +35,8 @@ export class VehicleDetailsComponent implements OnInit, OnDestroy {
 
   public returnList(): void {
     this.vehiclesFacade.returnToList();
-    console.log('Awesomeness Ensures!!!cancelDelete');
-    this._router.navigate(['vehicles', 'list']);
+    // console.log('Awesomeness Ensures!!!cancelDelete');
+    // this._router.navigate(['vehicles', 'list']);
 
   }
 
@@ -61,13 +61,22 @@ export class VehicleDetailsComponent implements OnInit, OnDestroy {
    */
   private registerEvents(): void {
     // 订阅车辆详情
-    this.subscriptions.push(this.vehiclesFacade.vehicleDetails$.subscribe((vehicle: any) => {
+    this.subscriptions.push(
+      this.vehiclesFacade.vehicleDetails$.subscribe((vehicle: any) => {
         if (vehicle) {
           this.changeDetector.markForCheck();
           this.vehicle = vehicle;
           this.vehicle$ = of(vehicle);
         }
-      })
+      }),
+      this.vehiclesFacade.vehicleDetailsRemoveSuccess$.subscribe((removeSuccess) => {
+        if (removeSuccess) {
+          console.log('Awesomeness Ensures!!!vehicleDetailsRemoveSuccess$vehicleDetailsRemoveSuccess$vehicleDetailsRemoveSuccess$');
+          this.returnList()
+        }
+        }
+
+      )
     );
   }
 

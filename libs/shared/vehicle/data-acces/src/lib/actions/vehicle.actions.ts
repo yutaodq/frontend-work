@@ -11,12 +11,12 @@ export const removeVehicle = createAction(
 );
 export const removeVehicleSuccess = createAction(
   '[Selected Vehicle Page] Remove Vehicle Success',
-  props<{ vehicle: Vehicle }>()
+  props<{ vehicle: Vehicle, removeSuccess: boolean }>()
 );
 
 export const removeVehicleFailure = createAction(
   '[Selected Vehicle Page] Remove Vehicle Failure',
-  props<{ vehicle: Vehicle }>()
+  props<{ vehicle: Vehicle, removeSuccess: boolean }>()
 );
 
 /**

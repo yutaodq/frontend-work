@@ -44,6 +44,7 @@ export const reducer = createReducer(
     loadFailed:  true,
     ids: [],
   })),
+
   /**
    * 乐观删除.
    */
@@ -53,11 +54,12 @@ export const reducer = createReducer(
       ids: state.ids.filter((id) => id !== vehicle.id),
     })
   ),
+
 /**
  * 删除失败
  */
 on(VehiclePageActions.removeVehicleFailure,
-  (state, { vehicle }) => {
+  (state, { vehicle}) => {
     if (state.ids.indexOf(vehicle.id) > -1) {
       return state;
     }
