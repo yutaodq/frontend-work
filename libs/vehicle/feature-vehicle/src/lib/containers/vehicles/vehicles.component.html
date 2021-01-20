@@ -1,29 +1,34 @@
-<div class="content-section introduction">
-  <div class="feature-intro">
-    <h1>车辆档案<span>列表</span></h1>
-    <p>档案主要记录车辆所属单位</p>
+
+
+<div class="container">
+  <div class=" introduction">
+    <div class="feature-intro">
+      <h1>车辆档案<span>列表</span></h1>
+      <p>档案主要记录车辆所属单位</p>
+    </div>
   </div>
-
-  <zy-ui-button-new (onClick)="create()">
-  </zy-ui-button-new>
-</div>
-
-<div class="content-section implementation">
-  <div class="card">
-    <div class="container">
-      <div class="row">
-        <h5>Filter Menu</h5>
-        {{ 'ConfirmPassword' | translate }}
-        <p>Filters are displayed in an overlay.</p>
-        <zy-ui-grid-search [globalFilterInp]="''"></zy-ui-grid-search>
-
+  <!--  <div class="container content-section implementation">-->
+  <div class="card  ">
+    <div class="row justify-content-between">
+      <div class="col-md-3">
+        <zy-ui-button-new (onClick)="create()">
+        </zy-ui-button-new>
       </div>
-      <zy-vehicle-grid
-        [items]="vehiclesSandbox.vehicles$ | async"
-        (selectDataEvent)="onSelectData($event)"
-      >
-      </zy-vehicle-grid>
+      <div class="col-md-3 align-self-end">
+         <zy-ui-grid-search [globalFilterInp]="''"></zy-ui-grid-search>
+      </div>
 
+    </div>
+    <p></p>
+    <div class="row">
+
+    <div class="col">
+        <zy-vehicle-grid
+          [items]="vehiclesSandbox.vehicles$ | async"
+          (selectDataEvent)="onSelectData($event)"
+        >
+        </zy-vehicle-grid>
+      </div>
     </div>
 
   </div>
