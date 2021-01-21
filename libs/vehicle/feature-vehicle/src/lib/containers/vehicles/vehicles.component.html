@@ -1,5 +1,3 @@
-
-
 <div class="container">
   <div class=" introduction">
     <div class="feature-intro">
@@ -15,20 +13,15 @@
         </zy-ui-button-new>
       </div>
 
-      <div class="col-md-3 ">
-        <zy-ui-grid-search-ngrx [globalFilterInp]="''"></zy-ui-grid-search-ngrx>
-      </div>
-
       <div class="col-md-3 align-self-end">
-        <zy-ui-grid-search ></zy-ui-grid-search>
-<!--         <zy-ui-grid-search [globalFilterInp]="''"></zy-ui-grid-search>-->
+        <zy-ui-grid-search-ngrx></zy-ui-grid-search-ngrx>
       </div>
 
     </div>
     <p></p>
     <div class="row">
 
-    <div class="col">
+      <div class="col">
         <zy-vehicle-grid
           [items]="vehiclesSandbox.vehicles$ | async"
           (selectDataEvent)="onSelectData($event)"
