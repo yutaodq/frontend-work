@@ -4,7 +4,7 @@ https://github.com/saisureshdeveloper/ReportApp/tree/78ac33c5a2362d53af8c53067a0
 D:\学习案例\真实案例\ReportApp\Adventui_src\src\app\modules\home\dashboard\table-control\table-control.component.ts
  */
 import { Component, OnInit, Input } from '@angular/core';
-import { SearchGridService, SearchNgrxGridService } from '@zy/shared/util';
+import {  SearchNgrxGridService } from '@zy/shared/util';
 
 @Component({
   selector: 'zy-ui-grid-search-ngrx',
@@ -19,27 +19,26 @@ export class SearchNgrxComponent implements OnInit {
   }
 
   constructor(
-    private searchGridService: SearchGridService,
      public searchNgrxGridService: SearchNgrxGridService
   ) { }
 
   ngOnInit() {
-    this.searchGridService.globalFilterResetSubject.subscribe(data => {
-      this.globalFilter = '';
-    });
-    this.searchNgrxGridService.query$.subscribe( a => this.globalFilter=a )
+    this.searchNgrxGridService.query$.subscribe( filter => this.globalFilter = filter )
     this.onGlobalFilterChanged(this.globalFilter);
   }
 
   onGlobalFilterChanged(val) {
     this.globalFilterInp = val;
-    this.searchGridService.globalFilterSubject.next(val);
-    this.searchNgrxGridService.search(val);
+
+    this.search(val);
+  }
+  private search(filter: string) {
+    this.searchNgrxGridService.search(filter);
   }
 
 
   onClearSearch() {
-    this.searchGridService.clearSearchSubject.next(true);
+    this.search('');
   }
 
   public isShowSearchIcon(): boolean {

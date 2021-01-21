@@ -39,7 +39,6 @@ export const COMPONENTS_EXPORTS : Array<any> = [
   ],
   exports: [...COMPONENTS_EXPORTS],
 
-  providers: [ {provide:SearchNgrxGridService, useClass:VehicleSearchNgrxGridService}],
   entryComponents: [
     VehicleDeleteDialogComponent
   ]

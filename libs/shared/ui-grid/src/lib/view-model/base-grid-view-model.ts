@@ -41,51 +41,28 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
   @Output() selectDataEvent = new EventEmitter<T>();
 
   protected constructor(
-    public _searchGridService: SearchGridService,
-    public _searchNgrxGridService: SearchNgrxGridService
+    private _searchNgrxGridService: SearchNgrxGridService
   ) {
     this.cacheBlockSize = 50;
-    this._frameworkComponents = {
-      buttonRendered: ButtonRenderedComponent,
-      actionsColRendered: ActionsColumnRendererComponent
-    };
-    // this._gridOptions = this.createGridOptions();
 
   }
 
   ngOnInit() {
+    this._frameworkComponents = {
+      buttonRendered: ButtonRenderedComponent,
+      actionsColRendered: ActionsColumnRendererComponent
+    };
     this.initGrid();
-    this._searchNgrxGridService.query$.subscribe(query => this.quickFilter(query))
-
-    // this._searchGridService.globalFilterSubject.subscribe(val => {
-    //   if (this.hasGridOptionsApi()) {
-    //     this.quickFilter(val);
-    //   }
-    // });
-
-    // this._searchGridService.clearSearchSubject.subscribe(flag => {
-    //   if (flag) {
-    //     if (this.hasGridOptionsApi()) {
-    //       this._searchGridService.globalFilterResetSubject.next('');
-    //       this.quickFilter('');
-    //     }
-    //   }
-    // });
 
   }
-  private hasGridOptionsApi() : boolean {
-    return !!this.gridOptions.api;
-  }
-private  quickFilter(filterValue: any){
-  if (this.hasGridOptionsApi()) {
-    console.log(`quickFilter::`+  filterValue);
-    this.gridOptions.api.setQuickFilter(filterValue);
-  }
-}
+  /*
+  由详细表单返回到列表时，如果有过滤条件。保证返回过滤条件的列表
+   */
   public ngAfterViewInit(): void {
-    let vale ;
-    this._searchNgrxGridService.query$.pipe(map( query =>  vale = query)).subscribe();
-    console.log(`BaseGridViewModel::`+  vale);
+    let vale;
+    this._searchNgrxGridService.query$.pipe(
+      map(query => vale = query))
+      .subscribe(query => this.quickFilter(query));
     this.quickFilter(vale);
     this.registerFilterChangeHandlers();
   }
@@ -93,6 +70,16 @@ private  quickFilter(filterValue: any){
   private initGrid(): void {
     this.setGridOptions(this.createGridOptions());
     this.setRowHeight(this._gridOptions);
+  }
+
+  private hasGridOptionsApi(): boolean {
+    return !!this.gridOptions.api;
+  }
+
+  private quickFilter(filterValue: any) {
+    if (this.hasGridOptionsApi()) {
+      this.gridOptions.api.setQuickFilter(filterValue);
+    }
   }
 
   public createGridOptions(): IDataGridOptions {
@@ -124,13 +111,13 @@ private  quickFilter(filterValue: any){
       width: 65,
       fixedWidth: true,
       lockPinned: true,
-      pinned: "right",
+      pinned: 'right',
       cellRenderer: 'actionsColRendered',
       cellRendererParams: {
         onClick: this.onSelectData.bind(this),
         fa: 'fa fa-info-circle',
         iconClass: 'detail-icon'
-      },
+      }
 
 
     }];
@@ -158,27 +145,13 @@ private  quickFilter(filterValue: any){
     return this.showCheckboxColumn() ? 'multiple' : 'single';
   }
 
-  protected getHeaderRowsCount(): number {
-    return DEFAULT_HEADER_ROWS;
-  }
-
   protected showCheckboxColumn(): boolean {
     return true;
   }
 
   protected abstract getGridStateKey(): string;
 
-
-  private filterModelExist(): boolean {
-    return this.gridState && this.gridState.filterModel;
-  }
-
-  // 快速过滤器
-  // public onQuickFilterChanged($event) {
-  //   this.gridOptions.api.setQuickFilter($event.target.value);
-  // }
-
-  protected abstract registerFilterChangeHandlers(): void;
+   protected abstract registerFilterChangeHandlers(): void;
 
   public refreshGrid(): void {
     if (this.gridOptions && this.gridOptions.api) {

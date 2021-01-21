@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { VehicleSearchNgrxGridService, VehiclesFacade } from '@zy/shared/vehicle/data-acces-facade';
+import { VehiclesFacade } from '@zy/shared/vehicle/data-acces-facade';
 import { TranslateService } from '@ngx-translate/core';
-import { GridOptions } from 'ag-grid-community';
-// import { ButtonRenderedComponent } from '@zy/shared/ui-grid';
 import { Router } from '@angular/router';
-import { localeTextGrid } from '@zy/shared/util';
 import { NGXLogger } from 'ngx-logger';
-import { ButtonRenderedComponent } from '@zy/shared/ui-grid';
 import { Vehicle } from '@zy/model';
 
 @Component({

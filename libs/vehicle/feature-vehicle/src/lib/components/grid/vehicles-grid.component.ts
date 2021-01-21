@@ -1,24 +1,19 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  EventEmitter,
-  inject,
-  Injector,
   Input,
-  OnInit,
-  Output
 } from '@angular/core';
 import { Vehicle } from '@zy/model';
 import { VehicleColumnsBuilder } from '../../grid/vehicle-columns.builder';
 import { BaseGridViewModel, GridLocaleService, IGridColumnsBuilder } from '@zy/shared/ui-grid';
-import { SearchGridService, SearchNgrxGridService } from '@zy/shared/util';
 import { VehicleSearchNgrxGridService } from '@zy/shared/vehicle/data-acces-facade';
+import { SearchNgrxGridService } from '@zy/shared/util';
 
 @Component({
   selector: 'zy-vehicle-grid',
   templateUrl: './vehicles-grid.component.html',
   styleUrls: ['./vehicles-grid.component.scss'],
-  providers: [VehicleColumnsBuilder, VehicleSearchNgrxGridService],
+  providers: [ VehicleColumnsBuilder, VehicleSearchNgrxGridService],
   changeDetection: ChangeDetectionStrategy.OnPush
 
 })
@@ -29,11 +24,10 @@ export class VehiclesGridComponent extends BaseGridViewModel<Vehicle> {
   private readonly _gridColumnsBuilder: IGridColumnsBuilder;
 
 
-  constructor(searchGridService: SearchGridService,
-              searchNgrxGridService: VehicleSearchNgrxGridService,
+  constructor(searchNgrxGridService: VehicleSearchNgrxGridService,
   vehicleColumnsBuilder: VehicleColumnsBuilder
   ) {
-    super(searchGridService, searchNgrxGridService);
+    super( searchNgrxGridService);
     this._gridColumnsBuilder = vehicleColumnsBuilder
   }
 
