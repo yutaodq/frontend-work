@@ -45,19 +45,17 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
     public _searchNgrxGridService: SearchNgrxGridService
   ) {
     this.cacheBlockSize = 50;
-  }
-
-  ngOnInit() {
     this._frameworkComponents = {
       buttonRendered: ButtonRenderedComponent,
       actionsColRendered: ActionsColumnRendererComponent
     };
+    // this._gridOptions = this.createGridOptions();
+
+  }
+
+  ngOnInit() {
     this.initGrid();
     this._searchNgrxGridService.query$.subscribe(query => this.quickFilter(query))
-    let vale ;
-      this._searchNgrxGridService.query$.pipe(map( query =>  vale = query)).subscribe();
-    console.log(`BaseGridViewModel::`+  vale);
-    this.quickFilter(vale);
 
     // this._searchGridService.globalFilterSubject.subscribe(val => {
     //   if (this.hasGridOptionsApi()) {
@@ -85,6 +83,10 @@ private  quickFilter(filterValue: any){
   }
 }
   public ngAfterViewInit(): void {
+    let vale ;
+    this._searchNgrxGridService.query$.pipe(map( query =>  vale = query)).subscribe();
+    console.log(`BaseGridViewModel::`+  vale);
+    this.quickFilter(vale);
     this.registerFilterChangeHandlers();
   }
 
