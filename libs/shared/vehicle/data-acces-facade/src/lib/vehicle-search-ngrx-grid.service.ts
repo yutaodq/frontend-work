@@ -16,7 +16,6 @@ export class VehicleSearchNgrxGridService extends  SearchNgrxGridService{
   }
 
   search(query: string) {
-    console.log(`onSelectData(event):VehicleSearchNgrxGridServiceVehicleSearchNgrxGridServiceVehicleSearchNgrxGridService` );
     this.appState$.dispatch(fromVehicles.CollectionPageActions.searchCollection({query}));
   }
 

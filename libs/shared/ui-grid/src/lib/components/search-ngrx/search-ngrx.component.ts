@@ -10,7 +10,8 @@ import { SearchGridService, SearchNgrxGridService } from '@zy/shared/util';
   selector: 'zy-ui-grid-search-ngrx',
   templateUrl: './search-ngrx.component.html',
   styleUrls: ['./search-ngrx.component.css'],
-  providers: [SearchNgrxGridService]
+  providers: []
+  // providers: [SearchNgrxGridService]
 })
 export class SearchNgrxComponent implements OnInit {
   public globalFilter: string;
