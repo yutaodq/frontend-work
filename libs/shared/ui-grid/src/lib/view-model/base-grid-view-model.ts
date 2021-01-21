@@ -19,9 +19,10 @@ import { IGridColumnsBuilder } from '../builder';
 import { IDataGridViewModel } from './data-grid-vm.interface';
 import { COLUMN_DEFAULT_VALUE, ROW_HEIGHT } from '../options/column-default-value';
 import { LOCALE_TEXT_GRID } from '../util/locale-text-grid';
-import { SearchGridService } from '@zy/shared/util';
+import { SearchGridService, SearchNgrxGridService } from '@zy/shared/util';
 import { ButtonRenderedComponent } from '../components/renderer';
 import { ActionsColumnRendererComponent } from '../components/renderer/actions-column-renderer/actions-column-renderer.component';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -39,7 +40,10 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
 
   @Output() selectDataEvent = new EventEmitter<T>();
 
-  protected constructor(private _searchGridService: SearchGridService) {
+  protected constructor(
+    public _searchGridService: SearchGridService,
+    public _searchNgrxGridService: SearchNgrxGridService
+  ) {
     this.cacheBlockSize = 50;
   }
 
@@ -49,28 +53,36 @@ export abstract class BaseGridViewModel<T> implements OnInit, AfterViewInit {
       actionsColRendered: ActionsColumnRendererComponent
     };
     this.initGrid();
-    this._searchGridService.globalFilterSubject.subscribe(val => {
-      if (this.hasGridOptionsApi()) {
-        this.quickFilter(val);
-      }
-    });
+    this._searchNgrxGridService.query$.subscribe(query => this.quickFilter(query))
+    let vale ;
+      this._searchNgrxGridService.query$.pipe(map( query =>  vale = query)).subscribe();
+    console.log(`BaseGridViewModel::`+  vale);
+    this.quickFilter(vale);
 
-    this._searchGridService.clearSearchSubject.subscribe(flag => {
-      if (flag) {
-        if (this.hasGridOptionsApi()) {
-          this._searchGridService.globalFilterResetSubject.next('');
-          this.quickFilter('');
-        }
-      }
-    });
+    // this._searchGridService.globalFilterSubject.subscribe(val => {
+    //   if (this.hasGridOptionsApi()) {
+    //     this.quickFilter(val);
+    //   }
+    // });
+
+    // this._searchGridService.clearSearchSubject.subscribe(flag => {
+    //   if (flag) {
+    //     if (this.hasGridOptionsApi()) {
+    //       this._searchGridService.globalFilterResetSubject.next('');
+    //       this.quickFilter('');
+    //     }
+    //   }
+    // });
 
   }
   private hasGridOptionsApi() : boolean {
     return !!this.gridOptions.api;
   }
 private  quickFilter(filterValue: any){
-  this.gridOptions.api.setQuickFilter(filterValue);
-
+  if (this.hasGridOptionsApi()) {
+    console.log(`quickFilter::`+  filterValue);
+    this.gridOptions.api.setQuickFilter(filterValue);
+  }
 }
   public ngAfterViewInit(): void {
     this.registerFilterChangeHandlers();

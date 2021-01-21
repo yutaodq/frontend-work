@@ -11,7 +11,6 @@ import { SearchGridService, SearchNgrxGridService } from '@zy/shared/util';
   templateUrl: './search-ngrx.component.html',
   styleUrls: ['./search-ngrx.component.css'],
   providers: []
-  // providers: [SearchNgrxGridService]
 })
 export class SearchNgrxComponent implements OnInit {
   public globalFilter: string;
@@ -28,6 +27,8 @@ export class SearchNgrxComponent implements OnInit {
     this.searchGridService.globalFilterResetSubject.subscribe(data => {
       this.globalFilter = '';
     });
+    this.searchNgrxGridService.query$.subscribe( a => this.globalFilter=a )
+    this.onGlobalFilterChanged(this.globalFilter);
   }
 
   onGlobalFilterChanged(val) {

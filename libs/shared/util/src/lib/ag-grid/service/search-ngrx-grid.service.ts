@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 // @Injectable({
 //   providedIn: 'root'
 // })
 @Injectable()
 
-// export abstract class SearchNgrxGridService {
 export class SearchNgrxGridService {
 
+  public query$: Observable<string>
   public constructor() {  }
 
    search(query: string) {
-     console.log(`onSelectData(event):SearchNgrxGridService` );
-
    }
 
    clearSearch() {

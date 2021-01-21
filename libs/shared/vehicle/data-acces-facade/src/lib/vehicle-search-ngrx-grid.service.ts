@@ -6,12 +6,13 @@ import { SearchNgrxGridService } from '@zy/shared/util';
 
 @Injectable()
 export class VehicleSearchNgrxGridService extends  SearchNgrxGridService{
-  public query$ = this.appState$.pipe(select(fromVehicles.selectCollectionQuery));
+  // public query$ = this.appState$.pipe(select(fromVehicles.selectCollectionQuery));
 
   constructor(
     protected appState$: Store<fromVehicles.State>,
   ) {
     super();
+    this.query$ = this.appState$.pipe(select(fromVehicles.selectCollectionQuery));
     this.registerEvents();
   }
 
