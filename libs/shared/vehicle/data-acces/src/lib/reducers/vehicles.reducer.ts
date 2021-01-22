@@ -35,6 +35,7 @@ export const reducer = createReducer(
   ),
   on(CollectionPageActions.selectVehicle, (state, { id }) => ({
     ...state,
+    removeSuccess: false,
     selectedVehicleId: id,
   })),
   /**

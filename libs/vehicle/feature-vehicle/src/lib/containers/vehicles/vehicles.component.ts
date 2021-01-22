@@ -29,7 +29,7 @@ export class VehiclesComponent implements OnInit {
   }
 
   onSelectData(vehicle: Vehicle) {
-    // console.log(`onSelectData(event):` + selectDataId);
+    console.log(`onSelectData(event):aaaaaaaaaaaaaaaa` );
     // const id = selectDataId.id;
     this._vehiclesFacade.selectVehicle(vehicle);
     this.router.navigate(['vehicles', vehicle.id,'detail']);

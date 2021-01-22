@@ -14,7 +14,7 @@ import { VehicleDeleteDialogComponent } from '../../components/vehicle-delete-di
   templateUrl: './vehicle-details.component.html',
   styleUrls: ['./vehicle-details.component.scss'],
   providers: [DialogService, MessageService, ConfirmationService],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class VehicleDetailsComponent implements OnInit, OnDestroy {
@@ -72,6 +72,9 @@ export class VehicleDetailsComponent implements OnInit, OnDestroy {
       this.vehiclesFacade.vehicleDetailsRemoveSuccess$.subscribe((removeSuccess) => {
         if (removeSuccess) {
           console.log('Awesomeness Ensures!!!vehicleDetailsRemoveSuccess$vehicleDetailsRemoveSuccess$vehicleDetailsRemoveSuccess$');
+          // if (this.ref) {
+          //   this.ref.close();
+          // }
           this.returnList()
         }
         }
@@ -88,6 +91,9 @@ export class VehicleDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    if (this.ref) {
+      this.ref.close();
+    }
     this.subscriptions.forEach(sub => sub.unsubscribe());
   }
 
