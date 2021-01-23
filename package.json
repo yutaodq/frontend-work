@@ -56,6 +56,7 @@
     "@ngx-translate/http-loader": "^6.0.0",
     "@nrwl/angular": "10.4.4",
     "@nrwl/schematics": "^8.12.11",
+    "@rxweb/reactive-form-validators": "^2.1.2",
     "ag-grid-angular": "^24.1.0",
     "ag-grid-community": "^24.1.0",
     "angular2-notifications": "^9.0.0",

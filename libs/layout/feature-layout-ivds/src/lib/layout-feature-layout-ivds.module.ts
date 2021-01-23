@@ -9,6 +9,8 @@ import { MainModule } from './main/main.module';
 import { SharedUiGridModule } from '@zy/shared/ui-grid';
 import { SharedUtilModule } from '@zy/shared/util';
 import { MessageService } from 'primeng/api';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 
 const EXPORTS_MODULES = [
   MainModule,
@@ -18,6 +20,9 @@ const EXPORTS_MODULES = [
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RxReactiveFormsModule,
     HttpClientModule,
     SharedUtilModule,
     SharedUiGridModule,
