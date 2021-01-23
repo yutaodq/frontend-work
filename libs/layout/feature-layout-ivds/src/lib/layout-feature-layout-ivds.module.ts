@@ -7,8 +7,8 @@ import { HttpServiceModule } from '@zy/shared/data-access-http';
 
 import { MainModule } from './main/main.module';
 import { SharedUiGridModule } from '@zy/shared/ui-grid';
-// import { SharedUtilI18nModule } from '@frontend-work/shared/util-i18n';
 import { SharedUtilModule } from '@zy/shared/util';
+import { MessageService } from 'primeng/api';
 
 const EXPORTS_MODULES = [
   MainModule,
@@ -19,7 +19,6 @@ const EXPORTS_MODULES = [
   imports: [
     CommonModule,
     HttpClientModule,
-    // SharedUtilI18nModule,
     SharedUtilModule,
     SharedUiGridModule,
     SharedDataAccessStoreModule.forRoot(),
@@ -28,6 +27,7 @@ const EXPORTS_MODULES = [
   exports: [
     ...EXPORTS_MODULES
   ],
+  providers: [MessageService]
 })
 export class LayoutFeatureLayoutIvdsModule {
 }

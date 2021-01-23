@@ -13,6 +13,8 @@
   <div class="layout-mask" [ngClass]="{'layout-mask-active': menuActive}" (click)="onMaskClick()">
   </div>
   <div class="layout-content">
+<!--    <p-messages></p-messages>-->
+    <p-toast position="top-left"></p-toast>
     <router-outlet></router-outlet>
     <zy-ui-footer></zy-ui-footer>
   </div>

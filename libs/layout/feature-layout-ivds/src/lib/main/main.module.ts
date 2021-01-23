@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { SharedUiModule } from '@zy/shared/ui';
 
 import { IvdsComponent } from './component/ivds.component';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [IvdsComponent],
@@ -12,10 +13,10 @@ import { IvdsComponent } from './component/ivds.component';
     CommonModule,
     RouterModule,
     SharedUiModule,
+    ToastModule
   ],
-  exports: [
-    IvdsComponent
-    ]
+  exports: [ IvdsComponent ],
+  providers: []
 
 })
 export class MainModule { }

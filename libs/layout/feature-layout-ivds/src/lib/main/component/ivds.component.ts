@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NotificationReceiverService } from '@zy/shared/util';
+import { of, Subscription } from 'rxjs';
 @Component({
   selector: 'layout-ivds',
   templateUrl: './ivds.component.html',
   styleUrls: ['./ivds.component.scss']
 })
-export class IvdsComponent  {
+export class IvdsComponent  implements OnInit {
+  private subscriptions: Array<Subscription> = [];
+
   logo = require('../../../../assets/images/logo.svg').default;
   menuActive: boolean;
 
@@ -31,9 +34,28 @@ export class IvdsComponent  {
     else
       element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
   }
+  constructor(
+    public notificationReceiverService: NotificationReceiverService
+  ) {
 
+}
   onMaskClick() {
     this.hideMenu();
+  }
+  /**
+   * Registers events
+   */
+  private registerEvents(): void {
+    // 订阅车辆详情
+    this.subscriptions.push(
+    )
+  }
+
+  /*
+
+    */
+  ngOnInit() {
+    this.registerEvents();
   }
 
 

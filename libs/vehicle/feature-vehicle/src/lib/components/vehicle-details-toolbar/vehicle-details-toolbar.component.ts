@@ -46,8 +46,8 @@ export class VehicleDetailsToolbarComponent  {
   // }
 
   public delete(event: Event): void {
-    console.log('Awesomeness Ensures!!!');
-      // event.stopPropagation();
+    // console.log('Awesomeness Ensures!!!');
+    //   // event.stopPropagation();
       this.onDelete.emit();
   }
   //   this.ref = this.dialogService.open(VehicleDeleteDialogComponent, {

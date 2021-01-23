@@ -16,7 +16,6 @@ import { LayoutFeatureLayoutIvdsModule } from '@zy/layout/feature-layout-ivds';
     AppRoutingModule,
     LayoutFeatureLayoutIvdsModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 
 
