@@ -50,7 +50,7 @@ export class VehicleDetailsToolbarComponent  {
     //   // event.stopPropagation();
       this.onDelete.emit();
   }
-  //   this.ref = this.dialogService.open(VehicleDeleteDialogComponent, {
+  //   this.ref = this.dialogService.open(VehicleCreateFormComponent, {
   //     header: 'Choose a Product',
   //     width: '70%',
   //     contentStyle: {"max-height": "500px", "overflow": "auto"},

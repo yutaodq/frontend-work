@@ -11,7 +11,8 @@ import { SharedUtilModule } from '@zy/shared/util';
 import { MessageService } from 'primeng/api';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
-
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyPrimeNGModule } from '@ngx-formly/primeng';
 const EXPORTS_MODULES = [
   MainModule,
   SharedUiGridModule
@@ -23,6 +24,8 @@ const EXPORTS_MODULES = [
     FormsModule,
     ReactiveFormsModule,
     RxReactiveFormsModule,
+    FormlyModule.forRoot(),
+    FormlyPrimeNGModule,
     HttpClientModule,
     SharedUtilModule,
     SharedUiGridModule,
