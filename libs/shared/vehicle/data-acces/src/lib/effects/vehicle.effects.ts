@@ -29,7 +29,21 @@ export class VehicleEffects {
       )
     )
   );
+
   // this.apiClient.getRemoveVehicle(vehicle.id).pipe(
+  // this.apiClient.getCreateVehicle(vehicle).pipe(
+
+  addVehicleToCollection$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(VehiclePageActions.createVehicle),
+      mergeMap(({ vehicle }) =>
+        this.apiClient.create(vehicle).pipe(
+          map(() => VehiclePageActions.createVehicleSuccess( {vehicle} )),
+          catchError(() => of(VehiclePageActions.createVehicleFailure({ vehicle })))
+        )
+      )
+    )
+  );
 
 
   constructor(

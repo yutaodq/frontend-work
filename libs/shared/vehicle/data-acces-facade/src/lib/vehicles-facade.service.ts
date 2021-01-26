@@ -40,9 +40,18 @@ export class VehiclesFacade extends Sandbox {
   public loadVehicles(): void {
     this.appState$.dispatch(fromVehicles.CollectionPageActions.loadCollection());
   }
+/*
+   * Loads vehicle vehicle-create from the server
+   * loadVehicle
+ */
+  public addVehicle(vehicle: Vehicle): void {
+    console.log(`onSelectData(event):+ getCreateVehicle+ getCreateVehicle+ selectDataId`+ vehicle.name );
+
+    this.appState$.dispatch(fromVehicles.VehiclePageActions.createVehicle({vehicle}));
+  }
 
   /**
-   * Loads product vehicle-details-form from the server
+   * Loads vehicle vehicle-details-form from the server
    * loadVehicle
    */
   public loadVehicleDetails(id: string): void {

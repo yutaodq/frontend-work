@@ -1,91 +1,104 @@
 import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
-import { FormlyFieldConfig } from '@ngx-formly/core';
+import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
+import { Vehicle } from '@zy/model';
+
+const FIELDS  = require('./vehicle-create-form.json');
 
 export class VehicleCreateFormPresenter {
-  private _add: Subject<string> = new Subject();
-  add$: Observable<string> = this._add.asObservable();
+  private _add: Subject<Vehicle> = new Subject();
+  add$: Observable<Vehicle> = this._add.asObservable();
+
   private _cancel: Subject<string> = new Subject();
   cancel$: Observable<string> = this._cancel.asObservable();
 
   form = new FormGroup({});
-  model = { name: '', pz: 'sdf', nbpz: '', type: '', zt: '', bz: '' };
+  // model = { name: '', pz: 'sdf', nbpz: '', type: '', zt: '', bz: '' };
+  model = { };
 
   fields: FormlyFieldConfig[] = FIELDS;
-
+  options: FormlyFormOptions = {};
   public cancel(): void {
     this._cancel.next('cancelCreate');
   }
 
   public save(): void {
-    this._add.next('cancelCreate');
-  }
+    if (!this.form.valid) {
+      console.log('public save(): void保存记录错误' + this.model);
 
+    }
+    const vehicle: Vehicle = this.model as Vehicle;
+    Object.keys(vehicle).forEach((key) => (vehicle[key] === null || vehicle[key] === '') && delete vehicle[key]);
+
+    // const data = { ...this.model };
+    this._add.next(vehicle);
+
+  }
 }
 
-const FIELDS =  [
-  {
-    fieldGroupClassName: 'row',
-    fieldGroup: [
-      {
-        className: 'col-md-6',
-        key: 'name',
-        type: 'input',
-        templateOptions: {
-          label: 'Email address',
-          placeholder: 'Enter email',
-          required: true
-        }
-      },
-      {
-        className: 'col-md-3',
-        key: 'pz',
-        type: 'input',
-        templateOptions: {
-          label: 'Email address',
-          placeholder: 'Enter email',
-          required: true
-        }
-      },
-      {
-        className: 'col-md-3',
-        key: 'nbpz',
-        type: 'input',
-        templateOptions: {
-          label: 'Email address',
-          placeholder: 'Enter email',
-          required: true
-        }
-      }
-    ]
-  },
-  { template: '<hr />' },
-  {
-    key: 'type',
-    type: 'input',
-    templateOptions: {
-      label: 'Email address',
-      placeholder: 'Enter email',
-      required: true
-    }
-  },
-  {
-    key: 'zt',
-    type: 'input',
-    templateOptions: {
-      label: 'Email address',
-      placeholder: 'Enter email',
-      required: true
-    }
-  },
-  {
-    key: 'bz',
-    type: 'input',
-    templateOptions: {
-      label: 'Email address',
-      placeholder: 'Enter email',
-      required: true
-    }
-  }
-];
+  // const  FIELDS = [
+  //   {
+  //     fieldGroupClassName: 'row',
+  //     fieldGroup: [
+  //       {
+  //         className: 'col-md-6',
+  //         key: 'name',
+  //         type: 'input',
+  //         templateOptions: {
+  //           label: 'Email address',
+  //           placeholder: 'Enter email',
+  //           required: true
+  //         }
+  //       },
+  //       {
+  //         className: 'col-md-3',
+  //         key: 'pz',
+  //         type: 'input',
+  //         templateOptions: {
+  //           label: 'Email address',
+  //           placeholder: 'Enter email',
+  //           required: true
+  //         }
+  //       },
+  //       {
+  //         className: 'col-md-3',
+  //         key: 'nbpz',
+  //         type: 'input',
+  //         templateOptions: {
+  //           label: 'Email address',
+  //           placeholder: 'Enter email',
+  //           required: true
+  //         }
+  //       }
+  //     ]
+  //   },
+  //   { template: '<hr />' },
+  //   {
+  //     key: 'type',
+  //     type: 'input',
+  //     templateOptions: {
+  //       label: 'Email address',
+  //       placeholder: 'Enter email',
+  //       required: true
+  //     }
+  //   },
+  //   {
+  //     key: 'zt',
+  //     type: 'input',
+  //     templateOptions: {
+  //       label: 'Email address',
+  //       placeholder: 'Enter email',
+  //       required: true
+  //     }
+  //   },
+  //   {
+  //     key: 'bz',
+  //     type: 'input',
+  //     templateOptions: {
+  //       label: 'Email address',
+  //       placeholder: 'Enter email',
+  //       required: true
+  //     }
+  //   }
+  // ];

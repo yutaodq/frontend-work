@@ -18,6 +18,24 @@ export const removeVehicleFailure = createAction(
   '[Selected Vehicle Page] Remove Vehicle Failure',
   props<{ vehicle: Vehicle, removeSuccess: boolean }>()
 );
+/**
+ * create Vehicle  Actions
+ */
+
+export const createVehicle = createAction(
+  '[Create Vehicle Page] Create Vehicle',
+  props<{ vehicle: Vehicle }>()
+);
+
+export const createVehicleSuccess = createAction(
+  '[Create Vehicle Page] Create Vehicle Success',
+  props<{ vehicle: Vehicle }>()
+);
+
+export const createVehicleFailure = createAction(
+  '[Create Vehicle Page] Create Vehicle Failure',
+  props<{ vehicle: Vehicle }>()
+);
 
 /**
  * Load Vehicle  Actions

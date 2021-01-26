@@ -11,7 +11,7 @@ import {
 import { Vehicle } from '@zy/model';
 import {VehicleCreateFormPresenter} from './vehicle-create-form.presenter';
 import { FormGroup } from '@angular/forms';
-import { FormlyFieldConfig } from '@ngx-formly/core';
+import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 @Component({
   selector: 'zy-vehicle-create-form',
   templateUrl: './vehicle-create-form.component.html',
@@ -21,27 +21,27 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 })
 
 export class VehicleCreateFormComponent   implements OnInit {
-  @Output() addEvent: EventEmitter<string> = new EventEmitter();
+  @Output() addEvent: EventEmitter<Vehicle> = new EventEmitter();
   @Output() cancelEvent: EventEmitter<string> = new EventEmitter();
   constructor( private _formPresenter: VehicleCreateFormPresenter) {
   }
 
   ngOnInit(): void {
-    this._formPresenter.add$.subscribe(name => this.addEvent.emit(name));
+    this._formPresenter.add$.subscribe(vehicle => this.addEvent.emit(vehicle));
     this._formPresenter.cancel$.subscribe(name => this.cancelEvent.emit(name));
 
   }
 
   onSubmit(model: any) {
-    console.log('保存记录' + this.model);
-    // this._formPresenter.();
+    this._formPresenter.save();
   }
 
-  public onSave(): void{
-
-  }
   public cancelCreate(): void{
     this._formPresenter.cancel();
+  }
+
+  get options(): FormlyFormOptions {
+    return this._formPresenter.options;
   }
 
   get form(): FormGroup {

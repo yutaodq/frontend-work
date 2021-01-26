@@ -38,6 +38,12 @@ export class VehicleCreateComponent implements OnInit, OnDestroy {
     this.vehiclesSandbox.returnToList()
   }
 
+  onAdd(vehicle: Vehicle) {
+    console.log('VehicleCreateComponent保存记录' + vehicle);
+
+    this.vehiclesSandbox.addVehicle(vehicle);
+  }
+
   /**
    * Registers events
    */
