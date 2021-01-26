@@ -1,8 +1,8 @@
 <div class="container content-section introduction">
-  <h1>Form Layout</h1>
-  <p>Form layout is a CSS utility optimized for creating forms with <a
-    href="http://www.xsdw.dqyt.petrochina/sites/cy6c/zydd/Pages/default.aspx">PrimeFlex</a>,
-    a shared grid library between PrimeFaces, PrimeNG, PrimeReact and PrimeVue projects.</p>
+  <h1>添加车辆信息</h1>
+  <p>添加车辆信息 <a
+    href="http://www.xsdw.dqyt.petrochina/sites/cy6c/zydd/Pages/default.aspx">作业</a>,
+    一个简单的试验项目.</p>
 </div>
 
 <div class="container content-section implementation">
@@ -10,11 +10,8 @@
 
 <!--  </zy-vehicle-details-toolbar>-->
   <div class="card">
-    <zy-vehicle-create-form>
-
+    <zy-vehicle-create-form (cancelEvent)="onCancel()" >
     </zy-vehicle-create-form>
-
-
   </div>
 
 </div>

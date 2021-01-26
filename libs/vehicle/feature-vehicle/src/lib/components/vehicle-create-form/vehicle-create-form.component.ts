@@ -20,41 +20,38 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class VehicleCreateFormComponent  {
+export class VehicleCreateFormComponent   implements OnInit {
+  @Output() addEvent: EventEmitter<string> = new EventEmitter();
+  @Output() cancelEvent: EventEmitter<string> = new EventEmitter();
+  constructor( private _formPresenter: VehicleCreateFormPresenter) {
+  }
 
-  // form = new FormGroup({});
-  // model = { email: 'email@gmail.com' };
-  //
-  // fields: FormlyFieldConfig[] = [
-  //   {
-  //     key: 'email',
-  //     type: 'input',
-  //     templateOptions: {
-  //       label: 'Email address',
-  //       placeholder: 'Enter email',
-  //       required: true,
-  //     }
-  //   }
-  // ];
-  form: FormGroup;
-  model: { };
+  ngOnInit(): void {
+    this._formPresenter.add$.subscribe(name => this.addEvent.emit(name));
+    this._formPresenter.cancel$.subscribe(name => this.cancelEvent.emit(name));
 
-  fields: FormlyFieldConfig[] ;
-
-  constructor( private formPresenter: VehicleCreateFormPresenter) {
-    this.form = this.formPresenter.form;
-    this.model= this.formPresenter.model;
-    this.fields = this.formPresenter.fields;
   }
 
   onSubmit(model: any) {
-    console.log(this.model);
+    console.log('保存记录' + this.model);
+    // this._formPresenter.();
   }
-  public delete(): void{
+
+  public onSave(): void{
 
   }
-  public cancel(): void{
+  public cancelCreate(): void{
+    this._formPresenter.cancel();
+  }
 
+  get form(): FormGroup {
+    return this._formPresenter.form;
+  }
+  get model() {
+    return this._formPresenter.model;
+  }
+  get fields(): FormlyFieldConfig[] {
+    return this._formPresenter.fields;
   }
 
 }

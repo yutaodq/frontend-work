@@ -34,6 +34,10 @@ export class VehicleCreateComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach(sub => sub.unsubscribe());
   }
 
+  onCancel() {
+    this.vehiclesSandbox.returnToList()
+  }
+
   /**
    * Registers events
    */
