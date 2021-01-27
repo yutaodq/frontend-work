@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { NGXLogger } from 'ngx-logger';
 import { Vehicle } from '@zy/model';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'zy-vehicle-vehicle',
@@ -26,6 +27,7 @@ export class VehiclesComponent implements OnInit {
 
   ngOnInit(): void {
     this._logger.debug('日志功能：Your log message goes here');
+    console.log('public save(): void保存记录错误' + uuidv4());
   }
 
   onSelectData(vehicle: Vehicle) {

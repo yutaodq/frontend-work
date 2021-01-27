@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 import { Vehicle } from '@zy/model';
-
+import { v4 as uuidv4 } from 'uuid';
 const FIELDS  = require('./vehicle-create-form.json');
 
 export class VehicleCreateFormPresenter {
@@ -24,7 +24,7 @@ export class VehicleCreateFormPresenter {
 
   public save(): void {
     if (!this.form.valid) {
-      console.log('public save(): void保存记录错误' + this.model);
+      console.log('public save(): void保存记录错误' + uuidv4());
 return;
     }
     // const vehicle: Vehicle = {id: 'ddsdsdsds',
