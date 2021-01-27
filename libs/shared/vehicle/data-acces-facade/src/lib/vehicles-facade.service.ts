@@ -78,7 +78,6 @@ export class VehiclesFacade extends Sandbox {
   }
 
   public returnToList() {
-    console.log(`onSelectData(event):+ getCreateVehicle+ getCreateVehicle+ selectDataId` );
     this.appState$.dispatch(RouterAction.go({ to: { path: ['vehicles', 'list'] } }))
     // this._router.navigate(['vehicles', 'list']);
   }

@@ -8,6 +8,7 @@ import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { VehicleDeleteDialogComponent } from '../../components/vehicle-delete-dialog/vehicle-delete-dialog.component';
 import { NotificationService } from '@zy/shared/util';
+import { RouterFacade } from '@zy/shared/utils/ngrx-router';
 
 @Component({
   selector: 'zy-vehicle-details',
@@ -27,13 +28,15 @@ export class VehicleDetailsComponent implements OnInit, OnDestroy {
     public vehiclesFacade: VehiclesFacade,
     private changeDetector: ChangeDetectorRef,
     private _dialogService: DialogService,
+    private _routerFacade: RouterFacade,
     // private _messageService: MessageService,
     private notification: NotificationService
   ) {
   }
 
   public returnList(): void {
-    this.vehiclesFacade.returnToList();
+    this._routerFacade.goTo({ path: ['vehicles', 'list'] } );
+    // this.vehiclesFacade.returnToList();
 
   }
 
