@@ -20,5 +20,6 @@ module.exports = {
     '<rootDir>/libs/shared/ui-grid',
     '<rootDir>/libs/shared/util-i18n',
     '<rootDir>/libs/shared/util-logging',
+    '<rootDir>/libs/shared/utils/ngrx-router',
   ],
 };

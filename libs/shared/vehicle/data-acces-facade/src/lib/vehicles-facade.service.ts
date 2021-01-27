@@ -7,6 +7,7 @@ import * as fromVehicles from '@zy/shared/vehicle/data-acces';
 import { Vehicle } from '@zy/model';
 import { filter, map, take } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import * as RouterAction from '@zy/shared/utils/ngrx-router';
 
 @Injectable()
 export class VehiclesFacade extends Sandbox {
@@ -77,7 +78,9 @@ export class VehiclesFacade extends Sandbox {
   }
 
   public returnToList() {
-    this._router.navigate(['vehicles', 'list']);
+    console.log(`onSelectData(event):+ getCreateVehicle+ getCreateVehicle+ selectDataId` );
+    this.appState$.dispatch(RouterAction.go({ to: { path: ['vehicles', 'list'] } }))
+    // this._router.navigate(['vehicles', 'list']);
   }
   public removeVehicle(vehicle: Vehicle) {
     this.appState$.dispatch(fromVehicles.VehiclePageActions.removeVehicle( {vehicle} ))

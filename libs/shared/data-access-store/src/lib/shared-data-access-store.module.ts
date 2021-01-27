@@ -9,21 +9,22 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { RouterEffects } from './effects';
 @NgModule({
   imports: [
-    StoreModule.forRoot(ROOT_REDUCERS, {
-      metaReducers,
-      runtimeChecks: {
-        // strictStateImmutability and strictActionImmutability are enabled by default
-        strictStateSerializability: true,
-        strictActionSerializability: true,
-        strictActionWithinNgZone: true,
-        strictActionTypeUniqueness: true,
-      },
-    }),
+    StoreModule.forRoot({}),
+    // StoreModule.forRoot(ROOT_REDUCERS, {
+    //   metaReducers,
+    //   runtimeChecks: {
+    //     // strictStateImmutability and strictActionImmutability are enabled by default
+    //     strictStateSerializability: true,
+    //     strictActionSerializability: true,
+    //     strictActionWithinNgZone: true,
+    //     strictActionTypeUniqueness: true,
+    //   },
+    // }),
 
     /**
      * @ngrx/router-store keeps router state up-to-date in the store.
      */
-    StoreRouterConnectingModule.forRoot(),
+    // StoreRouterConnectingModule.forRoot(),
 
     /**
      * Store devtools instrument the store retaining past versions of state
@@ -36,7 +37,7 @@ import { RouterEffects } from './effects';
      * See: https://github.com/zalmoxisus/redux-devtools-extension
      */
     StoreDevtoolsModule.instrument({
-      name: 'NgRx IVDS Store App',
+      name: '作业大队应用程序',
 
       // In a production build you would want to disable the Store Devtools
       // logOnly: environment.production,
@@ -48,7 +49,8 @@ import { RouterEffects } from './effects';
      *
      * See: https://ngrx.io/guide/effects#registering-root-effects
      */
-    EffectsModule.forRoot([ RouterEffects]),  ],
+    // EffectsModule.forRoot([ RouterEffects]),  ],
+    EffectsModule.forRoot()]
 })
 export class SharedDataAccessStoreModule {
   static forRoot(): ModuleWithProviders<any> {

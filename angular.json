@@ -635,6 +635,39 @@
           "style": "scss"
         }
       }
+    },
+    "shared-utils-ngrx-router": {
+      "projectType": "library",
+      "root": "libs/shared/utils/ngrx-router",
+      "sourceRoot": "libs/shared/utils/ngrx-router/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/utils/ngrx-router/tsconfig.lib.json",
+              "libs/shared/utils/ngrx-router/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/utils/ngrx-router/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/utils/ngrx-router/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

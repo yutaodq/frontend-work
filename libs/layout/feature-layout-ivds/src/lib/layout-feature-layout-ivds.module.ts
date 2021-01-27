@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyPrimeNGModule } from '@ngx-formly/primeng';
+import { SharedUtilsNgrxRouterModule } from '@zy/shared/utils/ngrx-router';
 const EXPORTS_MODULES = [
   MainModule,
   SharedUiGridModule
@@ -30,6 +31,7 @@ const EXPORTS_MODULES = [
     SharedUtilModule,
     SharedUiGridModule,
     SharedDataAccessStoreModule.forRoot(),
+    SharedUtilsNgrxRouterModule,
     HttpServiceModule.forRoot()
   ],
   exports: [
