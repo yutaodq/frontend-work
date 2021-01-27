@@ -12,7 +12,7 @@ export const collectionFeatureKey = 'collection';
 export interface State {
   loaded: boolean;
   loading: boolean;
-  loadFailed:  boolean;
+  loadFailed: boolean;
   query: string
   ids: string[];
 }
@@ -20,9 +20,9 @@ export interface State {
 const initialState: State = {
   loaded: false,
   loading: false,
-  loadFailed:  false,
+  loadFailed: false,
   query: '',
-  ids: [],
+  ids: []
 };
 
 export const reducer = createReducer(
@@ -31,25 +31,25 @@ export const reducer = createReducer(
     ...state,
     loaded: false,
     loading: true,
-    loadFailed:  false,
-    ids: [],
+    loadFailed: false,
+    ids: []
   })),
   on(CollectionApiActions.loadCollectionSuccess, (state, { vehicles }) => ({
     loaded: true,
     loading: false,
-    loadFailed:  false,
-    query:'',
-    ids: vehicles.map((vehicle) => vehicle.id),
+    loadFailed: false,
+    query: '',
+    ids: vehicles.map((vehicle) => vehicle.id)
   })),
   on(CollectionApiActions.loadCollectionFailure, (state, { error }) => ({
     loaded: true,
     loading: false,
-    loadFailed:  true,
-    ids: [],
+    loadFailed: true,
+    ids: []
   })),
-/*
-  查询
- */
+  /*
+    查询
+   */
   on(CollectionPageActions.searchCollection, (state, { query }) => ({
     ...state,
     query: query
@@ -59,28 +59,47 @@ export const reducer = createReducer(
   /**
    * 乐观删除.
    */
-  on(   VehiclePageActions.removeVehicle,
+  on(VehiclePageActions.removeVehicle,
     (state, { vehicle }) => ({
       ...state,
-      ids: state.ids.filter((id) => id !== vehicle.id),
+      ids: state.ids.filter((id) => id !== vehicle.id)
     })
   ),
 
-/**
- * 删除失败
- */
-on(VehiclePageActions.removeVehicleFailure,
-  (state, { vehicle}) => {
-    if (state.ids.indexOf(vehicle.id) > -1) {
-      return state;
+  /**
+   * 删除失败
+   */
+  on(VehiclePageActions.removeVehicleFailure,
+    (state, { vehicle }) => {
+      if (state.ids.indexOf(vehicle.id) > -1) {
+        return state;
+      }
+      return {
+        ...state,
+        ids: [...state.ids, vehicle.id]
+      };
     }
-    return {
+  ),
+  /**
+   * 添加
+   */
+  on(VehiclePageActions.createVehicle,
+    (state, { vehicle }) => {
+      return {
+        ...state,
+        ids: [...state.ids, vehicle.id]
+      };
+    }
+  ),
+  /**
+   * 添加失败
+   */
+  on(VehiclePageActions.createVehicleFailure,
+    (state, { vehicle }) => ({
       ...state,
-      ids: [...state.ids, vehicle.id],
-    };
-  }
-),
-
+      ids: state.ids.filter((id) => id !== vehicle.id)
+    })
+  ),
 );
 
 export const getCollectionLoaded = (state: State) => state.loaded;

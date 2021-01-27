@@ -14,7 +14,6 @@ export class VehicleCreateFormPresenter {
   cancel$: Observable<string> = this._cancel.asObservable();
 
   form = new FormGroup({});
-  // model = { name: '', pz: 'sdf', nbpz: '', type: '', zt: '', bz: '' };
   model = { };
 
   fields: FormlyFieldConfig[] = FIELDS;
@@ -26,8 +25,11 @@ export class VehicleCreateFormPresenter {
   public save(): void {
     if (!this.form.valid) {
       console.log('public save(): void保存记录错误' + this.model);
-
+return;
     }
+    // const vehicle: Vehicle = {id: 'ddsdsdsds',
+    // name: this.model.valueOf}
+    // // this.model as Vehicle;
     const vehicle: Vehicle = this.model as Vehicle;
     Object.keys(vehicle).forEach((key) => (vehicle[key] === null || vehicle[key] === '') && delete vehicle[key]);
 

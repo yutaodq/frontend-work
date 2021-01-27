@@ -39,6 +39,11 @@ export const reducer = createReducer(
     selectedVehicleId: id,
   })),
   /**
+   * 添加 Vehicle
+   */
+  on(VehiclePageActions.createVehicle, (state, { vehicle }) => adapter.addOne(vehicle, state)),
+
+  /**
    * 删除失败
    */
   on(VehiclePageActions.removeVehicleFailure,(state, { vehicle, removeSuccess}) => ({
