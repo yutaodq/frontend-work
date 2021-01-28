@@ -27,15 +27,12 @@ export class VehiclesComponent implements OnInit {
 
   ngOnInit(): void {
     this._logger.debug('日志功能：Your log message goes here');
-    console.log('public save(): void保存记录错误' + uuidv4());
   }
 
   onSelectData(vehicle: Vehicle) {
     console.log(`onSelectData(event):aaaaaaaaaaaaaaaa` );
-    // const id = selectDataId.id;
     this._vehiclesFacade.selectVehicle(vehicle);
     this.router.navigate(['vehicles', vehicle.id,'detail']);
-    // this.router.navigate(['vehicles', selectDataId], { relativeTo: this.activeRouter });
   }
 
   get vehiclesSandbox() {

@@ -80,6 +80,9 @@
     },
     "shared-utils-ngrx-router": {
       "tags": ["scope:shared", "type:util"]
+    },
+    "vehicle-feature-use-type": {
+      "tags": ["scope:vehicle", "type:feature"]
     }
   }
 }

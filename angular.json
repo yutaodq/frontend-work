@@ -668,6 +668,39 @@
           "style": "scss"
         }
       }
+    },
+    "vehicle-feature-use-type": {
+      "projectType": "library",
+      "root": "libs/vehicle/feature-use-type",
+      "sourceRoot": "libs/vehicle/feature-use-type/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/vehicle/feature-use-type/tsconfig.lib.json",
+              "libs/vehicle/feature-use-type/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/vehicle/feature-use-type/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/vehicle/feature-use-type/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

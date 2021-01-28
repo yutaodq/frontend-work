@@ -1,32 +1,35 @@
 <div class="layout-sidebar" [ngClass]="{'active': active}">
   <div class="layout-menu">
 
-    <div class="menu-category">Media</div>
+    <div class="menu-category">智能调派</div>
     <div class="menu-items">
-      <a [routerLink]=" ['/404']" routerLinkActive="router-link-exact-active">Carousel</a>
+      <a [routerLink]=" ['/404']" routerLinkActive="router-link-exact-active">用车申请</a>
       <div>
-        <a tabindex="0" (click)="toggleSubmenu($event, '/galleria')">Galleria</a>
+        <a tabindex="0" (click)="toggleSubmenu($event, '/galleria')">审批计划</a>
         <div [@submenu]="isSubmenuActive('/galleria') ? 'visible': 'hidden'">
           <ul>
-            <li><a [routerLink]=" ['/galleria']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Documentation</a></li>
-            <li><a [routerLink]=" ['/galleria/programmatic']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Programmatic</a></li>
-            <li><a [routerLink]=" ['/galleria/indicator']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Indicator</a></li>
-            <li><a [routerLink]=" ['/galleria/thumbnail']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Thumbnail</a></li>
-            <li><a [routerLink]=" ['/galleria/navigator']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Navigator</a></li>
-            <li><a [routerLink]=" ['/galleria/responsive']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Responsive</a></li>
-            <li><a [routerLink]=" ['/galleria/fullscreen']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Fullscreen</a></li>
-            <li><a [routerLink]=" ['/galleria/autoplay']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">AutoPlay</a></li>
-            <li><a [routerLink]=" ['/galleria/caption']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Caption</a></li>
-            <li><a [routerLink]=" ['/galleria/advanced']" routerLinkActive="router-link-exact-active" [routerLinkActiveOptions]="{exact:true}">Advanced</a></li>
+            <li><a [routerLink]=" ['/galleria']" routerLinkActive="router-link-exact-active"
+                   [routerLinkActiveOptions]="{exact:true}">待审批计划</a></li>
+            <li><a [routerLink]=" ['/galleria/programmatic']" routerLinkActive="router-link-exact-active"
+                   [routerLinkActiveOptions]="{exact:true}">已审批计划</a></li>
+            <li><a [routerLink]=" ['/galleria/indicator']" routerLinkActive="router-link-exact-active"
+                   [routerLinkActiveOptions]="{exact:true}">计划执行情况</a></li>
+
           </ul>
         </div>
       </div>
     </div>
 
 
-    <div class="menu-category">Utilities</div>
+    <div class="menu-category">车辆管理</div>
     <div class="menu-items">
-      <a [routerLink]=" ['/filterservice']" routerLinkActive="router-link-exact-active">FilterService <span class="p-tag">New</span></a>
+      <a [routerLink]=" ['/filterservice']" routerLinkActive="router-link-exact-active">车辆信息档案 <span
+        class="p-tag">New</span></a>
     </div>
+    <div class="menu-items">
+      <a [routerLink]=" ['/filterservice']" routerLinkActive="router-link-exact-active">车辆用途 <span
+        class="p-tag">New</span></a>
+    </div>
+
   </div>
 </div>

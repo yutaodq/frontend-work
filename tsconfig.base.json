@@ -45,6 +45,9 @@
       "@zy/shared/ui-grid": ["libs/shared/ui-grid/src/index.ts"],
       "@zy/shared/utils/ngrx-router": [
         "libs/shared/utils/ngrx-router/src/index.ts"
+      ],
+      "@zy/vehicle/feature-use-type": [
+        "libs/vehicle/feature-use-type/src/index.ts"
       ]
     }
   },
