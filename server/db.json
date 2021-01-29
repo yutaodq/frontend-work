@@ -142,5 +142,37 @@
       "name": "uuuuu",
       "id": 17
     }
+  ],
+  "vehicleUseTypes": [
+    {
+      "id": 1,
+      "name": "吊车",
+      "description": "12345"
+    },
+    {
+      "id": 2,
+      "name": "锅炉车",
+      "description": "7777889999"
+    },
+    {
+      "id": 3,
+      "name": "水泥车",
+      "description": "5fg"
+    },
+    {
+      "id": 4,
+      "name": "清水罐车",
+      "description": "fdwe333"
+    },
+    {
+      "id": 5,
+      "name": "污水罐车",
+      "description": "5fg"
+    },
+    {
+      "id": 6,
+      "name": "污油罐车",
+      "description": "fdwe333"
+    }
   ]
 }
