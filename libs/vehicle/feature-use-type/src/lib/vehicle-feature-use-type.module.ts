@@ -6,14 +6,15 @@ import { VehiclesUseTypeComponent } from './containers/list/vehicles-use-type.co
 import { SharedVehiclesDataAccesStoreUseTypeModule } from '@zy/shared/vehicles/data-acces/store/use-type';
 import { SharedVehicleDataAccesFacadeModule } from '@zy/shared/vehicle/data-acces-facade';
 import { SharedVehiclesDataAccesApiUseTypeModule } from '@zy/shared/vehicles/data-acces/api/use-type';
-
+import { SharedUtilsThemePrimengModule } from '@zy/shared/utils/theme-primeng';
 @NgModule({
   imports: [
     CommonModule,
     VehicleFeatureVehicleUseTypeRouting,
     SharedVehiclesDataAccesStoreUseTypeModule,
     SharedVehicleDataAccesFacadeModule,
-    SharedVehiclesDataAccesApiUseTypeModule
+    SharedVehiclesDataAccesApiUseTypeModule,
+    SharedUtilsThemePrimengModule
   ],
   declarations: [
     VehiclesUseTypeComponent,

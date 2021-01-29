@@ -25,5 +25,6 @@ module.exports = {
     '<rootDir>/libs/shared/vehicles/data-acces/store/use-type',
     '<rootDir>/libs/shared/vehicles/data-acces/api/use-type',
     '<rootDir>/libs/shared/vehicles/data-acces/facade/use-type',
+    '<rootDir>/libs/shared/utils/theme-primeng',
   ],
 };

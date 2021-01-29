@@ -800,6 +800,39 @@
           "style": "scss"
         }
       }
+    },
+    "shared-utils-theme-primeng": {
+      "projectType": "library",
+      "root": "libs/shared/utils/theme-primeng",
+      "sourceRoot": "libs/shared/utils/theme-primeng/src",
+      "prefix": "frontend-work",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/utils/theme-primeng/tsconfig.lib.json",
+              "libs/shared/utils/theme-primeng/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/utils/theme-primeng/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/utils/theme-primeng/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

@@ -57,6 +57,9 @@
       ],
       "@zy/shared/vehicles/data-acces/facade/use-type": [
         "libs/shared/vehicles/data-acces/facade/use-type/src/index.ts"
+      ],
+      "@zy/shared/utils/theme-primeng": [
+        "libs/shared/utils/theme-primeng/src/index.ts"
       ]
     }
   },
