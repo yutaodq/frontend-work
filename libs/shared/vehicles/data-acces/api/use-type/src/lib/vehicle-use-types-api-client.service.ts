@@ -6,7 +6,8 @@ import { VehicleUseType } from '@zy/model';
 
 @Injectable()
 export class VehicleUseTypesApiClient extends HttpService {
-  @GET('/vehicleUseTypes')
+  // @GET('/vehicleUseTypes')
+  @GET('/vehicle_use_types')
   public getCollection(): Observable<any> {
 
     return null;

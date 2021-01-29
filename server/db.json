@@ -143,7 +143,7 @@
       "id": 17
     }
   ],
-  "vehicleUseTypes": [
+  "vehicle_use_types": [
     {
       "id": 1,
       "name": "吊车",

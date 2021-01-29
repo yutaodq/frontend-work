@@ -11,13 +11,13 @@ import * as RouterAction from '@zy/shared/utils/ngrx-router';
 
 @Injectable()
 export class VehicleUseTypesFacade extends Sandbox {
-  public vehicles$ = this.appState$.pipe(select(fromVehicleUseTypes.selectAllVehicleUseTypes));
-  public vehiclesLoading$       = this.appState$.pipe(select(fromVehicleUseTypes.selectVehicleUseTypesLoading ));
+  public vehicleUseTypes$ = this.appState$.pipe(select(fromVehicleUseTypes.selectAllVehicleUseTypes));
+  public vehicleUseTypesLoading$       = this.appState$.pipe(select(fromVehicleUseTypes.selectVehicleUseTypesLoading ));
 
 
   // public query$ = this.appState$.pipe(select(fromVehicleUseTypes.selectVehicleUseTypesQuery));
 
-  public vehiclesCollectionLoaded$ = this.appState$.pipe(select(fromVehicleUseTypes.selectVehicleUseTypesLoaded));
+  public vehicleUseTypesLoaded$ = this.appState$.pipe(select(fromVehicleUseTypes.selectVehicleUseTypesLoaded));
 
   private subscriptions: Array<Subscription> = [];
 

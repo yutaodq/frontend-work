@@ -5,12 +5,13 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 import * as fromVehicleUseType from './reducers';
+import { VehicleUseTypeEffects } from './effects';
 @NgModule({
   imports: [
     CommonModule,
     SharedVehicleDataAccesApiModule,
     StoreModule.forFeature(fromVehicleUseType.vehicleUseTypeFeatureKey, fromVehicleUseType.reducers),
-    EffectsModule.forFeature([ ]),
+    EffectsModule.forFeature([VehicleUseTypeEffects ]),
   ],
 })
 export class SharedVehiclesDataAccesStoreUseTypeModule {}
