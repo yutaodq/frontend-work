@@ -1,0 +1,37 @@
+<div class="p-fluid p-formgrid p-grid">
+  <form [formGroup]="form" (ngSubmit)="onSubmit(model)">
+    <formly-form [form]="form" [fields]="fields" [model]="model" [options]="">
+
+    </formly-form>
+    <hr/>
+    <div class="row">
+      <p-button label="保存新记录"
+                icon="pi pi-save"
+                iconPos="left"
+                type="submit"
+                class=" mr-2"
+      >
+      </p-button>
+      <p-button label="重置信息"
+                icon="pi pi-refresh"
+                iconPos="left"
+                class=" mr-2"
+      >
+        <i class="far fa-save"></i>
+      </p-button>
+
+      <!--      <p-button label="取消"-->
+      <!--                icon="pi pi-undo"-->
+      <!--                iconPos="left"-->
+      <!--                (onClick)="cancelCreate()"-->
+      <!--      >-->
+      <p-button
+        (onClick)="cancelCreate()"
+      >
+        <i class="fas fa-chevron-circle-left"></i>
+        取消
+      </p-button>
+    </div>
+    <!--    <button type="submit" class="btn btn-default">Submit</button>-->
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<div class="container content-section introduction">
+  <h1>添加车辆信息</h1>
+  <p>添加车辆信息 <a
+    href="http://www.xsdw.dqyt.petrochina/sites/cy6c/zydd/Pages/default.aspx">作业</a>,
+    一个简单的试验项目.</p>
+</div>
+
+<div class="container content-section implementation">
+<!--  <zy-vehicle-details-toolbar (onList)="returnList()" (onDelete)="delete()">-->
+
+<!--  </zy-vehicle-details-toolbar>-->
+  <div class="card">
+    <zy-vehicle-create-form (cancelEvent)="onCancel()" (addEvent)="onAdd($event)">
+    </zy-vehicle-create-form>
+  </div>
+
+</div>

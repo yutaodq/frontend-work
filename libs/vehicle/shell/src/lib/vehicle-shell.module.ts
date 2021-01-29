@@ -11,7 +11,7 @@ const routes: Routes = [
   // {
   //   path: 'welcome',
   //   loadChildren: () => import('@zy/vehicle/feature-vehicle')
-  //     .then((m) => m.VehicleFeatureVehicleComponentsModule),
+  //     .then((m) => m.VehicleFeatureUseTypeComponentsModule),
   // },
   // {
   //   path: '',

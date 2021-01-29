@@ -1,0 +1,59 @@
+[
+  {
+    "fieldGroupClassName": "row",
+    "fieldGroup": [
+      {
+        "className": "col-md-6",
+        "key": "name",
+        "type": "input",
+        "templateOptions": {
+          "label": "Email address",
+          "placeholder": "Enter email"
+        }
+      },
+      {
+        "className": "col-md-3",
+        "key": "pz",
+        "type": "input",
+        "templateOptions": {
+          "label": "Email address",
+          "placeholder": "Enter email"
+        }
+      },
+      {
+        "className": "col-md-3",
+        "key": "nbpz",
+        "type": "input",
+        "templateOptions": {
+          "label": "Email address",
+          "placeholder": "Enter email"
+        }
+      }
+    ]
+  },
+  { "template": "<hr />" },
+  {
+    "key": "type",
+    "type": "input",
+    "templateOptions": {
+      "label": "Email address",
+      "placeholder": "Enter email"
+    }
+  },
+  {
+    "key": "zt",
+    "type": "input",
+    "templateOptions": {
+      "label": "Email address",
+      "placeholder": "Enter email"
+    }
+  },
+  {
+    "key": "bz",
+    "type": "input",
+    "templateOptions": {
+      "label": "Email address",
+      "placeholder": "Enter email"
+    }
+  }
+]

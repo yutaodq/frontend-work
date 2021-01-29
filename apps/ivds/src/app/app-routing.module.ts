@@ -8,6 +8,10 @@ const routes: Routes = [
     loadChildren: () => import('@zy/vehicle/shell').then((m) => m.VehicleShellModule),
   },
   {
+    path: 'vehicleUseTypes',
+    loadChildren: () => import('@zy/vehicle/feature-use-type').then((m) => m.VehicleFeatureUseTypeModule),
+  },
+  {
     path: '404',
     loadChildren: () => import('@zy/shared/ui').then((m) => m.SharedUiNoFoundPagaModule),
   },
@@ -19,3 +23,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
+// VehicleFeatureUseTypeModule

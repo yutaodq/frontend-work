@@ -83,6 +83,15 @@
     },
     "vehicle-feature-use-type": {
       "tags": ["scope:vehicle", "type:feature"]
+    },
+    "shared-vehicles-data-acces-store-use-type": {
+      "tags": ["scope:shared", "type:feature"]
+    },
+    "shared-vehicles-data-acces-api-use-type": {
+      "tags": ["scope:shared", "type:feature"]
+    },
+    "shared-vehicles-data-acces-facade-use-type": {
+      "tags": ["scope:shared", "type:feature"]
     }
   }
 }

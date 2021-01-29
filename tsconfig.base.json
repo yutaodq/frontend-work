@@ -48,6 +48,15 @@
       ],
       "@zy/vehicle/feature-use-type": [
         "libs/vehicle/feature-use-type/src/index.ts"
+      ],
+      "@zy/shared/vehicles/data-acces/store/use-type": [
+        "libs/shared/vehicles/data-acces/store/use-type/src/index.ts"
+      ],
+      "@zy/shared/vehicles/data-acces/api/use-type": [
+        "libs/shared/vehicles/data-acces/api/use-type/src/index.ts"
+      ],
+      "@zy/shared/vehicles/data-acces/facade/use-type": [
+        "libs/shared/vehicles/data-acces/facade/use-type/src/index.ts"
       ]
     }
   },
